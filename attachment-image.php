@@ -53,6 +53,19 @@ get_header(); // Loads the header.php template. ?>
 					</article><!-- .hentry -->
 					
 					<?php do_atomic( 'after_entry' ); // kultalusikka_after_entry ?>
+					
+					<div class="attachment-meta">
+					
+						<?php $gallery = do_shortcode( sprintf( '[gallery id="%1$s" exclude="%2$s" columns="8"]', $post->post_parent, get_the_ID() ) ); ?>
+						
+						<?php if ( !empty( $gallery ) ) { ?>
+							<div class="image-gallery">
+								<h3><?php _e( 'Gallery', 'kultalusikka' ); ?></h3>
+								<?php echo $gallery; ?>
+							</div>
+						<?php } ?>
+						
+					</div><!-- .attachment-meta -->
 
 					<?php do_atomic( 'after_singular' ); // kultalusikka_after_singular ?>
 
