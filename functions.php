@@ -241,16 +241,19 @@ function kultalusikka_one_column() {
 	if ( !is_active_sidebar( 'primary' ) )
 		add_filter( 'get_theme_layout', 'kultalusikka_theme_layout_one_column' );
 		
-	elseif ( is_post_type_archive( 'download') )
+	elseif ( is_post_type_archive( 'download' ) )
 		add_filter( 'get_theme_layout', 'kultalusikka_theme_layout_one_column' );
 		
-	elseif ( is_tax( 'download_category') )
+	elseif ( is_tax( 'download_category' ) || is_tax( 'download_tag' ) )
 		add_filter( 'get_theme_layout', 'kultalusikka_theme_layout_one_column' );
 		
 	elseif ( is_tax( 'edd_download_info_feature' ) )
 		add_filter( 'get_theme_layout', 'kultalusikka_theme_layout_one_column' );
 	
 	elseif ( is_attachment() && 'layout-default' == theme_layouts_get_layout() )
+		add_filter( 'get_theme_layout', 'kultalusikka_theme_layout_one_column' );
+
+	elseif ( is_page_template( 'page-templates/front-page.php' ) )
 		add_filter( 'get_theme_layout', 'kultalusikka_theme_layout_one_column' );
 
 	elseif ( 'layout-default' == theme_layouts_get_layout() )
@@ -296,14 +299,6 @@ function kultalusikka_subsidiary_classes( $classes ) {
 		$classes[] = 'sidebar-subsidiary-'. $num;
 		
     }
-	
-	if ( is_active_sidebar( 'front-page' ) && is_page_template( 'page-template/front-page.php' ) ) {
-		
-	$the_sidebars = wp_get_sidebars_widgets();
-	$num = count( $the_sidebars['front-page'] );
-	$classes[] = 'sidebar-front-page-'. $num;
-		
-    }
     
     return $classes;
 	
@@ -311,14 +306,12 @@ function kultalusikka_subsidiary_classes( $classes ) {
 
 /**
  * Counts widgets number in front-page sidebar and ads css class (.sidebar-front-page-$number) to body_class.
- * Used to increase / decrease widget size according to number of widgets.
- * Example: if there's one widget in subsidiary sidebar - widget width is 100%, if two widgets, 50% each...
  * @note: credit goes to Sukelius Magazine Theme. http://themehybrid.com/themes/sukelius-magazine
  * @since 0.1.0
  */
 function kultalusikka_front_page_classes( $classes ) {
 	
-	if ( is_active_sidebar( 'front-page' ) ) { // @todo: is_page_template(page-template/front-page.php is not working)
+	if ( is_active_sidebar( 'front-page' ) && is_page_template( 'page-templates/front-page.php' ) ) {
 		
 	$the_sidebars = wp_get_sidebars_widgets();
 	$num = count( $the_sidebars['front-page'] );
@@ -379,7 +372,7 @@ function kultalusikka_customize_preview_css() {
  */
 function kultalusikka_taxonomy_template( $template  ) {
 
-	if ( is_tax( 'download_category' ) || is_tax( 'edd_download_info_feature' ) )
+	if ( is_tax( 'download_category' ) || is_tax( 'download_tag' ) || is_tax( 'edd_download_info_feature' ) )
 		$template = locate_template( array( 'archive-download.php' ) );
 
 	return $template;
