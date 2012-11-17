@@ -90,6 +90,9 @@ function kultalusikka_theme_setup() {
 
 	// the name of your product. This should match the download name in EDD exactly.
 	define( 'KULTALUSIKKA_SL_THEME_NAME', 'Kultalusikka' ); // add your own unique prefix to prevent conflicts
+	
+	/* Define current version of Kultalusikka. */
+	define( 'KULTALUSIKKA_VERSION', '0.1' ); // add your own unique prefix to prevent conflicts
 
 	if( !class_exists( 'EDD_SL_Theme_Updater' ) ) {
 	// load our custom theme updater
@@ -102,7 +105,7 @@ function kultalusikka_theme_setup() {
 
 	$edd_updater = new EDD_SL_Theme_Updater( array( 
 		'remote_api_url' 	=> KULTALUSIKKA_SL_STORE_URL, 	// our store URL that is running EDD
-		'version' 			=> '0.1', 			        	// the current theme version we are running
+		'version' 			=> KULTALUSIKKA_VERSION, 		// the current theme version we are running
 		'license' 			=> $kultalusikka_license, 		// the license key (used get_option above to retrieve from DB)
 		'item_name' 		=> KULTALUSIKKA_SL_THEME_NAME,	// the name of this theme
 		'author'			=> 'Sami Keijonen'	            // the author's name
@@ -121,6 +124,9 @@ function kultalusikka_theme_setup() {
 	/* Add excerpt support for 'download' post type. */
 	add_filter( 'edd_download_supports', 'kultalusikka_add_edd_excerpt' );
 	
+	/* Enqueue main stylesheet (style.css) before than others. */
+	add_action( 'wp_enqueue_scripts', 'kultalusikka_main_styles', 9 );
+	
 	/* Enqueue scripts. */
 	add_action( 'wp_enqueue_scripts', 'kultalusikka_scripts_styles' );
 	
@@ -128,7 +134,7 @@ function kultalusikka_theme_setup() {
 	add_filter( 'sidebars_widgets', 'kultalusikka_disable_sidebars' );
 	add_action( 'template_redirect', 'kultalusikka_one_column' );
 	
-	/* Add number of subsidiary and front page widgets to body_class */
+	/* Add number of subsidiary and front page widgets to body_class. */
 	add_filter( 'body_class', 'kultalusikka_subsidiary_classes' );
 	add_filter( 'body_class', 'kultalusikka_front_page_classes' );
 	
@@ -199,8 +205,23 @@ function kultalusikka_add_edd_excerpt( $download_supports ) {
 }
 
 /**
+ * Load main style.css file.
+ *
+ * @since 0.1.0
+ */
+function kultalusikka_main_styles() {
+
+	if ( !is_admin() ) {
+		
+		/* Load main style.css file. */
+		wp_enqueue_style( 'kultalusikka-style', get_stylesheet_uri(), array(), KULTALUSIKKA_VERSION );
+		
+	}
+}
+
+/**
  * Enqueues scripts and styles.
- * @copyright TwentyTwelve theme.
+ *
  * @since 0.1.0
  */
 function kultalusikka_scripts_styles() {
@@ -213,7 +234,10 @@ function kultalusikka_scripts_styles() {
 		/* Enqueue FitVids. */
 		wp_enqueue_script( 'kultalusikka-fitvids', trailingslashit( get_template_directory_uri() ) . 'js/fitvids/jquery.fitvids.js', array( 'jquery' ), '20121117', true );
 		wp_enqueue_script( 'kultalusikka-fitvids-settings', trailingslashit( get_template_directory_uri() ) . 'js/fitvids/fitvids.js', array( 'kultalusikka-fitvids' ), '20121117', true );
-	
+		
+		/* Dequeue  EDD styles. These are added in a theme to save extra load. */
+		wp_dequeue_style( 'edd-styles' );
+		
 	}
 }
 
