@@ -92,8 +92,8 @@ function kultalusikka_theme_setup() {
 	define( 'KULTALUSIKKA_SL_THEME_NAME', 'Kultalusikka' ); // add your own unique prefix to prevent conflicts
 
 	if( !class_exists( 'EDD_SL_Theme_Updater' ) ) {
-		// load our custom theme updater
-		include( dirname( __FILE__ ) . '/includes/EDD_SL_Theme_Updater.php' );
+	// load our custom theme updater
+	include( dirname( __FILE__ ) . '/includes/EDD_SL_Theme_Updater.php' );
 	}
 	
 	// Get licence key from database.
@@ -204,10 +204,17 @@ function kultalusikka_add_edd_excerpt( $download_supports ) {
  * @since 0.1.0
  */
 function kultalusikka_scripts_styles() {
-	
-	/* Adds JavaScript for handling the navigation menu hide-and-show behavior. */
-	wp_enqueue_script( 'kultalusikka-navigation',  trailingslashit( get_template_directory_uri() ) . 'js/navigation.js', array(), '20121711', true );
 
+	if ( !is_admin() ) {
+	
+		/* Adds JavaScript for handling the navigation menu hide-and-show behavior. */
+		wp_enqueue_script( 'kultalusikka-navigation',  trailingslashit( get_template_directory_uri() ) . 'js/navigation.js', array(), '20121711', true );
+	
+		/* Enqueue FitVids. */
+		wp_enqueue_script( 'kultalusikka-fitvids', trailingslashit( get_template_directory_uri() ) . 'js/fitvids/jquery.fitvids.js', array( 'jquery' ), '20121117', true );
+		wp_enqueue_script( 'kultalusikka-fitvids-settings', trailingslashit( get_template_directory_uri() ) . 'js/fitvids/fitvids.js', array( 'kultalusikka-fitvids' ), '20121117', true );
+	
+	}
 }
 
 /**

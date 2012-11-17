@@ -108,6 +108,14 @@ video {
 img {
 	height: auto;
 }
+img.kultalusikka-thumbnail-download {
+	-webkit-border-top-left-radius: 3px;
+	-webkit-border-top-right-radius: 3px;
+	-moz-border-radius-topleft: 3px;
+	-moz-border-radius-topright: 3px;
+	border-top-left-radius: 3px;
+	border-top-right-radius: 3px;
+}
 
 /* Override the Twitter embed fixed width to make tweet responsive. */
 .entry-content .twitter-tweet-rendered {
@@ -1095,15 +1103,42 @@ ol.comment-list {
 /* =EDD and EDD Download Info CSS
 -------------------------------------------------------------- */
 
-.edd-submit.plain {
+body .edd-submit.button {
+	padding: 14px 20px;
+	padding: 1rem 1.42857143rem;
+	
+}
+
+body .edd-submit.plain {
 	-moz-box-shadow: none;
 	-webkit-box-shadow: none;
 	box-shadow: none;
 	color: #90b535;
 }
-.edd-submit.plain:hover {
+body .edd-submit.plain:hover {
 	background: none;
 }
+
+/* Theme Green */
+.edd-submit.button.theme-green {
+	color: #fff;
+	border-color: #78a018 #78a018 #387038;
+	background: #90b535;
+	background:    -moz-linear-gradient(top, #90b535, #83ab23);
+	background: -webkit-linear-gradient(top, #90b535, #83ab23);
+	background:         linear-gradient(top, #90b535, #83ab23);
+}
+
+.edd-submit.button.theme-green:hover {
+	background: #78a018;
+}
+
+.edd-submit.button.theme-green:active {
+	background: #78a018;
+	border-color: #387038 #51A351 #51A351;
+}
+
+/* EDD download info widget css. */
 .widget-edd-download-info .edd-submit.button {
 	display: inline-block;
 	text-align: center;
