@@ -1,8 +1,8 @@
 <?php 
 /**
- * Content Template
+ * Content Forum Template
  *
- * Template used to show post content when a more specific template cannot be found.
+ * Template used to show post content for 'forum' post type.
  *
  * @package    Kultalusikka
  * @subpackage Template
@@ -31,10 +31,32 @@ do_atomic( 'before_entry' ); // kultalusikka_before_entry ?>
 		<?php the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'kultalusikka' ) ); ?>
 		<?php wp_link_pages( array( 'before' => '<p class="page-links">' . __( 'Pages:', 'kultalusikka' ), 'after' => '</p>' ) ); ?>
 	</div><!-- .entry-content -->
-
+	
+	<?php if ( is_post_type_archive( 'forum' ) ) { // Display extra info only on archive page. ?>
+	
+	<?php
+	/* Get forum topic count. */
+	$kultalusikka_bbp_forum_topic_count = bbp_get_forum_topic_count( get_the_ID() );
+	$kultalusikka_forum_topic_count = sprintf( _n( '%d topic', '%d topics', $kultalusikka_bbp_forum_topic_count , 'kultalusikka' ), $kultalusikka_bbp_forum_topic_count );
+	
+	/* Get forum post count. */
+	$kultalusikka_bbp_forum_post_count = bbp_get_forum_post_count( get_the_ID() );
+	$kultalusikka_forum_post_count = sprintf( _n( '%d post', '%d posts', $kultalusikka_bbp_forum_post_count , 'kultalusikka' ), $kultalusikka_bbp_forum_post_count );
+	
+	/* Get freshness_link. */
+	$kultalusikka_bbp_get_forum_freshness_link = bbp_get_forum_freshness_link( get_the_ID() );
+	$kultalusikka_forum_freshness_link = sprintf( __( 'Last post %s', 'kultalusikka' ), $kultalusikka_bbp_get_forum_freshness_link );
+	?>
+	
 	<footer class="entry-footer">
-		<?php echo apply_atomic_shortcode( 'entry_meta', '<div class="entry-meta">' . __( '[entry-terms taxonomy="category" before="Posted in "] [entry-terms before="Tagged "]', 'kultalusikka' ) . '</div>' ); ?>
+		<ul class="forum-info">
+			<li><?php echo $kultalusikka_forum_topic_count; ?></li>
+			<li><?php echo $kultalusikka_forum_post_count; ?></li>
+			<li><?php echo $kultalusikka_forum_freshness_link; ?></li>
+		</ul>
 	</footer><!-- .entry-footer -->
+	
+	<?php } // end if ?>
 
 	<?php do_atomic( 'close_entry' ); // kultalusikka_close_entry ?>
 

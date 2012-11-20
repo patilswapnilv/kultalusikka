@@ -34,7 +34,7 @@ add_action( 'init', 'theme_layouts_add_post_type_support' );
 add_action( 'init', 'theme_layouts_remove_post_type_support' );
 
 /* Set up the custom post layouts. */
-add_action( 'admin_menu', 'theme_layouts_admin_setup' );
+add_action( 'admin_init', 'theme_layouts_admin_setup' );
 
 /* Add layout option in Customize. */
 add_action( 'customize_register', 'theme_layouts_customize_register' );
@@ -134,7 +134,7 @@ function theme_layouts_get_args() {
 }
 
 /**
- * Filters the 'theme_mod_theme_layout' hook to alter the layout based on post and user metadata.  
+ * Filters the 'theme_mods_theme_layout' hook to alter the layout based on post and user metadata.  
  * Theme authors should also use this hook to filter the layout if need be.
  *
  * @since 0.5.0
@@ -184,7 +184,7 @@ function theme_layouts_get_layout() {
 	/* @deprecated 0.2.0. Use the 'get_theme_layout' hook. */
 	$layout = apply_filters( 'get_post_layout', "layout-{$layout}" );
 
-	/* @deprecated 0.5.0.  Use the 'theme_mod_theme_layout' hook. */
+	/* @deprecated 0.5.0.  Use the 'theme_mods_theme_layout' hook. */
 	return esc_attr( apply_filters( 'get_theme_layout', $layout ) );
 }
 

@@ -31,9 +31,15 @@ do_atomic( 'before_entry' ); // kultalusikka_before_entry ?>
 		<?php wp_link_pages( array( 'before' => '<p class="page-links">' . __( 'Pages:', 'kultalusikka' ), 'after' => '</p>' ) ); ?>
 	</div><!-- .entry-content -->
 
+	<?php if ( is_post_type_archive( 'topic' ) ) { ?>
 	<footer class="entry-footer">
-		<?php echo apply_atomic_shortcode( 'entry_meta', '<div class="entry-meta">[entry-edit-link]</div>' ); ?>
+		<ul class="topic-info">
+			<li><?php bbp_topic_voice_count( get_the_ID() ); ?> <?php _e( 'voices', 'kultalusikka' ); ?></li>
+			<li><?php bbp_show_lead_topic() ? bbp_topic_reply_count( get_the_ID() ) : bbp_topic_post_count( get_the_ID() ); ?> <?php _e( 'posts', 'kultalusikka' ); ?></li>
+			<li><?php _e( 'Last post', 'kultalusikka' ); ?> <?php bbp_topic_freshness_link( get_the_ID() ); ?></li>
+		</ul>
 	</footer><!-- .entry-footer -->
+	<?php } ?>
 
 	<?php do_atomic( 'close_entry' ); // kultalusikka_close_entry ?>
 

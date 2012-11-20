@@ -205,7 +205,7 @@ h6 {
 	margin-top: 0;
 }
 
-/* Note: line-height are 28px. */
+/* Note: line-height is 28px. */
 h1 {
 	font-size: 32px;
 	font-size: 2.28571429rem;
@@ -494,6 +494,7 @@ img.wp-smiley {
 /* Buttons. */
 .menu-toggle,
 input[type="submit"],
+#bbpress-forums button[type="submit"],
 #respond #submit {
 	background: #90b535;
 	border: none;
@@ -520,6 +521,7 @@ input[type="submit"],
 	width: 150px;
 }
 input[type="submit"],
+#bbpress-forums button[type="submit"],
 a.edd_go_to_checkout {
 	display: inline-block;
 	margin: 14px 0 0 0;
@@ -527,6 +529,7 @@ a.edd_go_to_checkout {
 }
 .menu-toggle,
 input[type="submit"],
+#bbpress-forums button[type="submit"],
 #respond #submit {
 	cursor: pointer;
 }
@@ -534,6 +537,7 @@ input[type="submit"],
 	background: #78a018;
 }
 input[type="submit"]:hover,
+#bbpress-forums button[type="submit"]:hover,
 #respond #submit:hover {
 	background: #78a018;
 	text-decoration: none;
@@ -541,6 +545,7 @@ input[type="submit"]:hover,
 .menu-toggle:active,
 .menu-toggle.toggled-on,
 input[type="submit"]:active,
+#bbpress-forums button[type="submit"]:active,
 input[type="submit"].toggled-on {
 	background: #83ab23;
 }
@@ -760,7 +765,10 @@ div.menu li, nav.menu li {
 .loop-nav a,
 .pagination .page-numbers,
 .page-links a,
-a.more-link {
+a.more-link,
+.bbp-pagination-links a, 
+.bbp-pagination-links a.next,
+.bbp-pagination-links a.prev {
 	background: #90b535;
 	-moz-border-radius: 3px;
 	-webkit-border-radius: 3px;
@@ -1025,7 +1033,8 @@ ol.comment-list {
 
 /* Comment form inputs and textarea elements. */
 #respond input[type="text"],
-#respond textarea {
+#respond textarea,
+#bbpress-forums textarea {
 	background: #f9f9f9;
 	border: 1px solid #e5e5e5;
 	-webkit-border-radius: 3px;
@@ -1037,7 +1046,8 @@ ol.comment-list {
 	width: 100%;
 }
 #respond input[type="text"]:focus,
-#respond textarea:focus {
+#respond textarea:focus,
+#bbpress-forums textarea:focus {
 	background: #fff;
 }
 
@@ -1068,7 +1078,7 @@ ol.comment-list {
 /* =Page Templates
 -------------------------------------------------------------- */
 
-.page-template-front-page h2 a {
+.page-template-front-page h2 a.kultalusikka-latest-downloads {
 	font-size: 20px;
 	font-size: 1.42857143rem;
 	margin-left: 14px;

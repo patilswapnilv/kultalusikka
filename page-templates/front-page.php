@@ -53,7 +53,7 @@ get_header(); // Loads the header.php template. ?>
 			
 			<?php $kultalusikka_download_latest = esc_attr( apply_filters( 'kultalusikka_front_page_latest', __( 'Latest downloads', 'kultalusikka' ) ) ); ?>
 			
-			<h2 id="kultalusikka-latest-downloads"><?php printf( __( '%1$s <a href="%2$s">View all &raquo;&raquo;</a>', 'kultalusikka' ), $kultalusikka_download_latest, $kultalusikka_download_url ); ?></h2>
+			<h2 id="kultalusikka-latest-downloads"><?php printf( __( '%1$s <a href="%2$s" class="kultalusikka-latest-downloads">View all &raquo;&raquo;</a>', 'kultalusikka' ), $kultalusikka_download_latest, $kultalusikka_download_url ); ?></h2>
 			
 			<div class="kultalusikka-all-downloads">
 
@@ -91,7 +91,7 @@ get_header(); // Loads the header.php template. ?>
 						</header><!-- .entry-header -->
 		
 						<div class="entry-summary">
-							<?php echo apply_atomic_shortcode( 'entry_title', '[entry-title]' ); ?>
+							<?php echo apply_atomic_shortcode( 'entry_title', '[entry-title tag="h2"]' ); ?>
 							<?php the_excerpt(); ?>
 							<?php wp_link_pages( array( 'before' => '<p class="page-links">' . __( 'Pages:', 'kultalusikka' ), 'after' => '</p>' ) ); ?>
 						</div><!-- .entry-summary -->

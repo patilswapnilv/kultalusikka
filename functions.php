@@ -42,7 +42,6 @@ function kultalusikka_theme_setup() {
 	add_theme_support( 'hybrid-core-shortcodes' );
 	add_theme_support( 'hybrid-core-theme-settings', array( 'about', 'footer' ) );
 	add_theme_support( 'hybrid-core-scripts', array( 'drop-downs' ) );
-	add_theme_support( 'hybrid-core-seo' );
 	add_theme_support( 'hybrid-core-template-hierarchy' );
 	
 	/* Add theme support for framework extensions. */
@@ -91,8 +90,11 @@ function kultalusikka_theme_setup() {
 	// the name of your product. This should match the download name in EDD exactly.
 	define( 'KULTALUSIKKA_SL_THEME_NAME', 'Kultalusikka' ); // add your own unique prefix to prevent conflicts
 	
-	/* Define current version of Kultalusikka. */
-	define( 'KULTALUSIKKA_VERSION', '0.1' ); // add your own unique prefix to prevent conflicts
+	/* Define current version of Kultalusikka. Get it from parent theme style.css. */
+	$kultalusikka_theme = wp_get_theme( 'kultalusikka' );
+	if ( $kultalusikka_theme->exists() ) {
+		define( 'KULTALUSIKKA_VERSION', $kultalusikka_theme->Version ); // Get parent theme Kultalusikka version
+	}
 
 	if( !class_exists( 'EDD_SL_Theme_Updater' ) ) {
 	// load our custom theme updater
@@ -158,6 +160,15 @@ function kultalusikka_theme_setup() {
 	
 	/* Change EDD Download info feature image size. */
 	add_filter( 'edd_download_info_feature_image_size', 'kultalusikka_edd_download_info_feature_size' );
+	
+	/* Disable bbPress breadcrumb. */
+	add_filter ( 'bbp_no_breadcrumb', 'kultalusikka_no_breadcrumb' );
+	
+	/* Display topics (bbPress) by last activity. */
+	add_action( 'pre_get_posts', 'kultalusikka_filter_topic' );
+	
+	/* Display forums (bbPress) by title. */
+	add_action( 'pre_get_posts', 'kultalusikka_filter_forum' );
 
 }
 
@@ -214,7 +225,7 @@ function kultalusikka_main_styles() {
 	if ( !is_admin() ) {
 		
 		/* Load main style.css file. */
-		wp_enqueue_style( 'kultalusikka-style', get_stylesheet_uri(), array(), KULTALUSIKKA_VERSION );
+		wp_enqueue_style( 'kultalusikka-style', get_stylesheet_uri() );
 		
 	}
 }
@@ -457,6 +468,50 @@ function kultalusikka_edd_download_info_feature_size( $feature_size ) {
 		$feature_size = 'kultalusikka-thumbnail-download';
 
 	return $feature_size;
+	
+}
+
+/**
+ * Disable bbPress breadcrumb.
+ * 
+ * @since 0.1.0
+ */
+function kultalusikka_no_breadcrumb( $param ) {
+	
+	return true;
+	
+}
+
+/**
+ * Display topics (bbPress) by last activity.
+ * 
+ * @since 0.1.0
+ */
+function kultalusikka_filter_topic( $query ) {
+	
+	if( $query->is_main_query() && is_post_type_archive( 'topic' ) ) {
+	
+		$query->set( 'meta_key', '_bbp_last_active_id' );
+		$query->set( 'orderby', 'meta_value_num' );
+		$query->set( 'order', 'DESC' );
+ 
+	}
+	
+}
+
+/**
+ * Display forums (bbPress) by title.
+ * 
+ * @since 0.1.0
+ */
+function kultalusikka_filter_forum( $query ) {
+	
+	if( $query->is_main_query() && is_post_type_archive( 'forum' ) ) {
+	
+		$query->set( 'orderby', 'title' );
+		$query->set( 'order', 'ASC' );
+ 
+	}
 	
 }
 
