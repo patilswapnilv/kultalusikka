@@ -105,6 +105,12 @@ video {
 img {
 	height: auto;
 }
+
+/* For IE 8. */
+.ie8 img {
+	width: auto;
+}
+
 img.kultalusikka-thumbnail-download {
 	-webkit-border-top-left-radius: 3px;
 	-webkit-border-top-right-radius: 3px;
