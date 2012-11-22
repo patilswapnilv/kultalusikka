@@ -91,10 +91,7 @@ body {
 	font-size: 1rem;
 	line-height: 1.71428571;
 	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-     word-break: break-word;
-	-webkit-hyphens: auto;	
-	-moz-hyphens: auto;
-	hyphens: auto;
+    word-break: break-word;
 }
 
 /* Images, embed, video. */

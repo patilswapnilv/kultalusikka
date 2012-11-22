@@ -491,8 +491,8 @@ function kultalusikka_filter_topic( $query ) {
 	
 	if( $query->is_main_query() && is_post_type_archive( 'topic' ) ) {
 	
-		$query->set( 'meta_key', '_bbp_last_active_id' );
-		$query->set( 'orderby', 'meta_value_num' );
+		$query->set( 'meta_key', '_bbp_last_active_time' );
+		$query->set( 'orderby', 'meta_value' );
 		$query->set( 'order', 'DESC' );
  
 	}

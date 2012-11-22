@@ -13,8 +13,6 @@
 
 	<div class="bbp-meta">
 
-		<span class="bbp-reply-post-date"><?php bbp_reply_post_date(); ?></span>
-
 		<?php if ( bbp_is_single_user_replies() ) : ?>
 
 			<span class="bbp-header">
@@ -32,32 +30,33 @@
 
 		<?php do_action( 'bbp_theme_after_reply_admin_links' ); ?>
 		
-			<div class="bbp-reply-author">
+		<div class="bbp-reply-author">
 
-		<?php do_action( 'bbp_theme_before_reply_author_details' ); ?>
+			<?php do_action( 'bbp_theme_before_reply_author_details' ); ?>
 
-		<?php bbp_reply_author_link( array( 'sep' => '<br />', 'show_role' => true ) ); ?>
+			<?php bbp_reply_author_link( array( 'sep' => '<br />', 'show_role' => true ) ); ?>
+			
+			<span class="bbp-reply-post-date"><?php bbp_reply_post_date(); ?></span>
 
-		<?php if ( is_super_admin() ) : ?>
+			<?php if ( is_super_admin() ) : ?>
 
-			<?php do_action( 'bbp_theme_before_reply_author_admin_details' ); ?>
+				<?php do_action( 'bbp_theme_before_reply_author_admin_details' ); ?>
 
-			<div class="bbp-reply-ip"><?php bbp_author_ip( bbp_get_reply_id() ); ?></div>
+				<div class="bbp-reply-ip"><?php bbp_author_ip( bbp_get_reply_id() ); ?></div>
 
-			<?php do_action( 'bbp_theme_after_reply_author_admin_details' ); ?>
+				<?php do_action( 'bbp_theme_after_reply_author_admin_details' ); ?>
 
-		<?php endif; ?>
+			<?php endif; ?>
 
-		<?php do_action( 'bbp_theme_after_reply_author_details' ); ?>
+			<?php do_action( 'bbp_theme_after_reply_author_details' ); ?>
 
-	</div><!-- .bbp-reply-author -->
+		</div><!-- .bbp-reply-author -->
 
 	</div><!-- .bbp-meta -->
 
 </div><!-- .bbp-reply-header -->
 
 <div id="post-<?php bbp_reply_id(); ?>" <?php bbp_reply_class(); ?>>
-
 
 	<div class="bbp-reply-content">
 

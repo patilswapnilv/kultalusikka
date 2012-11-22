@@ -39,7 +39,7 @@
 
 #bbpress-forums div.bbp-topic-header,
 #bbpress-forums div.bbp-reply-header {
-	background-color: #f2f2f2;
+	background-color: #f9f9f9;
 }
 
 #bbpress-forums .status-trash.even,
@@ -193,8 +193,10 @@ li.bbp-header div.bbp-reply-content span#favorite-toggle {
 }
 
 #bbpress-forums div.bbp-topic-author a.bbp-author-name,
-#bbpress-forums div.bbp-reply-author a.bbp-author-name {
+#bbpress-forums div.bbp-reply-author a.bbp-author-name,
+#bbpress-forums .bbp-reply-post-date {
 	margin: 0 12px;
+	margin: 0 0.857142857rem;
 	word-break: break-word;
 }
 
@@ -936,7 +938,8 @@ div.bbp-no-topic,
 div.bbp-template-notice,
 .archive-forum .entry-content,
 .archive-topic .entry-content,
-.archive-topic .entry-summary {
+.archive-topic .entry-summary,
+#bbpress-forums #bbp-user-wrapper {
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
@@ -982,7 +985,8 @@ div.bbp-no-topic,
 div.bbp-template-notice,
 .archive-forum .entry-content,
 .archive-topic .entry-content,
-.archive-topic .entry-summary {
+.archive-topic .entry-summary,
+#bbpress-forums #bbp-user-wrapper  {
 	padding: 0 14px;
 	padding: 0 1rem;
 }
@@ -1018,7 +1022,8 @@ div.bbp-no-topic,
 div.bbp-template-notice,
 .archive-forum .entry-content,
 .archive-topic .entry-content,
-.archive-topic .entry-summary {
+.archive-topic .entry-summary,
+#bbpress-forums #bbp-user-wrapper {
 	padding: 0 28px;
 	padding: 0 2rem;
 }

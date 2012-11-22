@@ -21,6 +21,8 @@ get_header(); // Loads the header.php template. ?>
 		<div class="hfeed">
 
 			<?php get_template_part( 'loop-meta' ); // Loads the loop-meta.php template. ?>
+			
+			<?php do_atomic( 'before_topic_loop' ); // kultalusikka_before_topic_loop ?>
 
 			<?php if ( have_posts() ) : ?>
 
@@ -35,6 +37,8 @@ get_header(); // Loads the header.php template. ?>
 				<?php get_template_part( 'loop-error' ); // Loads the loop-error.php template. ?>
 
 			<?php endif; ?>
+			
+			<?php do_atomic( 'after_topic_loop' ); // kultalusikka_after_topic_loop ?>
 
 		</div><!-- .hfeed -->
 

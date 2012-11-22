@@ -24,7 +24,6 @@ do_atomic( 'before_entry' ); // kultalusikka_before_entry ?>
 			echo apply_atomic_shortcode( 'entry_title', '[entry-title]' ); 
 		} 
 		?>
-		<?php echo apply_atomic_shortcode( 'byline', '<div class="byline">' . __( '[entry-published] by [entry-author] [entry-comments-link before=" | "] [entry-edit-link before=" | "]', 'kultalusikka' ) . '</div>' ); ?>
 	</header><!-- .entry-header -->
 		
 	<div class="entry-content">
@@ -32,29 +31,36 @@ do_atomic( 'before_entry' ); // kultalusikka_before_entry ?>
 		<?php wp_link_pages( array( 'before' => '<p class="page-links">' . __( 'Pages:', 'kultalusikka' ), 'after' => '</p>' ) ); ?>
 	</div><!-- .entry-content -->
 	
-	<?php if ( is_post_type_archive( 'forum' ) ) { // Display extra info only on archive page. ?>
+	<?php if ( is_post_type_archive( 'forum' ) ) { // Display extra info only on 'forum' archive page. ?>
 	
-	<?php
-	/* Get forum topic count. */
-	$kultalusikka_bbp_forum_topic_count = bbp_get_forum_topic_count( get_the_ID() );
-	$kultalusikka_forum_topic_count = sprintf( _n( '%d topic', '%d topics', $kultalusikka_bbp_forum_topic_count , 'kultalusikka' ), $kultalusikka_bbp_forum_topic_count );
+		<?php
+		/* Get forum topic count. */
+		$kultalusikka_bbp_forum_topic_count = bbp_get_forum_topic_count( get_the_ID() );
+		$kultalusikka_forum_topic_count = sprintf( _n( '%d topic', '%d topics', $kultalusikka_bbp_forum_topic_count , 'kultalusikka' ), $kultalusikka_bbp_forum_topic_count );
 	
-	/* Get forum post count. */
-	$kultalusikka_bbp_forum_post_count = bbp_get_forum_post_count( get_the_ID() );
-	$kultalusikka_forum_post_count = sprintf( _n( '%d post', '%d posts', $kultalusikka_bbp_forum_post_count , 'kultalusikka' ), $kultalusikka_bbp_forum_post_count );
+		/* Get forum post/reply count. */
+		$kultalusikka_bbp_forum_post_count = bbp_get_forum_post_count( get_the_ID() );
+		$kultalusikka_bbp_forum_reply_count = bbp_get_forum_reply_count( get_the_ID() );
+		
+		if ( bbp_show_lead_topic() ) {
+			$kultalusikka_forum_post_count = sprintf( _n( '%d post', '%d posts', $kultalusikka_bbp_forum_reply_count , 'kultalusikka' ), $kultalusikka_bbp_forum_reply_count );
+		}
+		else {
+			$kultalusikka_forum_post_count = sprintf( _n( '%d post', '%d posts', $kultalusikka_bbp_forum_post_count , 'kultalusikka' ), $kultalusikka_bbp_forum_post_count );
+		}
+			
+		/* Get forum freshness link. */
+		$kultalusikka_bbp_get_forum_freshness_link = bbp_get_forum_freshness_link( get_the_ID() );
+		$kultalusikka_forum_freshness_link = sprintf( __( 'Last post %s', 'kultalusikka' ), $kultalusikka_bbp_get_forum_freshness_link );
+		?>
 	
-	/* Get freshness_link. */
-	$kultalusikka_bbp_get_forum_freshness_link = bbp_get_forum_freshness_link( get_the_ID() );
-	$kultalusikka_forum_freshness_link = sprintf( __( 'Last post %s', 'kultalusikka' ), $kultalusikka_bbp_get_forum_freshness_link );
-	?>
-	
-	<footer class="entry-footer">
-		<ul class="forum-info">
-			<li><?php echo $kultalusikka_forum_topic_count; ?></li>
-			<li><?php echo $kultalusikka_forum_post_count; ?></li>
-			<li><?php echo $kultalusikka_forum_freshness_link; ?></li>
-		</ul>
-	</footer><!-- .entry-footer -->
+		<footer class="entry-footer">
+			<ul class="forum-info">
+				<li><?php echo $kultalusikka_forum_topic_count; ?></li>
+				<li><?php echo $kultalusikka_forum_post_count; ?></li>
+				<li><?php echo $kultalusikka_forum_freshness_link; ?></li>
+			</ul>
+		</footer><!-- .entry-footer -->
 	
 	<?php } // end if ?>
 
