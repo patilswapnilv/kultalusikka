@@ -169,6 +169,9 @@ function kultalusikka_theme_setup() {
 	
 	/* Display forums (bbPress) by title. */
 	add_action( 'pre_get_posts', 'kultalusikka_filter_forum' );
+	
+	/* Change user profile gravatar size. */
+	add_filter( 'bbp_single_user_details_avatar_size', 'kultalusikka_user_details_avatar_size' );
 
 }
 
@@ -512,6 +515,16 @@ function kultalusikka_filter_forum( $query ) {
 		$query->set( 'order', 'ASC' );
  
 	}
+	
+}
+/**
+ * Change user profile gravatar size.
+ * 
+ * @since 0.1.0
+ */
+function kultalusikka_user_details_avatar_size() {
+	
+	return 80;
 	
 }
 
