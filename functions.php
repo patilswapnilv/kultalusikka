@@ -491,8 +491,17 @@ function kultalusikka_no_breadcrumb( $param ) {
  * @since 0.1.0
  */
 function kultalusikka_filter_topic( $query ) {
+
+	/* Get topic post type. */
+	if( function_exists( 'bbp_get_topic_post_type' ) ) {
+		$kultalusikka_topic = bbp_get_topic_post_type();
+	}
+	else {
+		$kultalusikka_topic = 'topic';
+	}
 	
-	if( $query->is_main_query() && is_post_type_archive( 'topic' ) ) {
+	/* Set query to show topics by latest activity. */
+	if( $query->is_main_query() && is_post_type_archive( $kultalusikka_topic ) ) {
 	
 		$query->set( 'meta_key', '_bbp_last_active_time' );
 		$query->set( 'orderby', 'meta_value' );
@@ -508,8 +517,17 @@ function kultalusikka_filter_topic( $query ) {
  * @since 0.1.0
  */
 function kultalusikka_filter_forum( $query ) {
+
+	/* Get forum post type. */
+	if( function_exists( 'bbp_get_forum_post_type' ) ) {
+		$kultalusikka_forum = bbp_get_forum_post_type();
+	}
+	else {
+		$kultalusikka_forum = 'forum';
+	}
 	
-	if( $query->is_main_query() && is_post_type_archive( 'forum' ) ) {
+	/* Set query to show forums by title. */
+	if( $query->is_main_query() && is_post_type_archive( $kultalusikka_forum ) ) {
 	
 		$query->set( 'orderby', 'title' );
 		$query->set( 'order', 'ASC' );
