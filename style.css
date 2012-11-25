@@ -874,6 +874,10 @@ input[type="email"] {
 input[type="text"]:focus,
 input[type="password"]:focus {
 	background: #fff;
+	border: 1px solid #90b535;
+	-moz-box-shadow: 0 0 3px rgba(131, 171, 35, 0.3);
+	-webkit-box-shadow: 0 0 rgba(131, 171, 35, 0.3);
+	box-shadow: 0 0 3px rgba(131, 171, 35, 0.3);
 }
 .widget-search input[type="submit"],
 .widget-search label {
@@ -1052,6 +1056,10 @@ ol.comment-list {
 #respond textarea:focus,
 #bbpress-forums textarea:focus {
 	background: #fff;
+	border: 1px solid #90b535;
+	-moz-box-shadow: 0 0 3px rgba(131, 171, 35, 0.3);
+	-webkit-box-shadow: 0 0 rgba(131, 171, 35, 0.3);
+	box-shadow: 0 0 3px rgba(131, 171, 35, 0.3);
 }
 
 /* Submit button. */
@@ -1396,6 +1404,13 @@ p.edd_error { margin: 0 !important; }
 
 /* Theme styles to EDD. */
 
+#edd_checkout_form_wrap input[type="text"], 
+#edd_checkout_form_wrap input[type="email"], 
+#edd_checkout_form_wrap input[type="password"] { 
+	padding: 7px;
+	padding: 0.5rem;
+}
+
 body .edd-submit.button {
 	padding: 14px 20px;
 	padding: 1rem 1.42857143rem;
@@ -1436,6 +1451,139 @@ body .edd-submit.plain:hover {
 	display: inline-block;
 	text-align: center;
 	width: 100%;
+}
+
+
+/* =Gravity Forms CSS. @link: http://www.rocketgenius.com/gravity-forms-css-targeting-specific-elements/
+-------------------------------------------------------------- */
+
+.gform_wrapper ul {
+	background: transparent;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+body .gform_wrapper .gform_heading {
+	margin-bottom: 14px;
+	margin-bottom: 1rem;
+	width: 100%;
+}
+body .gform_wrapper .gform_heading .gform_title,
+body .gform_wrapper .gform_body .gform_fields .gsection .gsection_title {
+	font-weight: normal;
+	margin: 7px 0;
+	margin: 0.5rem 0;
+}
+body .gform_wrapper .gform_body .gform_fields .gfield .gfield_description,
+body .gform_wrapper .gform_body .gform_fields .gsection .gsection_description,
+body .gform_wrapper .gform_body .gform_fields .gfield .ginput_complex label,
+body .gform_wrapper .instruction {
+	color: #555;
+	font-size: 13px;
+	font-size: 0.928571429rem;
+	padding: 7px 0;
+	padding: 0.5rem 0;
+}
+body .gform_wrapper .gform_body .gform_fields .gfield .ginput_complex label {
+	padding: 4px 0 7px;
+	padding: 0.285714286rem 0 0.5rem;
+}
+body .gform_wrapper .gform_body .gform_fields .gfield input[type=text],
+body .gform_wrapper .gform_body .gform_fields .gfield input[type=email],
+body .gform_wrapper .gform_body .gform_fields .gfield input[type=tel],
+body .gform_wrapper .gform_body .gform_fields .gfield input[type=url],
+body .gform_wrapper .gform_body .gform_fields .gfield input[type=number],
+body .gform_wrapper .gform_body .gform_fields .gfield input[type=password],
+body .gform_wrapper .gform_body .gform_fields .gfield textarea {
+	background: #f9f9f9;
+	border: 1px solid #e5e5e5;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	color: #555;
+	display: block;
+	font-size: 13px;
+	font-size: 0.928571429rem;
+	padding: 7px;
+	padding: 0.5rem;
+	width: 100%;
+}
+body .gform_wrapper .gform_body .gform_fields .gfield input[type=text]:focus,
+body .gform_wrapper .gform_body .gform_fields .gfield input[type=email]:focus,
+body .gform_wrapper .gform_body .gform_fields .gfield input[type=tel]:focus,
+body .gform_wrapper .gform_body .gform_fields .gfield input[type=url]:focus,
+body .gform_wrapper .gform_body .gform_fields .gfield input[type=number]:focus,
+body .gform_wrapper .gform_body .gform_fields .gfield input[type=password]:focus,
+body .gform_wrapper .gform_body .gform_fields .gfield textarea:focus {
+	background: #fff;
+	border: 1px solid #90b535;
+	-moz-box-shadow: 0 0 3px rgba(131, 171, 35, 0.3);
+	-webkit-box-shadow: 0 0 rgba(131, 171, 35, 0.3);
+	box-shadow: 0 0 3px rgba(131, 171, 35, 0.3);
+} 
+body .gform_wrapper .gform_body .gform_fields .gfield select {
+	border: 1px solid #e5e5e5;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+	font-size: 13px;
+	font-size: 0.928571429rem;
+	padding: 4px 0;
+	padding: 0.285714286rem 0;
+}
+body .gform_wrapper .gform_body .gform_fields .gfield .gfield_checkbox li input[type=checkbox],
+body .gform_wrapper .gform_body .gform_fields .gfield .gfield_radio li input[type=radio] {
+	margin-top: 4px;
+	margin-top: 0.285714286rem;
+}
+body .gform_wrapper table.gfield_list th,
+body .gform_wrapper table.gfield_list td {
+	padding: 7px 2%;
+	padding: 0.5rem 2%;
+}
+body .gform_wrapper table.gfield_list tr:hover td {
+	background: none;
+}
+body .gform_wrapper .gform_body .gform_page_footer .gform_next_button,
+body .gform_wrapper .gform_body .gform_page_footer .gform_previous_button {
+	background: #90b535;
+	border: none;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+	-moz-box-shadow: 0 2px 0 #f2f2f2;
+	-webkit-box-shadow: 0 2px 0 #f2f2f2;
+	box-shadow: 0 2px 0 #f2f2f2;
+	color: #fff;
+	padding: 14px 20px;
+	padding: 1rem 1.42857143rem;
+	display: inline-block;
+	margin: 0 7px 14px;
+	margin: 0 0.5rem 1rem;
+}
+body .gform_wrapper .gform_body .gform_page_footer .gform_next_button {
+	float: right;
+}
+body .gform_wrapper .gform_body .gform_page_footer .gform_next_button:hover,
+body .gform_wrapper .gform_body .gform_page_footer .gform_previous_button:hover {
+	background: #83ab23;
+}
+body .gform_wrapper .gf_progressbar_wrapper h3.gf_progressbar_title {
+	font-size: 1.1em;
+}
+body .gform_wrapper .gform_page_footer .button.gform_button {
+	float: right;
+	margin-top: 0;
+}
+body #gforms_confirmation_message {
+	background: #f9f9f9;
+	border: 1px solid #e5e5e5;
+	padding: 3%;
+}
+body .ui-datepicker-div,
+body .ui-datepicker-inline,
+body #ui-datepicker-div {
+	font: normal normal bold 0.875em/1.2 "Helvetica Neue", Helvetica, sans-serif;
 }
 
 
