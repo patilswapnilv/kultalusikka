@@ -722,7 +722,8 @@ div.bbp-template-notice a {
 .bbp-login-form .bbp-username input,
 .bbp-login-form .bbp-email input,
 .bbp-login-form .bbp-password input {
-	padding: 5px;
+	padding: 7px;
+	padding: 0.5rem;
 }
 
 .bbp-login-form label {

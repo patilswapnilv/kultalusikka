@@ -137,6 +137,9 @@ a:hover {
 	color: #83ab23;
 	text-decoration: underline;
 }
+:focus {
+	outline: none;
+}
 
 /* Transitions. */
 a,
@@ -277,6 +280,14 @@ blockquote {
 }
 blockquote blockquote {
 	padding: 0.5% 2%;
+}
+
+/* Fieldset. */
+
+fieldset {
+    border: none;
+    margin: 0 2px;
+    padding: 0;
 }
 
 /* Code */
@@ -498,6 +509,7 @@ img.wp-smiley {
 .menu-toggle,
 input[type="submit"],
 #bbpress-forums button[type="submit"],
+.bbp-submit-wrapper button[type="submit"],
 #respond #submit {
 	background: #90b535;
 	border: none;
@@ -525,6 +537,7 @@ input[type="submit"],
 }
 input[type="submit"],
 #bbpress-forums button[type="submit"],
+.bbp-submit-wrapper button[type="submit"],
 a.edd_go_to_checkout {
 	display: inline-block;
 	margin: 14px 0 0 0;
@@ -533,6 +546,7 @@ a.edd_go_to_checkout {
 .menu-toggle,
 input[type="submit"],
 #bbpress-forums button[type="submit"],
+.bbp-submit-wrapper button[type="submit"],
 #respond #submit {
 	cursor: pointer;
 }
@@ -541,6 +555,7 @@ input[type="submit"],
 }
 input[type="submit"]:hover,
 #bbpress-forums button[type="submit"]:hover,
+.bbp-submit-wrapper button[type="submit"]:hover,
 #respond #submit:hover {
 	background: #78a018;
 	text-decoration: none;
@@ -549,11 +564,22 @@ input[type="submit"]:hover,
 .menu-toggle.toggled-on,
 input[type="submit"]:active,
 #bbpress-forums button[type="submit"]:active,
+.bbp-submit-wrapper button[type="submit"]:active,
 input[type="submit"].toggled-on {
 	background: #83ab23;
 }
 h3.menu-toggle {
 	font-family: "Helvetica Neue", Helvetica, Arial, Sans-serif;
+}
+
+/* select. */
+select {
+	border: 1px solid #e5e5e5;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+	padding: 4px 0;
+	padding: 0.285714286rem 0;
 }
 
 /* Navigation Menu for narrow screens. */
@@ -742,6 +768,14 @@ div.menu li, nav.menu li {
 .loop-meta .loop-description {
 	color: #999;
 	font-style: italic;
+}
+
+/* Post formats. */
+.format-video .kultalusikka-video {
+	margin-top: -24px;
+	margin-top: -1.71428571rem;
+	padding-bottom: 14px;
+	padding-bottom: 1rem;
 }
 
 
@@ -943,7 +977,8 @@ ol.comment-list {
 }
 
 /* Avatars. */
-.comment-list .avatar {
+.comment-list .avatar,
+.format-status  .avatar {
 	float: none;
 	margin: 6px 20px 20px 0;
 	margin: 0.428571429rem 1.42857143rem 1.42857143rem 0;
@@ -955,6 +990,9 @@ ol.comment-list {
 	-moz-box-shadow: 0 0 6px #ebe7e7;
 	-webkit-box-shadow: 0 0 6px #ebe7e7;
 	box-shadow: 0 0 6px #ebe7e7;
+}
+.format-status  .avatar {
+	float: left;
 }
 .comment-list li li .avatar {
 	margin-bottom: 10px;
@@ -1104,14 +1142,18 @@ ol.comment-list {
 	width: 100%;
 }
 #menu-subsidiary .menu {
-    display: table;
-    margin: 0 auto;
+    /*display: table;
+    margin: 0 auto;*/
 }
 #menu-subsidiary ul {
 	padding: 0;
+	text-align: center;
 }
 #menu-subsidiary li {
-	display: inline;
+	float: none;
+	display: inline-block;
+	*display: inline; /* hack for IE */
+	*zoom: 1; /* hack for IE */
 }
 #menu-subsidiary li a {
 	color: #fff;
@@ -1273,13 +1315,10 @@ input.edd_submit_plain { background: none !important; border: none !important; p
 	outline: none;
 	position: relative;
 	border: 1px solid;
-
 	-webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, .25), 0 1px 3px rgba(0, 0, 0, .10);
 	-moz-box-shadow:    inset 0 1px 0 rgba(255, 255, 255, .25), 0 1px 3px rgba(0, 0, 0, .10);
 	box-shadow:         inset 0 1px 0 rgba(255, 255, 255, .25), 0 1px 3px rgba(0, 0, 0, .10);
-
 	border-radius:  3px;
-
 	color: #555;
 	border-color: #BBB;
 	background: #E8E8E8;
@@ -1294,17 +1333,14 @@ input.edd_submit_plain { background: none !important; border: none !important; p
 
 .edd-submit.button:hover {
 	text-decoration: none;
-
 	background: #E8E8E8;
 }
 
 .edd-submit.button:active {
 	text-decoration: none;
-
 	-webkit-box-shadow: none;
 	-moz-box-shadow:    none;
 	box-shadow:         none;
-
 	border-top: 1px solid #959595;
 	background: #E3E3E3;
 }
@@ -1319,7 +1355,7 @@ input.edd_submit_plain { background: none !important; border: none !important; p
 	background:         linear-gradient(top, #08C, #04C);
 }
 
-x.edd-submit.button.blue:hover {
+.edd-submit.button.blue:hover {
 	background: #006DCC;
 }
 
@@ -1411,6 +1447,12 @@ p.edd_error { margin: 0 !important; }
 	padding: 0.5rem;
 }
 
+body #edd_checkout_form_wrap fieldset#edd_register_account_fields,
+body #edd_checkout_form_wrap fieldset#edd_login_fields {
+	border: none;
+	padding: 0;
+}
+
 body .edd-submit.button {
 	padding: 14px 20px;
 	padding: 1rem 1.42857143rem;
@@ -1449,6 +1491,8 @@ body .edd-submit.plain:hover {
 /* EDD download info widget css. */
 .widget-edd-download-info .edd-submit.button {
 	display: inline-block;
+	margin-bottom: 7px;
+	margin-bottom: 0.5rem;
 	text-align: center;
 	width: 100%;
 }
@@ -1682,6 +1726,7 @@ div.menu ul,nav.menu ul{margin:0;padding:0;list-style:none;line-height:1.0}div.m
 #menu-secondary li a:hover,
 #menu-secondary li.sfHover a {
 	background: #83ab23;
+	background: rgba(131, 171, 35, 0.80);
 	-webkit-border-radius: 3px;
 	-moz-border-radius: 3px;
 	border-radius: 3px;
@@ -1742,27 +1787,24 @@ div.menu ul,nav.menu ul{margin:0;padding:0;list-style:none;line-height:1.0}div.m
 	padding-right: 1.71428571rem;
 }
 #menu-secondary li .sf-sub-indicator {
-	background: url('images/menu-plus.png') no-repeat 0 0;
-	background-position: 0 -12px;
+	background: url('images/menu-icon.png') no-repeat 0 0;
+	background-position: 0 0;
 	overflow: hidden;
 	position: absolute;
-	top: 14px;
-	right: 12px;
-	width: 6px;
-	height: 6px;
+	top: 15px;
+	right: 10px;
+	width: 8px;
+	height: 5px;
 	text-indent: -9999em;
 }
-#menu-secondary li a:hover .sf-sub-indicator, 
-#menu-secondary li.sfHover .sf-sub-indicator,
-#menu-secondary li.current-menu-item .sf-sub-indicator {
-	background-position: 0 -12px;
-}
+
 #menu-secondary li ul li .sf-sub-indicator,
 #menu-secondary li ul li.current-menu-item li .sf-sub-indicator {
-	background-position: 0 -6px !important;
+	background-position: 0 -5px !important;
 	top: 13px;
-	width: 6px;
-	height: 6px;
+	right: 12px;
+	width: 5px;
+	height: 8px;
 }
 
 /* hentry, comments template.*/

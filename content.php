@@ -18,10 +18,10 @@ do_atomic( 'before_entry' ); // kultalusikka_before_entry ?>
 	
 	<header class="entry-header">
 		<?php if ( is_singular() && is_main_query() ) {
-			echo apply_atomic_shortcode( 'entry_title', the_title( '<h1 class="entry-title">', '</h1>', false ) );
+			echo apply_atomic_shortcode( 'entry_title', '[entry-title]' );
 		}
 		else {
-			echo apply_atomic_shortcode( 'entry_title', '[entry-title]' ); 
+			echo apply_atomic_shortcode( 'entry_title', '[entry-title tag="h2"]' ); 
 		} 
 		?>
 		<?php echo apply_atomic_shortcode( 'byline', '<div class="byline">' . __( '[entry-published] by [entry-author] [entry-comments-link before=" | "] [entry-edit-link before=" | "]', 'kultalusikka' ) . '</div>' ); ?>

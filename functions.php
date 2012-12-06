@@ -30,6 +30,9 @@ function kultalusikka_theme_setup() {
 
 	/* Get action/filter hook prefix. */
 	$prefix = hybrid_get_prefix();
+
+	/* Load theme includes. */
+	require_once( trailingslashit( get_template_directory() ) . 'includes/post-formats.php' );
 	
 	/* Add theme settings. */
 	if ( is_admin() )
@@ -59,6 +62,9 @@ function kultalusikka_theme_setup() {
 	
 	/* Add support for auto-feed links. */
 	add_theme_support( 'automatic-feed-links' );
+
+	/* Add theme support for post formats. */
+	add_theme_support( 'post-formats', array( 'aside', 'audio', 'chat', 'image', 'gallery', 'link', 'quote', 'status', 'video' ) );
 	
 	/* Add custom background feature. */
 	add_theme_support( 
