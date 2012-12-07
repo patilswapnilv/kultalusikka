@@ -186,7 +186,7 @@ function kultalusikka_format_chat_row_id( $chat_author ) {
 	$_post_format_chat_ids[] = $chat_author;
 
 	/* Make sure the array only holds kultalusikka values. */
-	$_post_format_chat_ids = array_kultalusikka( $_post_format_chat_ids );
+	$_post_format_chat_ids = array_unique( $_post_format_chat_ids );
 
 	/* Return the array key for the chat author and add "1" to avoid an ID of "0". */
 	return absint( array_search( $chat_author, $_post_format_chat_ids ) ) + 1;

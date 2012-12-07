@@ -783,7 +783,16 @@ div.menu li, nav.menu li {
 	margin-top: -38px;
 	margin-top: -2.71428571rem;
 }
-
+.format-chat .chat-author {
+	font-weight: bold;
+}
+.format-chat .chat-text {
+	margin-left: 14px;
+	margin-left: 1rem;
+}
+.format-chat .chat-text p {
+	margin-top: 0;
+}
 
 /* =Pagination and prev/next links
 -------------------------------------------------------------- */
