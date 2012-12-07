@@ -146,6 +146,9 @@ function kultalusikka_theme_setup() {
 	add_filter( 'body_class', 'kultalusikka_subsidiary_classes' );
 	add_filter( 'body_class', 'kultalusikka_front_page_classes' );
 	
+	/* Add infinity symbol to aside post format. */
+	add_filter( 'the_content', 'kultalusikka_aside_infinity', 9 );
+	
 	/* Set customizer transport. */
 	add_action( 'customize_register', 'kultalusikka_customize_register' );
 	
@@ -371,6 +374,20 @@ function kultalusikka_front_page_classes( $classes ) {
     }
     
     return $classes;
+	
+}
+
+/**
+ * Add infinity symbol to aside post format.
+ * @note: credit goes to Justin Tadlock. http://justintadlock.com/archives/2012/09/06/post-formats-aside
+ * @since 0.1.0
+ */
+function kultalusikka_aside_infinity( $content ) {
+	
+	if ( has_post_format( 'aside' ) && !is_singular() )
+		$content .= ' <a href="' . get_permalink() . '">&#8734;</a>';
+
+	return $content;
 	
 }
 

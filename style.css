@@ -782,6 +782,20 @@ div.menu li, nav.menu li {
 	background: #363d40;
 	margin-top: -38px;
 	margin-top: -2.71428571rem;
+	-webkit-border-top-left-radius: 3px;
+	-webkit-border-top-right-radius: 3px;
+	-moz-border-radius-topleft: 3px;
+	-moz-border-radius-topright: 3px;
+	border-top-left-radius: 3px;
+	border-top-right-radius: 3px;
+}
+.format-image .kultalusikka-image img {
+	-webkit-border-top-left-radius: 3px;
+	-webkit-border-top-right-radius: 3px;
+	-moz-border-radius-topleft: 3px;
+	-moz-border-radius-topright: 3px;
+	border-top-left-radius: 3px;
+	border-top-right-radius: 3px;
 }
 .format-chat .chat-author {
 	font-weight: bold;
