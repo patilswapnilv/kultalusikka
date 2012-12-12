@@ -58,7 +58,7 @@ do_atomic( 'before_entry' ); // kultalusikka_before_entry ?>
 			<ul class="topic-info">
 				<li><?php echo $kultalusikka_topic_voice_count; ?></li>
 				<li><?php echo $kultalusikka_topic_post_count; ?></li>
-				<li><?php echo $kultalusikka_topic_freshness_link; ?></li>
+				<li><?php echo $kultalusikka_topic_freshness_link; ?> <?php _e( 'by', 'kultalusikka' ); ?> <span class="bbp-topic-freshness-author"><?php bbp_author_link( array( 'post_id' => bbp_get_topic_last_active_id( get_the_ID() ), 'type' => 'name' ) ); ?></span></li>
 			</ul>
 		</footer><!-- .entry-footer -->
 	
