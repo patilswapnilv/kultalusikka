@@ -37,8 +37,6 @@
 	<?php do_atomic( 'open_body' ); // kultalusikka_open_body ?>
 
 	<div id="container">
-	
-		<?php get_template_part( 'menu', 'primary' ); // Loads the menu-primary.php template. ?>
 
 		<?php do_atomic( 'before_header' ); // kultalusikka_before_header ?>
 
@@ -60,9 +58,9 @@
 
 				<?php do_atomic( 'header' ); // kultalusikka_header ?>
 				
-				<?php get_template_part( 'menu', 'secondary' ); // Loads the menu-secondary.php template. ?>
+				<?php get_template_part( 'menu', 'primary' ); // Loads the menu-primary.php template. ?>
 				
-				<?php get_template_part( 'menu', 'secondary-mobile' ); // Loads the menu-secondary-mobile.php template. ?>
+				<?php get_template_part( 'menu', 'primary-mobile' ); // Loads the menu-primary-mobile.php template. ?>
 
 			</div><!-- .wrap -->
 

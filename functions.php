@@ -39,7 +39,7 @@ function kultalusikka_theme_setup() {
 	    require_once( trailingslashit ( get_template_directory() ) . 'admin/functions-admin.php' );
 
 	/* Add theme support for core framework features. */
-	add_theme_support( 'hybrid-core-menus', array( 'primary', 'secondary', 'subsidiary' ) );
+	add_theme_support( 'hybrid-core-menus', array( 'primary', 'subsidiary' ) );
 	add_theme_support( 'hybrid-core-sidebars', array( 'primary', 'subsidiary' ) );
 	add_theme_support( 'hybrid-core-widgets' );
 	add_theme_support( 'hybrid-core-shortcodes' );

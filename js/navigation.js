@@ -4,8 +4,8 @@
  * Handles toggling the navigation menu for small screens.
  */
 ( function() {
-	var button = document.getElementById( 'menu-secondary-mobile' ).getElementsByTagName( 'h3' )[0],
-	    menu   = document.getElementById( 'menu-secondary-mobile' ).getElementsByTagName( 'ul' )[0];
+	var button = document.getElementById( 'menu-primary-mobile' ).getElementsByTagName( 'h3' )[0],
+	    menu   = document.getElementById( 'menu-primary-mobile' ).getElementsByTagName( 'ul' )[0];
 
 	if ( undefined === button )
 		return false;
