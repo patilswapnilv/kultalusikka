@@ -108,7 +108,7 @@ function kultalusikka_theme_meta_box_licence_key() {
 			</th>
 			<td>
 			<?php if( $kultalusikka_status !== false && $kultalusikka_status == 'valid' ) { ?>
-				<span style="color:green;"><?php _e( 'Active' ); ?></span>
+				<span style="color:green;"><?php _e( 'Active', 'kultalusikka' ); ?></span>
 				<?php wp_nonce_field( 'kultalusikka_licence_nonce', 'kultalusikka_licence_nonce' ); ?>
 				<input type="submit" class="button-secondary" name="kultalusikka_theme_license_deactivate" value="<?php _e( 'Deactivate License', 'kultalusikka' ); ?>" />
 				<?php } else {
