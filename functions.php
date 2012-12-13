@@ -30,9 +30,6 @@ function kultalusikka_theme_setup() {
 
 	/* Get action/filter hook prefix. */
 	$prefix = hybrid_get_prefix();
-
-	/* Load theme includes. */
-	require_once( trailingslashit( get_template_directory() ) . 'includes/post-formats.php' );
 	
 	/* Add theme settings. */
 	if ( is_admin() )

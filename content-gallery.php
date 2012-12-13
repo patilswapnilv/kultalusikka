@@ -44,7 +44,7 @@ do_atomic( 'before_entry' ); // kultalusikka_before_entry ?>
 			<?php the_excerpt(); ?>
 			<?php wp_link_pages( array( 'before' => '<p class="page-links">' . __( 'Pages:', 'kultalusikka' ), 'after' => '</p>' ) ); ?>
 		
-			<?php $kultalisikka_image_count = kultalusikka_get_image_attachment_count(); ?>
+			<?php $kultalisikka_image_count = post_format_tools_get_image_attachment_count(); ?>
 			<p class="image-count"><?php printf( _n( 'This gallery contains %s image.', 'This gallery contains %s images.', $kultalisikka_image_count, 'kultalusikka' ), $kultalisikka_image_count ); ?></p>
 		
 		</div><!-- .entry-summary -->

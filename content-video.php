@@ -36,7 +36,7 @@ do_atomic( 'before_entry' ); // kultalusikka_before_entry ?>
 	
 		<?php
 		/* Get video from content. */
-		$kultalusikka_video = kultalusikka_get_video_embed();
+		$kultalusikka_video = post_format_tools_get_video();
 		?>
 	
 		<?php if( !empty( $kultalusikka_video ) ) { ?>
