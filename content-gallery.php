@@ -33,14 +33,16 @@ do_atomic( 'before_entry' ); // kultalusikka_before_entry ?>
 		</footer><!-- .entry-footer -->
 		
 	<?php } else { ?>
+	
+		<div class="kultalusikka-gallery">
+			<?php echo do_shortcode( '[gallery numberposts="3" orderby="rand" size="medium"]' ); ?>
+		</div><!-- .kultalusikka-gallery -->
 
 		<header class="entry-header">	
 			<?php echo apply_atomic_shortcode( 'entry_title', '[entry-title]' ); ?>
 		</header><!-- .entry-header -->
 
 		<div class="entry-summary">
-		
-			<?php echo do_shortcode( '[gallery numberposts="3" orderby="rand"]' ); ?>
 			<?php the_excerpt(); ?>
 			<?php wp_link_pages( array( 'before' => '<p class="page-links">' . __( 'Pages:', 'kultalusikka' ), 'after' => '</p>' ) ); ?>
 		
