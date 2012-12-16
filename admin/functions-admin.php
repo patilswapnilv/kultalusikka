@@ -156,7 +156,7 @@ function kultalusikka_theme_meta_box_logo() { ?>
 				<label for="<?php echo hybrid_settings_field_id( 'kultalusikka_custom_logo' ); ?>"><?php _e( 'Custom logo:', 'kultalusikka' ); ?></label>
 			</th>
 			<td>
-				<p><?php printf( __( 'Want to replace or remove default logo? <a href="%s">Go to Appearance &gt;&gt; Header</a>. ', 'kultalusikka' ), admin_url( 'themes.php?page=custom-header' ) ); ?></p>
+				<p><?php printf( __( 'Want to set a logo? <a href="%s">Go to Appearance &gt;&gt; Header</a>. ', 'kultalusikka' ), admin_url( 'themes.php?page=custom-header' ) ); ?></p>
 			</td>
 		</tr>
 
