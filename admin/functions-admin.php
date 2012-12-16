@@ -10,10 +10,10 @@
 /* Theme setting page setup. */
 add_action( 'admin_menu', 'kultalusikka_theme_admin_setup' );
 
-/* Theme deactivate license. */
+/* Theme activate license. */
 add_action( 'admin_init', 'kultalusikka_theme_activate_license' );
 
-/* Theme activate license. */
+/* Theme deactivate license. */
 add_action( 'admin_init', 'kultalusikka_theme_deactivate_license' );
 
 function kultalusikka_theme_admin_setup() {
@@ -37,11 +37,11 @@ function kultalusikka_theme_admin_setup() {
 /* Adds custom meta boxes to the theme settings page. */
 function kultalusikka_theme_settings_meta_boxes() {
 
-	/* Add a custom meta box for licence key. */
+	/* Add a custom meta box for license key. */
 	add_meta_box(
-		'kultalusikka-theme-meta-box-licence-key',    // Name/ID
+		'kultalusikka-theme-meta-box-license-key',    // Name/ID
 		__( 'Theme Licence Key', 'kultalusikka' ),    // Label
-		'kultalusikka_theme_meta_box_licence_key',    // Callback function
+		'kultalusikka_theme_meta_box_license_key',    // Callback function
 		'appearance_page_theme-settings',             // Page to load on, leave as is
 		'normal',                                     // Which meta box holder?
 		'high'                                        // High/low within the meta box holder
@@ -80,10 +80,10 @@ function kultalusikka_theme_settings_meta_boxes() {
 	/* Add additional add_meta_box() calls here. */
 }
 
-/* Function for displaying the licence key meta box. */
-function kultalusikka_theme_meta_box_licence_key() { 
+/* Function for displaying the license key meta box. */
+function kultalusikka_theme_meta_box_license_key() { 
 
-	$kultalusikka_license = hybrid_get_setting( 'kultalusikka_licence_key' );
+	$kultalusikka_license = hybrid_get_setting( 'kultalusikka_license_key' );
 	$kultalusikka_status = get_option( 'kultalusikka_license_key_status' ); // Save status in different option.
 	
 	?>
@@ -93,26 +93,26 @@ function kultalusikka_theme_meta_box_licence_key() {
 		<!-- License key -->
 		<tr>
 			<th>
-				<label for="<?php echo hybrid_settings_field_id( 'kultalusikka_licence_key' ); ?>"><?php _e( 'Licence key:', 'kultalusikka' ); ?></label>
+				<label for="<?php echo hybrid_settings_field_id( 'kultalusikka_license_key' ); ?>"><?php _e( 'Licence key:', 'kultalusikka' ); ?></label>
 			</th>
 			<td>
-				<p><input class="widefat" type="text" id="<?php echo hybrid_settings_field_id( 'kultalusikka_licence_key' ); ?>" name="<?php echo hybrid_settings_field_name( 'kultalusikka_licence_key' ); ?>" value="<?php echo esc_attr( hybrid_get_setting( 'kultalusikka_licence_key' ) ); ?>" /></p>
-				<p><?php _e( 'Enter your licence key here.', 'kultalusikka' ); ?></p>
+				<p><input class="widefat" type="text" id="<?php echo hybrid_settings_field_id( 'kultalusikka_license_key' ); ?>" name="<?php echo hybrid_settings_field_name( 'kultalusikka_license_key' ); ?>" value="<?php echo esc_attr( hybrid_get_setting( 'kultalusikka_license_key' ) ); ?>" /></p>
+				<p><?php _e( 'Enter your license key here.', 'kultalusikka' ); ?></p>
 			</td>
 		</tr>
 		
 		<?php if( false !== $kultalusikka_license ) { ?>
 		<tr>	
 			<th scope="row" valign="top">
-				<label for="<?php echo hybrid_settings_field_id( 'kultalusikka_activate_licence' ); ?>"><?php _e( 'Activate Licence:', 'kultalusikka' ); ?></label>
+				<label for="<?php echo hybrid_settings_field_id( 'kultalusikka_activate_license' ); ?>"><?php _e( 'Activate Licence:', 'kultalusikka' ); ?></label>
 			</th>
 			<td>
 			<?php if( $kultalusikka_status !== false && $kultalusikka_status == 'valid' ) { ?>
 				<span style="color:green;"><?php _e( 'Active', 'kultalusikka' ); ?></span>
-				<?php wp_nonce_field( 'kultalusikka_licence_nonce', 'kultalusikka_licence_nonce' ); ?>
+				<?php wp_nonce_field( 'kultalusikka_license_nonce', 'kultalusikka_license_nonce' ); ?>
 				<input type="submit" class="button-secondary" name="kultalusikka_theme_license_deactivate" value="<?php _e( 'Deactivate License', 'kultalusikka' ); ?>" />
 				<?php } else {
-					wp_nonce_field( 'kultalusikka_licence_nonce', 'kultalusikka_licence_nonce' ); ?>
+					wp_nonce_field( 'kultalusikka_license_nonce', 'kultalusikka_license_nonce' ); ?>
 					<input type="submit" class="button-secondary" name="kultalusikka_theme_license_activate" value="<?php _e( 'Activate License', 'kultalusikka' ); ?>" />
 					
 				<?php } ?>
@@ -188,11 +188,11 @@ function kultalusikka_theme_meta_box_background() { ?>
 /* Validate theme settings. */
 function kultalusikka_theme_validate_settings( $input ) {
 
-	$input['kultalusikka_licence_key'] = wp_filter_nohtml_kses( $input['kultalusikka_licence_key'] );
+	$input['kultalusikka_license_key'] = wp_filter_nohtml_kses( $input['kultalusikka_license_key'] );
 	
 	/* If new license has been entered, license status must reactivate. */
-	$old = hybrid_get_setting( 'kultalusikka_licence_key' );
-	if( $old && $old != $input['kultalusikka_licence_key'] ) {
+	$old = hybrid_get_setting( 'kultalusikka_license_key' );
+	if( $old && $old != $input['kultalusikka_license_key'] ) {
 		delete_option( 'kultalusikka_license_key_status' );
 	}
 
@@ -205,12 +205,12 @@ function kultalusikka_theme_validate_settings( $input ) {
 function kultalusikka_theme_activate_license() {
 
 	if( isset( $_POST['kultalusikka_theme_license_activate'] ) ) { 
-	 	if( ! check_admin_referer( 'kultalusikka_licence_nonce', 'kultalusikka_licence_nonce' ) ) 	
+	 	if( ! check_admin_referer( 'kultalusikka_license_nonce', 'kultalusikka_license_nonce' ) ) 	
 			return; // get out if we didn't click the Activate button
 
 		global $wp_version;
 
-		$license = trim( hybrid_get_setting( 'kultalusikka_licence_key' ) );
+		$license = trim( hybrid_get_setting( 'kultalusikka_license_key' ) );
 				
 		$api_params = array( 
 			'edd_action' => 'activate_license', 
@@ -236,12 +236,12 @@ function kultalusikka_theme_activate_license() {
 function kultalusikka_theme_deactivate_license() {
 
 	if( isset( $_POST['kultalusikka_theme_license_deactivate'] ) ) { 
-	 	if( ! check_admin_referer( 'kultalusikka_licence_nonce', 'kultalusikka_licence_nonce' ) ) 	
+	 	if( ! check_admin_referer( 'kultalusikka_license_nonce', 'kultalusikka_license_nonce' ) ) 	
 			return; // get out if we didn't click the Deactivate button
 
 		global $wp_version;
 
-		$license = trim( hybrid_get_setting( 'kultalusikka_licence_key' ) );
+		$license = trim( hybrid_get_setting( 'kultalusikka_license_key' ) );
 				
 		$api_params = array( 
 			'edd_action' => 'deactivate_license', 

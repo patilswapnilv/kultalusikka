@@ -103,9 +103,9 @@ function kultalusikka_theme_setup() {
 	include( dirname( __FILE__ ) . '/includes/EDD_SL_Theme_Updater.php' );
 	}
 	
-	// Get licence key from database.
+	// Get license key from database.
 	$kultalusikka_get_license = get_option( $prefix . '_theme_settings' ); // This is array.
-	$kultalusikka_license = $kultalusikka_get_license['kultalusikka_licence_key'];
+	$kultalusikka_license = $kultalusikka_get_license['kultalusikka_license_key'];
 
 	$edd_updater = new EDD_SL_Theme_Updater( array( 
 		'remote_api_url' 	=> KULTALUSIKKA_SL_STORE_URL, 	// our store URL that is running EDD
