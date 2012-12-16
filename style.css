@@ -1527,8 +1527,8 @@ body .edd-submit.plain:hover {
 /* EDD download info widget css. */
 .widget-edd-download-info .edd-submit.button {
 	display: inline-block;
-	margin-bottom: 7px;
-	margin-bottom: 0.5rem;
+	margin: 7px 0;
+	margin: 0.5rem 0;
 	text-align: center;
 	width: 100%;
 }
