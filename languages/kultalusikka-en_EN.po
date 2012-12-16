@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Kultalusikka WordPress Theme\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-12-12 18:23+0200\n"
-"PO-Revision-Date: 2012-12-12 18:23+0200\n"
+"POT-Creation-Date: 2012-12-16 18:44+0200\n"
+"PO-Revision-Date: 2012-12-16 18:44+0200\n"
 "Last-Translator: Sami Keijonen <sami.keijonen@foxnet.fi>\n"
 "Language-Team: Foxnet Themes <sami.keijonen@foxnet.fi>\n"
 "Language: en\n"
@@ -28,15 +28,16 @@ msgid ""
 "You tried going to %s, which doesn't exist. You can try navigate or search."
 msgstr ""
 
-#: archive-download.php:68 attachment-image.php:43 content-aside.php:28
-#: content-aside.php:39 content-audio.php:28 content-audio.php:51
-#: content-chat.php:28 content-chat.php:51 content-download.php:42
-#: content-forum.php:31 content-gallery.php:28 content-gallery.php:45
-#: content-image.php:28 content-link.php:28 content-link.php:48
-#: content-page.php:31 content-quote.php:28 content-quote.php:39
-#: content-status.php:27 content-status.php:42 content-topic.php:31
-#: content-video.php:28 content-video.php:60 content.php:32
-#: page-templates/account-page.php:56 page-templates/front-page.php:96
+#: archive-download.php:68 attachment-image.php:43 bbpress.php:45
+#: content-aside.php:28 content-aside.php:39 content-audio.php:28
+#: content-audio.php:51 content-chat.php:28 content-chat.php:51
+#: content-download.php:42 content-forum.php:31 content-gallery.php:28
+#: content-gallery.php:47 content-image.php:28 content-link.php:28
+#: content-link.php:48 content-page.php:31 content-quote.php:28
+#: content-quote.php:39 content-status.php:27 content-status.php:42
+#: content-topic.php:31 content-video.php:28 content-video.php:60
+#: content.php:32 page-templates/account-page.php:56
+#: page-templates/front-page.php:96
 msgid "Pages:"
 msgstr ""
 
@@ -44,9 +45,9 @@ msgstr ""
 msgid "Starting at: "
 msgstr ""
 
-#: attachment-image.php:42 content-aside.php:38 content-audio.php:50
-#: content-chat.php:50 content-forum.php:30 content-status.php:41
-#: content-video.php:59 content.php:31
+#: attachment-image.php:42 bbpress.php:44 content-aside.php:38
+#: content-audio.php:50 content-chat.php:50 content-forum.php:30
+#: content-status.php:41 content-video.php:59 content.php:31
 msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
 msgstr ""
 
@@ -114,7 +115,7 @@ msgid ""
 "before=\"Tagged \"]"
 msgstr ""
 
-#: content-audio.php:57 content-chat.php:57 content-gallery.php:53
+#: content-audio.php:57 content-chat.php:57 content-gallery.php:55
 #: content-image.php:50 content-link.php:54 content-quote.php:43
 #: content-video.php:66
 msgid ""
@@ -138,7 +139,7 @@ msgstr ""
 msgid "Last post %s"
 msgstr ""
 
-#: content-gallery.php:48
+#: content-gallery.php:50
 #, php-format
 msgid "This gallery contains %s image."
 msgstr ""
@@ -173,21 +174,25 @@ msgstr ""
 msgid "%d voice"
 msgstr ""
 
+#: content-topic.php:61
+msgid "by"
+msgstr ""
+
 #: content.php:27
 msgid ""
 "[entry-published] by [entry-author] [entry-comments-link before=\" | \"] "
 "[entry-edit-link before=\" | \"]"
 msgstr ""
 
-#: functions.php:461
+#: functions.php:454
 msgid "Front Page"
 msgstr ""
 
-#: functions.php:462
+#: functions.php:455
 msgid "Front Page widget area."
 msgstr ""
 
-#: functions.php:480
+#: functions.php:473
 msgid "Theme Green"
 msgstr ""
 
@@ -237,7 +242,7 @@ msgstr ""
 msgid "Next <span class=\"meta-nav\">&rarr;</span>"
 msgstr ""
 
-#: menu-secondary-mobile.php:23
+#: menu-primary-mobile.php:23
 msgid "Menu"
 msgstr ""
 
@@ -314,8 +319,7 @@ msgstr ""
 #: admin/functions-admin.php:159
 #, php-format
 msgid ""
-"Want to replace or remove default logo? <a href=\"%s\">Go to Appearance &gt;"
-"&gt; Header</a>. "
+"Want to set a logo? <a href=\"%s\">Go to Appearance &gt;&gt; Header</a>. "
 msgstr ""
 
 #: admin/functions-admin.php:176
@@ -918,7 +922,7 @@ msgstr ""
 #: library/extensions/breadcrumb-trail.php:438
 #: library/extensions/breadcrumb-trail.php:637
 #: library/functions/context.php:441 library/functions/context.php:447
-#: library/functions/core-seo.php:90 library/functions/shortcodes.php:70
+#: library/functions/core-seo.php:94 library/functions/shortcodes.php:70
 msgid "Y"
 msgstr ""
 
@@ -974,7 +978,7 @@ msgid "Merge"
 msgstr ""
 
 #: library/extensions/breadcrumb-trail.php:641
-#: library/functions/core-seo.php:86
+#: library/functions/core-seo.php:90
 msgid "F Y"
 msgstr ""
 
@@ -988,6 +992,42 @@ msgstr ""
 
 #: library/extensions/custom-field-series.php:212
 msgid "Series"
+msgstr ""
+
+#: library/extensions/post-format-tools.php:96
+msgid "Asides"
+msgstr ""
+
+#: library/extensions/post-format-tools.php:97
+msgid "Audio"
+msgstr ""
+
+#: library/extensions/post-format-tools.php:98
+msgid "Chats"
+msgstr ""
+
+#: library/extensions/post-format-tools.php:99
+msgid "Images"
+msgstr ""
+
+#: library/extensions/post-format-tools.php:100
+msgid "Galleries"
+msgstr ""
+
+#: library/extensions/post-format-tools.php:101
+msgid "Links"
+msgstr ""
+
+#: library/extensions/post-format-tools.php:102
+msgid "Quotes"
+msgstr ""
+
+#: library/extensions/post-format-tools.php:103
+msgid "Status Updates"
+msgstr ""
+
+#: library/extensions/post-format-tools.php:104
+msgid "Videos"
 msgstr ""
 
 #: library/extensions/post-stylesheets.php:277
@@ -1111,12 +1151,12 @@ msgstr ""
 msgid "%1$s Page %2$s"
 msgstr ""
 
-#: library/functions/core-seo.php:93
+#: library/functions/core-seo.php:97
 #, php-format
 msgid "Copyright (c) %1$s"
 msgstr ""
 
-#: library/functions/core-seo.php:112 library/functions/shortcodes.php:218
+#: library/functions/core-seo.php:116 library/functions/shortcodes.php:218
 #: library/functions/shortcodes.php:378
 msgid "l, F jS, Y, g:i a"
 msgstr ""
