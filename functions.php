@@ -255,9 +255,6 @@ function kultalusikka_scripts_styles() {
 		wp_enqueue_script( 'kultalusikka-fitvids', trailingslashit( get_template_directory_uri() ) . 'js/fitvids/jquery.fitvids.js', array( 'jquery' ), '20121117', true );
 		wp_enqueue_script( 'kultalusikka-fitvids-settings', trailingslashit( get_template_directory_uri() ) . 'js/fitvids/fitvids.js', array( 'kultalusikka-fitvids' ), '20121117', true );
 		
-		/* Dequeue  EDD styles. These are added in a theme to save extra load. */
-		wp_dequeue_style( 'edd-styles' );
-		
 	}
 }
 
