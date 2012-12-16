@@ -73,17 +73,16 @@ function kultalusikka_theme_setup() {
 	);
 	
 	/* Add support for flexible headers. This means logo in this theme, not header image. @link http://make.wordpress.org/themes/2012/04/06/updating-custom-backgrounds-and-custom-headers-for-wordpress-3-4/ */
- 
-	add_theme_support( 
-		'custom-header', 
-		array(
-			'flex-height' => true,
-			'height' => 99,
-			'flex-width' => true,
-			'width' => 300,
-			'header-text' => false
-		)
+	$kultalusikka_header_args = array(
+		'flex-height' => true,
+		'height' => 79,
+		'flex-width' => true,
+		'width' => 300,
+		'default-image' => '',
+		'header-text' => false,
 	);
+	
+	add_theme_support( 'custom-header', $kultalusikka_header_args );
 	
 	/* Set up Licence key for this theme. URL: https://easydigitaldownloads.com/docs/activating-license-keys-in-wp-plugins-and-themes */
  

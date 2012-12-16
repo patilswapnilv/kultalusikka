@@ -1848,6 +1848,10 @@ div.menu ul,nav.menu ul{margin:0;padding:0;list-style:none;line-height:1.0}div.m
 	margin-top: 1.71428571rem;
 	width: 31%;
 }
+.custom-header #site-title {
+	margin: 7px 0;
+	margin: 0.5rem 0;
+}
 
 /* Secondary menu. */
 #menu-primary {
