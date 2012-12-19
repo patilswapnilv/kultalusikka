@@ -40,7 +40,7 @@ function kultalusikka_theme_settings_meta_boxes() {
 	/* Add a custom meta box for license key. */
 	add_meta_box(
 		'kultalusikka-theme-meta-box-license-key',    // Name/ID
-		__( 'Theme Licence Key', 'kultalusikka' ),    // Label
+		__( 'Theme License Key', 'kultalusikka' ),    // Label
 		'kultalusikka_theme_meta_box_license_key',    // Callback function
 		'appearance_page_theme-settings',             // Page to load on, leave as is
 		'normal',                                     // Which meta box holder?
@@ -93,7 +93,7 @@ function kultalusikka_theme_meta_box_license_key() {
 		<!-- License key -->
 		<tr>
 			<th>
-				<label for="<?php echo hybrid_settings_field_id( 'kultalusikka_license_key' ); ?>"><?php _e( 'Licence key:', 'kultalusikka' ); ?></label>
+				<label for="<?php echo hybrid_settings_field_id( 'kultalusikka_license_key' ); ?>"><?php _e( 'License key:', 'kultalusikka' ); ?></label>
 			</th>
 			<td>
 				<p><input class="widefat" type="text" id="<?php echo hybrid_settings_field_id( 'kultalusikka_license_key' ); ?>" name="<?php echo hybrid_settings_field_name( 'kultalusikka_license_key' ); ?>" value="<?php echo esc_attr( hybrid_get_setting( 'kultalusikka_license_key' ) ); ?>" /></p>
@@ -104,7 +104,7 @@ function kultalusikka_theme_meta_box_license_key() {
 		<?php if( false !== $kultalusikka_license ) { ?>
 		<tr>	
 			<th scope="row" valign="top">
-				<label for="<?php echo hybrid_settings_field_id( 'kultalusikka_activate_license' ); ?>"><?php _e( 'Activate Licence:', 'kultalusikka' ); ?></label>
+				<label for="<?php echo hybrid_settings_field_id( 'kultalusikka_activate_license' ); ?>"><?php _e( 'Activate License:', 'kultalusikka' ); ?></label>
 			</th>
 			<td>
 			<?php if( $kultalusikka_status !== false && $kultalusikka_status == 'valid' ) { ?>
