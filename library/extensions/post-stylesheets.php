@@ -258,6 +258,8 @@ function post_stylesheets_load_meta_boxes() {
 
 	/* Saves the post meta box data. */
 	add_action( 'save_post', 'post_stylesheets_meta_box_save', 10, 2 );
+	add_action( 'add_attachment', 'post_stylesheets_meta_box_save' );
+	add_action( 'edit_attachment', 'post_stylesheets_meta_box_save' );
 }
 
 /**
@@ -313,7 +315,11 @@ function post_stylesheets_meta_box( $object, $box ) { ?>
  * @param int $post_id The ID of the current post being saved.
  * @param object $post The post object currently being saved.
  */
-function post_stylesheets_meta_box_save( $post_id, $post ) {
+function post_stylesheets_meta_box_save( $post_id, $post = '' ) {
+
+	/* Fix for attachment save issue in WordPress 3.5. @link http://core.trac.wordpress.org/ticket/21963 */
+	if ( !is_object( $post ) )
+		$post = get_post();
 
 	/* Verify the nonce before proceeding. */
 	if ( !isset( $_POST['post-stylesheets-nonce'] ) || !wp_verify_nonce( $_POST['post-stylesheets-nonce'], basename( __FILE__ ) ) )

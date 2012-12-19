@@ -15,7 +15,7 @@
  * even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
  *
  * @package   CleanerGallery
- * @version   0.9.5 - Alpha
+ * @version   0.9.5
  * @author    Justin Tadlock <justin@justintadlock.com>
  * @copyright Copyright (c) 2008 - 2012, Justin Tadlock
  * @link      http://justintadlock.com/archives/2008/04/13/cleaner-wordpress-gallery-plugin
@@ -83,21 +83,23 @@ function cleaner_gallery( $output, $attr ) {
 
 	/* Arguments for get_children(). */
 	$children = array(
-		'post_parent'      => $id,
 		'post_status'      => 'inherit',
 		'post_type'        => 'attachment',
 		'post_mime_type'   => 'image',
 		'order'            => $order,
-		'orderby'          => !empty( $ids ) ? 'post__in' : $orderby,
+		'orderby'          => $orderby,
 		'exclude'          => $exclude,
-		'include'          => !empty( $ids ) ? $ids : $include,
+		'include'          => $include,
 		'numberposts'      => $numberposts,
 		'offset'           => $offset,
 		'suppress_filters' => true
 	);
 
 	/* Get image attachments. If none, return. */
-	$attachments = get_children( $children );
+	if ( empty( $include ) )
+		$attachments = get_children( array_merge( array( 'post_parent' => $id ), $children ) );
+	else
+		$attachments = get_posts( $children );
 
 	if ( empty( $attachments ) )
 		return '<!-- Here be dragons but no images. -->';
@@ -119,7 +121,7 @@ function cleaner_gallery( $output, $attr ) {
 	$output = "\n\t\t\t<div id='gallery-{$id}-{$cleaner_gallery_instance}' class='gallery gallery-{$id}'>";
 
 	/* Loop through each attachment. */
-	foreach ( $attachments as $id => $attachment ) {
+	foreach ( $attachments as $attachment ) {
 
 		/* Open each gallery row. */
 		if ( $columns > 0 && $i % $columns == 0 )
@@ -132,14 +134,14 @@ function cleaner_gallery( $output, $attr ) {
 		$output .= "\n\t\t\t\t\t\t<{$icontag} class='gallery-icon'>";
 
 		/* Add the image. */
-		$image = ( ( isset( $attr['link'] ) && 'file' == $attr['link'] ) ? wp_get_attachment_link( $id, $size, false, false ) : wp_get_attachment_link( $id, $size, true, false ) );
-		$output .= apply_filters( 'cleaner_gallery_image', $image, $id, $attr, $cleaner_gallery_instance );
+		$image = ( ( isset( $attr['link'] ) && 'file' == $attr['link'] ) ? wp_get_attachment_link( $attachment->ID, $size, false, false ) : wp_get_attachment_link( $attachment->ID, $size, true, false ) );
+		$output .= apply_filters( 'cleaner_gallery_image', $image, $attachment->ID, $attr, $cleaner_gallery_instance );
 
 		/* Close the image wrapper. */
 		$output .= "</{$icontag}>";
 
 		/* Get the caption. */
-		$caption = apply_filters( 'cleaner_gallery_caption', wptexturize( $attachment->post_excerpt ), $id, $attr, $cleaner_gallery_instance );
+		$caption = apply_filters( 'cleaner_gallery_caption', wptexturize( $attachment->post_excerpt ), $attachment->ID, $attr, $cleaner_gallery_instance );
 
 		/* If image caption is set. */
 		if ( !empty( $caption ) )

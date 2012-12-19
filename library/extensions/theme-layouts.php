@@ -401,6 +401,8 @@ function theme_layouts_load_meta_boxes() {
 
 	/* Saves the post format on the post editing page. */
 	add_action( 'save_post', 'theme_layouts_save_post', 10, 2 );
+	add_action( 'add_attachment', 'theme_layouts_save_post' );
+	add_action( 'edit_attachment', 'theme_layouts_save_post' );
 }
 
 /**
@@ -465,7 +467,11 @@ function theme_layouts_post_meta_box( $post, $box ) {
  * @param object $post The post object currently being saved.
  * @return void|int
  */
-function theme_layouts_save_post( $post_id, $post ) {
+function theme_layouts_save_post( $post_id, $post = '' ) {
+
+	/* Fix for attachment save issue in WordPress 3.5. @link http://core.trac.wordpress.org/ticket/21963 */
+	if ( !is_object( $post ) )
+		$post = get_post();
 
 	/* Verify the nonce for the post formats meta box. */
 	if ( !isset( $_POST['theme-layouts-nonce'] ) || !wp_verify_nonce( $_POST['theme-layouts-nonce'], basename( __FILE__ ) ) )
@@ -522,9 +528,11 @@ function theme_layouts_attachment_fields_to_edit( $fields, $post ) {
 
 	/* Add the attachment layout field to the $fields array. */
 	$fields['theme-layouts-post-layout'] = array(
-		'label' => __( 'Layout', 'theme-layouts' ),
-		'input' => 'html',
-		'html' => $select
+		'label'         => __( 'Layout', 'theme-layouts' ),
+		'input'         => 'html',
+		'html'          => $select,
+		'show_in_edit'  => false,
+		'show_in_modal' => true
 	);
 
 	/* Return the $fields array back to WordPress. */
