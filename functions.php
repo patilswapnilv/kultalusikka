@@ -42,6 +42,7 @@ function kultalusikka_theme_setup() {
 	add_theme_support( 'hybrid-core-shortcodes' );
 	add_theme_support( 'hybrid-core-theme-settings', array( 'about', 'footer' ) );
 	add_theme_support( 'hybrid-core-scripts', array( 'drop-downs' ) );
+	add_theme_support( 'hybrid-core-styles', array( 'parent', 'style' ) );
 	add_theme_support( 'hybrid-core-template-hierarchy' );
 	
 	/* Add theme support for framework extensions. */
@@ -127,9 +128,6 @@ function kultalusikka_theme_setup() {
 	
 	/* Add excerpt support for 'download' post type. */
 	add_filter( 'edd_download_supports', 'kultalusikka_add_edd_excerpt' );
-	
-	/* Enqueue main stylesheet (style.css) before than others. */
-	add_action( 'wp_enqueue_scripts', 'kultalusikka_main_styles', 9 );
 	
 	/* Enqueue scripts. */
 	add_action( 'wp_enqueue_scripts', 'kultalusikka_scripts_styles' );
@@ -221,21 +219,6 @@ function kultalusikka_add_edd_excerpt( $download_supports ) {
 
 	return $download_supports;
 	
-}
-
-/**
- * Load main style.css file.
- *
- * @since 0.1.0
- */
-function kultalusikka_main_styles() {
-
-	if ( !is_admin() ) {
-		
-		/* Load main style.css file. */
-		wp_enqueue_style( 'kultalusikka-style', get_stylesheet_uri() );
-		
-	}
 }
 
 /**
