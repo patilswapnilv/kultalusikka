@@ -50,6 +50,9 @@ get_header(); // Loads the header.php template. ?>
 								<p>
 									<?php wp_login_form(); ?>
 								</p>
+								<p>
+									<a href="<?php echo wp_lostpassword_url( get_permalink() ); ?>" title="<?php _e( 'Lost password?', 'kultalusikka' ); ?>"><?php _e( 'Lost password?', 'kultalusikka' ); ?></a>
+								</p>
 
 							<?php } ?>
 
