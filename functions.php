@@ -165,7 +165,7 @@ function kultalusikka_theme_setup() {
 	add_filter( 'edd_download_info_feature_image_size', 'kultalusikka_edd_download_info_feature_size' );
 	
 	/* Disable bbPress breadcrumb. */
-	add_filter ( 'bbp_no_breadcrumb', 'kultalusikka_no_breadcrumb' );
+	add_filter( 'bbp_no_breadcrumb', 'kultalusikka_no_breadcrumb' );
 	
 	/* Display topics (bbPress) by last activity. */
 	add_action( 'pre_get_posts', 'kultalusikka_filter_topic' );
