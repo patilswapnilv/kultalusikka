@@ -47,6 +47,7 @@ function kultalusikka_theme_setup() {
 	
 	/* Add theme support for framework extensions. */
 	add_theme_support( 'theme-layouts', array( '1c', '2c-l', '2c-r' ) );
+	add_theme_support( 'post-stylesheets' );
 	add_theme_support( 'loop-pagination' );
 	add_theme_support( 'get-the-image' );
 	add_theme_support( 'breadcrumb-trail' );
