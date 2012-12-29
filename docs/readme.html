@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<title>A guide to the Kultalusikka theme</title>
+
+<style type="text/css">body{max-width:750px;margin:36px auto 60px auto;font:16px/25px Georgia,Times,'Times New Roman',serif;padding: 0 4%;}a:link,a:visited{color:#2f6eb9;text-decoration:none}a:hover,a:active{text-decoration:underline}h1,h2,h3,h4,h5,h6{margin:40px 0 30px 0;color:#000;font-weight:bold;font-family:Arial,sans-serif}h1{margin-top:80px;font-size:2.2em}code{padding:0 3px;background:#eee}pre code{padding:0}pre{padding:9px;background:#eee;border:1px solid #ccc}ul{list-style:square}p.first{font-size:21px}p.second{font-size:15px}ul.space li{margin-bottom:10px}.section{overflow:hidden}.columns-2{float:left;width:350px;margin:0 0 21px 25px}.columns-3{float:left;width:230px;margin:0 0 21px 20px}</style>
+
+</head>
+<body>
+
+<h1>Kultalusikka WordPress theme</h1>
+
+<p class="first"><em>Kultalusikka</em> is made for selling digital downloads using Easy Digital Downloads plugin.</p>
+
+<p class="second">This theme is a parent theme. <strong>All modification</strong> should be made via a child theme.</p>
+
+<p>This theme is made for selling digital downloads using Easy Digital Downloads plugin. But hey, you can use it for whatever you want. It also supports bbPress and Gravity Forms plugins.</p>
+
+<h2>Features</h2>
+
+<p><em>Kultalusikka</em> is built on <a href="http://themehybrid.com/hybrid-core" title="Hybrid Core theme framework">Hybrid Core</a> framework. There is a brilliant minded man called <a href="http://justintadlock.com" title="Justin Tadlock">Justin Tadlock</a> who has created it. So remember to check out all the <a href="http://themehybrid.com/themes" title="Hybrid Themes">Hybrid Themes</a>.</p>
+
+<ul>
+	<li>Per-post layouts which means that you can choose one or two column layout. Content on the left or right.</li>
+	<li>Post setting that allows you to add a custom stylesheet for individual posts.</li>
+	<li>A smart breadcrumb system.</li>
+	<li>Built-in pagination.</li>
+	<li>Post thumbnails that work with WordPress featured image functionality and provide extra features.</li>
+	<li>Multiple and flexible sidebars areas: Primary, Subsidiary and front page template widgets.</li>
+	<li>Dynamic body, post, and comment <acronym title="Cascading Style Sheets">CSS</acronym> classes.</li>
+	<li>Fully internationalized, so you can translate the theme in any language. You should place your translations files to child theme <code>languages</code> folder.</li>
+	<li>Built-in WordPress menu system. There are two menus in the theme: Primary and Subsidiary.</li>
+	<li>Context-aware action and filter hooks.</li>
+	<li>Some of the most-used filter hooks are shortcode-ready and have accompanying shortcodes.</li>
+	<li>Theme settings page (Appearance &raquo;&raquo; Theme Settings) that allows you to set theme license key and add footer text.</li>
+	<li>Global layout can be changed under Appearance &raquo;&raquo; Customize.</li>
+	<li>Set logo under Appearance &raquo;&raquo; Header.</li>
+	<li>Set background under Appearance &raquo;&raquo; Background.</li>
+	<li>Ability to create custom templates for any post type in multiple ways.</li>
+	<li>Highly-configurable widgets that give you full control over their display.</li>
+	<li>Widget areas are content-aware, meaning that they only appear if they contain active widgets.</li>
+	<li>Support for all Post Formats.</li>
+	<li>Theme was designed with <a href="http://www.lukew.com/ff/entry.asp?933" title="Mobile First">Mobile First</a> attitude. It uses so called toggle menu for "mobile" devices, <a href="https://github.com/scottjehl/Respond" title="Respond.js">Respond.js</a> for legacy browsers and <a href="http://fitvidsjs.com/" title="Fit Vids">Fit Vids</a> for videos.</li>
+</ul>
+
+<h2>Child themes</h2>
+
+<p><em>Kultalusikka</em> is a parent theme, so use a child theme for any customizations. When you purchase this theme, you also get blank child theme. If you want do it yourself, here is how to get started.</p>
+
+<ul>
+	<li>Create a theme folder in your <code>/wp-content/themes</code> directory called <code>kultalusikka-child</code>.</li>
+	<li>After that create a <code>style.css</code> file in <code>/wp-content/themes/kultalusikka-child</code> folder.</li>
+	<li>At the top of your <code>style.css</code> file, add the below information.</li>
+</ul>
+
+<pre><code>/**
+ * Theme Name: Kultalusikka Child
+ * Theme URI: http://link-to-your-site.com
+ * Description: Describe your child theme.
+ * Version: 0.1
+ * Author: Your Name
+ * Author URI: http://link-to-your-site.com
+ * Tags: Some, Tags
+ * Template: kultalusikka
+ */</code></pre>
+
+<p>There is no reason to import parent theme styles, because they are loaded automatically. Note! If you compress your <code>style.css</code> and copy your styles to a file called <code>style.min.css</code>, it will be used automatically.</p>
+
+<p>Using child theme is officially-supported way of modifying themes in WordPress.</p>
+
+<h2>Supported plugins</h2>
+
+<p><strong>Easy Digital Downloads</strong></p>
+<p>Theme is designed for selling digital downloads using <a href="http://wordpress.org/extend/plugins/easy-digital-downloads/" title="Easy Digital Downloads">Easy Digital Downloads</a>.</p>
+
+<p><strong>bbPress</strong></p>
+<p>If you need to run forum, use <a href="http://wordpress.org/extend/plugins/bbpress/" title="bbPress">bbPress</a> and it automatically integrates theme design.</p> 
+
+<p><strong>Gravity Forms</strong></p>
+<p>Kultalusikka includes base CSS for <a href="http://www.gravityforms.com/" title="Gravity Forms">Gravity Forms</a> plugin.</p>
+
+<h2>Theme Settings (Appearance &raquo;&raquo; Theme Settings)</h2>
+
+<p><strong>Set logo</strong></p>
+
+<p>Set logo under Appearance &raquo;&raquo; Header. Suggested logo size is 300 x 79 (in pixels). Image size is flexible so you can try different image size. Theme is using Header images only for logo, not header images. Of course Blog name will be displayed if there is no logo set.</p>
+
+<p><strong>Set background</strong></p>
+
+<p>Set background under Appearance &raquo;&raquo; Background.</p>
+
+<p><strong>Change default layout</strong></p>
+
+<p>
+Kultalusikka theme has two column layout by default, content on the left and sidebar on the right. You can change this default layout under Appearance &raquo;&raquo; Customize. You can overwrite this in post
+editor by choosing layout for that certain post:
+</p>
+<ul>
+<li>Default</li>
+<li>One Column</li>
+<li>Two Columns, Left (theme default)</li>
+<li>Two Columns, Right</li>
+</ul>
+
+<p><strong>Footer text</strong></p>
+
+<p>You can change Footer text in Footer Settings metabox.</p>
+
+<p><strong>Theme customize</strong></p>
+
+<p>You can also customize theme in live preview using WordPress customize. Check it out under <strong>Appearance &raquo;&raquo; Customize</strong>. It's pretty cool.</p>
+
+<h2>Page Templates</h2>
+
+<p>There are couple of page templates in this theme. They are located in <code>page-templates</code> folder. If you need to overwrite page templates in a child theme, create subfolder <code>page-templates</code> in child theme and copy certain page template in that folder and start modifying.</p>
+
+<ul>
+	<li>Account Page (account-page.php): it will show login form if user is not logged in. For logged in user you can show whatever you want in page content.</li>
+	<li>Front Page (front-page.php): This is for showing your latest downloads. There is also Front page widget area for this page template</li>
+</ul>
+
+<p>
+You can select a page template from the "Template" section of the "Attributes" meta box when writing or editing a page.
+</p>
+
+<h2>Action Hooks reference</h2>
+<p>
+With action hooks you can add your custom code in a certain points in the theme. If you open <code>header.php</code> for example you'll
+see this line of code: 
+</p>
+
+<pre><code>&lt;?php do_atomic( 'open_body' ); // kultalusikka_open_body ?&gt;</code></pre>
+
+<p>
+It means that you can add your code in that spot  without modifying <code>header.php</code> file. 
+You do it using child theme <code>functions.php</code>. Add this inside setup function.
+</p>
+
+<pre><code>add_action( "{$prefix}_open_body", 'my_open_body_code' );</code></pre>
+
+<p>And this after setup function.</p>
+
+<pre><code>
+function my_open_body_code() {
+
+	echo 'My code';
+
+}
+</code></pre>
+
+<p>Here are all the hooks used in Kultalusikka theme.</p>
+
+<ul>
+<li><strong>header.php</strong>
+	<ul>
+	<li>kultalusikka_open_body</li>
+	<li>kultalusikka_before_header</li>
+	<li>kultalusikka_open_header</li>
+	<li>kultalusikka_header</li>
+	<li>kultalusikka_close_header</li>
+	<li>kultalusikka_after_header</li>
+	<li>kultalusikka_before_main</li>
+	<li>kultalusikka_open_main</li>
+	</ul>
+</li>
+<li><strong>menu-primary.php</strong>
+	<ul>
+	<li>kultalusikka_before_menu_primary</li>
+	<li>kultalusikka_open_menu_primary</li>
+	<li>kultalusikka_close_menu_primary</li>
+	<li>kultalusikka_after_menu_primary</li>
+	</ul>
+</li>
+<li><strong>menu-primary-mobile.php</strong>
+	<ul>
+	<li>kultalusikka_before_menu_primary_mobile</li>
+	<li>kultalusikka_open_menu_primary_mobile</li>
+	<li>kultalusikka_close_menu_primary_mobile</li>
+	<li>kultalusikka_after_menu_primary_mobile</li>
+	</ul>
+</li>
+<li><strong>menu-secondary.php</strong>
+	<ul>
+	<li>kultalusikka_before_menu_secondary</li>
+	<li>kultalusikka_open_menu_secondary</li>
+	<li>kultalusikka_close_menu_secondary</li>
+	<li>kultalusikka_after_menu_secondary</li>
+	</ul>
+</li>
+<li><strong>menu-secondary-mobile.php</strong>
+	<ul>
+	<li>kultalusikka_before_menu_secondary_mobile</li>
+	<li>kultalusikka_open_menu_secondary_mobile</li>
+	<li>kultalusikka_close_menu_secondary_mobile</li>
+	<li>kultalusikka_after_menu_secondary_mobile</li>
+	</ul>
+</li>
+<li><strong>sidebar-before-content.php</strong>
+	<ul>
+	<li>kultalusikka_before_sidebar_before_content</li>
+	<li>kultalusikka_open_sidebar_before_content</li>
+	<li>kultalusikka_close_sidebar_before_content</li>
+	<li>kultalusikka_after_sidebar_before_content</li>
+	</ul>
+</li>
+<li><strong>404.php</strong>, <strong>attachment-image.php</strong>, <strong>content-*.php</strong>, <strong>index.php</strong>, <strong>search.php</strong>, <strong>taxonomy-post_format-video.php</strong>
+	<ul>
+	<li>kultalusikka_before_content</li>
+	<li>kultalusikka_open_content</li>
+	<li>kultalusikka_before_entry (not in 404.php)</li>
+	<li>kultalusikka_open_entry (not in 404.php)</li>
+	<li>kultalusikka_close_entry(not in 404.php)</li>
+	<li>kultalusikka_after_entry(not in 404.php)</li>
+	<li>kultalusikka_after_singular (not in 404.php, search.php and taxonomy-post_format-video.php)</li>
+	<li>kultalusikka_close_content</li>
+	<li>kultalusikka_after_content</li>
+	</ul>
+</li>
+<li><strong>comment.php</strong>
+	<ul>
+	<li>kultalusikka_before_comment</li>
+	<li>kultalusikka_open_comment</li>
+	<li>kultalusikka_close_comment</li>
+	<li>kultalusikka_after_comment</li>
+	</ul>
+</li>
+<li><strong>comments.php</strong>
+	<ul>
+	<li>kultalusikka_before_comment_list</li>
+	<li>kultalusikka_after_comment_list</li>
+	</ul>
+</li>
+<li><strong>sidebar-primary.php</strong>
+	<ul>
+	<li>kultalusikka_before_sidebar_primary</li>
+	<li>kultalusikka_open_sidebar_primary</li>
+	<li>kultalusikka_close_sidebar_primary</li>
+	<li>kultalusikka_after_sidebar_primary</li>
+	</ul>
+</li>
+<li><strong>sidebar-secondary.php</strong>
+	<ul>
+	<li>kultalusikka_before_sidebar_secondary</li>
+	<li>kultalusikka_open_sidebar_secondary</li>
+	<li>kultalusikka_close_sidebar_secondary</li>
+	<li>kultalusikka_after_sidebar_secondary</li>
+	</ul>
+</li>
+<li><strong>sidebar-after-singular.php</strong>
+	<ul>
+	<li>kultalusikka_before_sidebar_after_singular</li>
+	<li>kultalusikka_open_sidebar_after_singular</li>
+	<li>kultalusikka_close_sidebar_after_singular</li>
+	<li>kultalusikka_after_sidebar_after_singular</li>
+	</ul>
+</li>
+<li><strong>footer.php</strong>
+	<ul>
+	<li>kultalusikka_close_main</li>
+	<li>kultalusikka_after_main</li>
+	<li>kultalusikka_before_footer</li>
+	<li>kultalusikka_open_footer</li>
+	<li>kultalusikka_footer</li>
+	<li>kultalusikka_close_footer</li>
+	<li>kultalusikka_after_footer</li>
+	<li>kultalusikka_close_body</li>
+	</ul>
+</li>
+<li><strong>sidebar-subsidiary.php</strong>
+	<ul>
+	<li>kultalusikka_before_sidebar_subsidiary</li>
+	<li>kultalusikka_open_sidebar_subsidiary</li>
+	<li>kultalusikka_close_sidebar_subsidiary</li>
+	<li>kultalusikka_after_sidebar_subsidiary</li>
+	</ul>
+</li>
+<li><strong>menu-subsidiary.php</strong>
+	<ul>
+	<li>kultalusikka_before_menu_subsidiary</li>
+	<li>kultalusikka_open_menu_subsidiary</li>
+	<li>kultalusikka_close_menu_subsidiary</li>
+	<li>kultalusikka_after_menu_subsidiary</li>
+	</ul>
+</li>
+</ul>
+
+
+<h2>Theme support</h2>
+
+<p>Support for the <em>Kultalusikka</em> theme is not offered on the WordPress support forums.  There is a site called <a href="http://foxnet-themes.fi" title="Foxnet Themes">Foxnet Themes</a> where support is offered for this theme.</p>
+
+<h2>Credits</h2>
+
+<p>Kultalusikka is build on <a href="http://themehybrid.com/hybrid-core" title="Hybrid Core">Hybrid Core</a> framework by <a href="http://justintadlock.com/" title="Justin Tadlock">Justin Tadlock</a>.</p>
+
+<p>Theme uses</p>
+
+<ul>
+	<li><a href="http://www.theleagueofmoveabletype.com/league-gothic" title="League Gothic">League Gothic</a> font, which is licensed under <a href="http://scripts.sil.org/OFL" title="OFL">OFL</a>.</li>
+	<li><a href="http://fitvidsjs.com" title="FitVids">FitVids</a>, which is licensed under <a href="http://sam.zoy.org/wtfpl/" title="WTFPL">WTFPL</a>.</li>
+	<li><a href="https://github.com/scottjehl/Respond" title="Respond.js">Respond.js</a>, which is licensed under <a href="http://www.opensource.org/licenses/mit-license.php" title="MIT">MIT</a>.</li>
+	<li><a href="http://code.google.com/p/html5shiv/" title="html5shiv">html5shiv</a>, which is licensed under <a href="http://www.gnu.org/licenses/old-licenses/gpl-2.0.html" title="GPLv2">GPLv2</a> license.</li>
+</ul>
+
+
+<h2>Copyright &amp; license</h2>
+
+<p><em>Kultalusikka</em> is licensed under the <a href="http://www.gnu.org/licenses/old-licenses/gpl-2.0.html" title="GNU GPL">GNU General Public License</a>, version 2 (<acronym title="GNU General Public License">GPL</acronym>).</p>
+
+<p>This theme is copyrighted to <a href="http://foxnet.fi" title="Sami Keijonen">Sami Keijonen</a>.</p>
+
+<p>2013 &copy; Sami Keijonen.  All rights reserved.</p>
+
+</body>
+</html>
