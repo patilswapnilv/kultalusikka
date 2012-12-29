@@ -1795,6 +1795,7 @@ div.menu ul,nav.menu ul{margin:0;padding:0;list-style:none;line-height:1.0}div.m
 
 }
 
+
 /* Minimum width of 896 pixels. */
 @media screen and (min-width: 896px) {
 
@@ -1805,6 +1806,12 @@ div.menu ul,nav.menu ul{margin:0;padding:0;list-style:none;line-height:1.0}div.m
 #footer .wrap {
 	max-width: 1000px;
 	max-width: 71.4285714rem;
+}
+
+/* Menu primary with custom header. */
+.custom-header #menu-primary {
+	padding-top: 20px;
+	padding-top: 1.42857143rem;
 }
 
 /* Paddings. */
@@ -1958,6 +1965,18 @@ div.menu ul,nav.menu ul{margin:0;padding:0;list-style:none;line-height:1.0}div.m
 .singular-download .entry-title {
 	margin-right: 56px;
 	margin-right: 4rem;
+}
+
+}
+
+
+/* Minimum width of 1030 pixels. */
+@media screen and (min-width: 1030px) {
+
+/* Menu primary with custom header. */
+.custom-header #menu-primary {
+	padding-top: 26px;
+	padding-top: 1.85714286rem;
 }
 
 }
