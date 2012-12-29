@@ -67,10 +67,10 @@
 			</div><!-- .wrap -->
 
 			<?php do_atomic( 'close_header' ); // kultalusikka_close_header ?>
-
-		<?php do_atomic( 'after_header' ); // kultalusikka_after_header ?>
 		
 		</header><!-- #header -->
+		
+		<?php do_atomic( 'after_header' ); // kultalusikka_after_header ?>
 		
 		<h2 id="site-description"><?php bloginfo( 'description' ); ?></h2>
 		
