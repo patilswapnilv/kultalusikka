@@ -28,7 +28,7 @@
 	<li>Built-in pagination.</li>
 	<li>Post thumbnails that work with WordPress featured image functionality and provide extra features.</li>
 	<li>Multiple and flexible sidebars areas: Primary, Subsidiary and front page template widgets.</li>
-	<li>Dynamic body, post, and comment <acronym title="Cascading Style Sheets">CSS</acronym> classes.</li>
+	<li>Dynamic body, post, and comment CSS classes.</li>
 	<li>Fully internationalized, so you can translate the theme in any language. You should place your translations files to child theme <code>languages</code> folder.</li>
 	<li>Built-in WordPress menu system. There are two menus in the theme: Primary and Subsidiary.</li>
 	<li>Context-aware action and filter hooks.</li>
@@ -124,6 +124,28 @@ editor by choosing layout for that certain post:
 You can select a page template from the "Template" section of the "Attributes" meta box when writing or editing a page.
 </p>
 
+<p>
+If you want to use Front Page template as a front page for your site instead of the standard blog post view, follow these instructions.
+</p>
+
+<h3>Creating the front page</h3>
+
+<ul>
+	<li>First create a new page. You can name it anything. For example 'Home' or 'Downloads'.</li>
+	<li>When creating this page, select "Front Page" from the "Template" drop-down inside of the "Attributes" meta box.</li>
+	<li>Click the "Publish" button.</li>
+</ul>
+
+<h3>Change site front page</h3>
+
+<ul>
+	<li>Go to the "Settings &raquo;&raquo; Reading" screen in the admin to adjust the page shown on the front of the site.</li>
+	<li>Locate the section labeled "Front page displays".</li>
+	<li>Select "A static page".</li>
+	<li>In the "Front Page" drop-down, select the page you created earlier that has the "Front Page" template.</li>
+	<li>Click the "Save Changes" button.</li>
+</ul>
+
 <h2>Action Hooks reference</h2>
 <p>
 With action hooks you can add your custom code in a certain points in the theme. If you open <code>header.php</code> for example you'll
@@ -180,31 +202,7 @@ function my_open_body_code() {
 	<li>kultalusikka_after_menu_primary_mobile</li>
 	</ul>
 </li>
-<li><strong>menu-secondary.php</strong>
-	<ul>
-	<li>kultalusikka_before_menu_secondary</li>
-	<li>kultalusikka_open_menu_secondary</li>
-	<li>kultalusikka_close_menu_secondary</li>
-	<li>kultalusikka_after_menu_secondary</li>
-	</ul>
-</li>
-<li><strong>menu-secondary-mobile.php</strong>
-	<ul>
-	<li>kultalusikka_before_menu_secondary_mobile</li>
-	<li>kultalusikka_open_menu_secondary_mobile</li>
-	<li>kultalusikka_close_menu_secondary_mobile</li>
-	<li>kultalusikka_after_menu_secondary_mobile</li>
-	</ul>
-</li>
-<li><strong>sidebar-before-content.php</strong>
-	<ul>
-	<li>kultalusikka_before_sidebar_before_content</li>
-	<li>kultalusikka_open_sidebar_before_content</li>
-	<li>kultalusikka_close_sidebar_before_content</li>
-	<li>kultalusikka_after_sidebar_before_content</li>
-	</ul>
-</li>
-<li><strong>404.php</strong>, <strong>attachment-image.php</strong>, <strong>content-*.php</strong>, <strong>index.php</strong>, <strong>search.php</strong>, <strong>taxonomy-post_format-video.php</strong>
+<li><strong>404.php</strong>, <strong>attachment-image.php</strong>, <strong>content-*.php</strong>, <strong>index.php</strong>, <strong>search.php</strong>.
 	<ul>
 	<li>kultalusikka_before_content</li>
 	<li>kultalusikka_open_content</li>
@@ -212,7 +210,7 @@ function my_open_body_code() {
 	<li>kultalusikka_open_entry (not in 404.php)</li>
 	<li>kultalusikka_close_entry(not in 404.php)</li>
 	<li>kultalusikka_after_entry(not in 404.php)</li>
-	<li>kultalusikka_after_singular (not in 404.php, search.php and taxonomy-post_format-video.php)</li>
+	<li>kultalusikka_after_singular (not in 404.php, search.php)</li>
 	<li>kultalusikka_close_content</li>
 	<li>kultalusikka_after_content</li>
 	</ul>
@@ -239,20 +237,12 @@ function my_open_body_code() {
 	<li>kultalusikka_after_sidebar_primary</li>
 	</ul>
 </li>
-<li><strong>sidebar-secondary.php</strong>
+<li><strong>sidebar-front-page.php</strong>
 	<ul>
-	<li>kultalusikka_before_sidebar_secondary</li>
-	<li>kultalusikka_open_sidebar_secondary</li>
-	<li>kultalusikka_close_sidebar_secondary</li>
-	<li>kultalusikka_after_sidebar_secondary</li>
-	</ul>
-</li>
-<li><strong>sidebar-after-singular.php</strong>
-	<ul>
-	<li>kultalusikka_before_sidebar_after_singular</li>
-	<li>kultalusikka_open_sidebar_after_singular</li>
-	<li>kultalusikka_close_sidebar_after_singular</li>
-	<li>kultalusikka_after_sidebar_after_singular</li>
+	<li>kultalusikka_before_sidebar_front_page</li>
+	<li>kultalusikka_open_sidebar_front_page</li>
+	<li>kultalusikka_close_sidebar_front_page</li>
+	<li>kultalusikka_after_sidebar_front_page</li>
 	</ul>
 </li>
 <li><strong>footer.php</strong>
@@ -306,9 +296,9 @@ function my_open_body_code() {
 
 <h2>Copyright &amp; license</h2>
 
-<p><em>Kultalusikka</em> is licensed under the <a href="http://www.gnu.org/licenses/old-licenses/gpl-2.0.html" title="GNU GPL">GNU General Public License</a>, version 2 (<acronym title="GNU General Public License">GPL</acronym>).</p>
+<p><em>Kultalusikka</em> is licensed under the <a href="http://www.gnu.org/licenses/old-licenses/gpl-2.0.html" title="GNU GPL">GNU General Public License</a>, version 2 (<abbr title="GNU General Public License">GPL</abbr>).</p>
 
-<p>This theme is copyrighted to <a href="http://foxnet.fi" title="Sami Keijonen">Sami Keijonen</a>.</p>
+<p>This theme is copyrighted to <a href="http://foxnet-themes.fi" title="Sami Keijonen">Sami Keijonen</a>.</p>
 
 <p>2013 &copy; Sami Keijonen.  All rights reserved.</p>
 
