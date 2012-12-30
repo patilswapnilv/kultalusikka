@@ -329,19 +329,26 @@ function breadcrumb_trail_get_items( $args = array() ) {
 			/* Add post type archive if its 'has_archive' matches the taxonomy rewrite 'slug'. */
 			if ( $taxonomy->rewrite['slug'] ) {
 
-				/* Get public post types that match the rewrite slug. */
-				$post_types = get_post_types( array( 'public' => true, 'has_archive' => $taxonomy->rewrite['slug'] ), 'objects' );
+	/* Get public post types that match the rewrite slug. */
+	$post_types = get_post_types( array( 'public' => true, 'has_archive' => $taxonomy->rewrite['slug'] ), 'objects' );
 
-				/* If any post types are found, get the first one. */
-				if ( !empty( $post_types ) ) {
-					$post_type_object = array_shift( $post_types );
+	/* If any post types are found, get the first one. */
+	if ( !empty( $post_types ) ) {
 
-					/* Add support for a non-standard label of 'archive_title' (special use case). */
-					$label = !empty( $post_type_object->labels->archive_title ) ? $post_type_object->labels->archive_title : $post_type_object->labels->name;
+		foreach ( $post_types as $post_type_object ) {
 
-					$trail[] = '<a href="' . get_post_type_archive_link( $post_type_object->name ) . '" title="' . esc_attr( $label ) . '">' . $label . '</a>';
-				}
+			if ( $taxonomy->rewrite['slug'] === $post_type_object->has_archive ) {
+
+				/* Add support for a non-standard label of 'archive_title' (special use case). */
+				$label = !empty( $post_type_object->labels->archive_title ) ? $post_type_object->labels->archive_title : $post_type_object->labels->name;
+
+				$trail[] = '<a href="' . get_post_type_archive_link( $post_type_object->name ) . '" title="' . esc_attr( $label ) . '">' . $label . '</a>';
+
+				break;
 			}
+		}
+	}
+}
 
 			/* If the taxonomy is hierarchical, list its parent terms. */
 			if ( is_taxonomy_hierarchical( $term->taxonomy ) && $term->parent )

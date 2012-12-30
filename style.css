@@ -496,7 +496,7 @@ img.wp-smiley {
 #site-title {
 	font-family: "Helvetica Neue", Helvetica, Arial, Sans-serif;
 	font-size: 24px;
-	font-size: 1.71428571;
+	font-size: 1.71428571rem;
 	line-height: 1;
 	text-align: center;
 }
@@ -1285,6 +1285,9 @@ body .edd-submit.plain:hover {
 
 .edd-submit.button.theme-green:hover {
 	background: #78a018;
+	background:    -moz-linear-gradient(top, #83ab23, #90b535);
+	background: -webkit-linear-gradient(top, #83ab23, #90b535);
+	background:         linear-gradient(top, #83ab23, #90b535);
 }
 
 .edd-submit.button.theme-green:active {
@@ -1575,8 +1578,9 @@ div.menu ul,nav.menu ul{margin:0;padding:0;list-style:none;line-height:1.0}div.m
 #menu-primary li.sfHover ul {
 	top: 40px;
 }
-#menu-primary li:hover li ul,
+#menu-primary li:hover li ul {
 	top: -999em;
+}
 #menu-primary li.sfHover li ul {
 }
 #menu-primary li li:hover ul,
