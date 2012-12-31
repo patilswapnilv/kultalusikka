@@ -80,7 +80,7 @@ function kultalusikka_theme_setup() {
 		'height' => 79,
 		'flex-width' => true,
 		'width' => 300,
-		'default-image' => '',
+		'default-image' => trailingslashit( get_template_directory_uri() ) . 'images/logo_kultalusikka.png',
 		'header-text' => false,
 	);
 	
