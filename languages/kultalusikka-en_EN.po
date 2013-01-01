@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Kultalusikka WordPress Theme\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-12-23 19:01+0200\n"
-"PO-Revision-Date: 2012-12-23 19:21+0200\n"
+"POT-Creation-Date: 2013-01-01 19:00+0200\n"
+"PO-Revision-Date: 2013-01-01 19:00+0200\n"
 "Last-Translator: Sami Keijonen <sami.keijonen@foxnet.fi>\n"
 "Language-Team: Foxnet Themes <sami.keijonen@foxnet.fi>\n"
 "Language: en\n"
@@ -184,15 +184,15 @@ msgid ""
 "[entry-edit-link before=\" | \"]"
 msgstr ""
 
-#: functions.php:437
+#: functions.php:438
 msgid "Front Page"
 msgstr ""
 
-#: functions.php:438
+#: functions.php:439
 msgid "Front Page widget area."
 msgstr ""
 
-#: functions.php:456
+#: functions.php:457
 msgid "Theme Green"
 msgstr ""
 
@@ -242,7 +242,11 @@ msgstr ""
 msgid "Next <span class=\"meta-nav\">&rarr;</span>"
 msgstr ""
 
-#: menu-primary-mobile.php:23
+#: menu-primary-mobile.php:19 menu-primary.php:19
+msgid "Skip to content"
+msgstr ""
+
+#: menu-primary-mobile.php:25
 msgid "Menu"
 msgstr ""
 
