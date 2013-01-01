@@ -15,6 +15,8 @@ if ( has_nav_menu( 'primary' ) ) : ?>
 	<?php do_atomic( 'before_menu_primary_mobile' ); // kultalusikka_before_menu_primary_mobile ?>
 
 	<nav id="menu-primary-mobile" class="menu-container">
+	
+		<div class="assistive-text skip-link"><a href="#content" title="<?php esc_attr_e( 'Skip to content', 'kultalusikka' ); ?>"><?php _e( 'Skip to content', 'kultalusikka' ); ?></a></div>
 
 		<div class="wrap">
 

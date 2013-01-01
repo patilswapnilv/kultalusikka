@@ -505,6 +505,15 @@ img.wp-smiley {
 	text-shadow: 0 1px 1px rgba(0, 0, 0, 0.9);
 }
 
+/* assistive */
+.skip-link,
+.screen-reader-text,
+.assistive-text {
+	clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+	clip: rect(1px, 1px, 1px, 1px);
+	position: absolute !important;
+}
+
 /* Buttons. */
 .menu-toggle,
 input[type="submit"],
