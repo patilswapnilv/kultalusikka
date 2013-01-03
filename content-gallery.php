@@ -35,7 +35,7 @@ do_atomic( 'before_entry' ); // kultalusikka_before_entry ?>
 	<?php } else { ?>
 	
 		<div class="kultalusikka-gallery">
-			<?php echo do_shortcode( '[gallery numberposts="3" orderby="rand" size="medium"]' ); ?>
+			<?php echo do_shortcode( '[gallery numberposts="3" orderby="rand" size="kultalusikka-thumbnail-gallery"]' ); ?>
 		</div><!-- .kultalusikka-gallery -->
 
 		<header class="entry-header">	
