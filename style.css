@@ -693,6 +693,7 @@ div.menu li, nav.menu li {
 #comments-number,
 #respond,
 #sidebar-front-page,
+#sidebar-front-page-callout,
 #kultalusikka-latest-downloads {
 	padding: 0 4%;
 }
@@ -799,8 +800,8 @@ div.menu li, nav.menu li {
 	border-top-right-radius: 3px;
 }
 .format-gallery .kultalusikka-gallery  {
-	margin-top: -24px;
-	margin-top: -1.71428571rem;
+	margin: -24px -1px 0 0;
+	margin: -1.71428571rem -1px 0 0;
 }
 .format-gallery .kultalusikka-gallery .gallery-caption  {
 	display: none;
@@ -895,9 +896,16 @@ a.more-link:hover {
 	padding: 14px 4%;
 	padding: 1rem 4%;
 }
-#sidebar-front-page {
+#sidebar-front-page,
+#sidebar-front-page-callout {
 	margin-bottom: 14px;
 	margin-bottom: 1rem;
+}
+#sidebar-front-page-callout {
+	font-size: 18px;
+	font-size: 1.28571429rem;
+	font-style: italic;
+	text-align: center;
 }
 .singular-page #sidebar-primary {
 	border-top: none;
@@ -1860,6 +1868,11 @@ div.menu ul,nav.menu ul{margin:0;padding:0;list-style:none;line-height:1.0}div.m
 	padding-left: 2rem;
 }
 
+/* Sidebar front-page-callout. */
+#sidebar-front-page-callout {
+	font-size: 28px;
+	font-size: 2rem;
+}
 
 /* Site title and menu. */
 #site-title {

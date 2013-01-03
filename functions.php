@@ -206,6 +206,7 @@ function kultalusikka_respond_html5shiv() {
 function kultalusikka_add_image_sizes() {
 
 	add_image_size( 'kultalusikka-thumbnail-download', 428, 265, true );
+	add_image_size( 'kultalusikka-thumbnail-gallery', 256, 158, true );
 	
 }
 
@@ -437,6 +438,19 @@ function kultalusikka_register_sidebars() {
 			'id' => 'front-page',
 			'name' => __( 'Front Page', 'kultalusikka' ),
 			'description' => __( 'Front Page widget area.', 'kultalusikka' ),
+			'before_widget' => '<div id="%1$s" class="widget %2$s widget-%2$s"><div class="widget-wrap widget-inside">',
+			'after_widget' => '</div></div>',
+			'before_title' => '<h3 class="widget-title">',
+			'after_title' => '</h3>'
+		)
+	);
+	
+	/* Register the 'front-page-callout' sidebar. */
+	register_sidebar(
+		array(
+			'id' => 'front-page-callout',
+			'name' => __( 'Front Page Callout', 'kultalusikka' ),
+			'description' => __( 'Front Page Callout widget area. This is meant to used for short text area.', 'kultalusikka' ),
 			'before_widget' => '<div id="%1$s" class="widget %2$s widget-%2$s"><div class="widget-wrap widget-inside">',
 			'after_widget' => '</div></div>',
 			'before_title' => '<h3 class="widget-title">',

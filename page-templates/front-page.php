@@ -17,6 +17,12 @@ $archive_iterator = 0;
 
 get_header(); // Loads the header.php template. ?>
 
+	<?php do_atomic( 'before_front_page_callout_sidebar' ); // kultalusikka_before_front_page_callout_sidebar ?>
+	
+	<?php get_sidebar( 'front-page-callout' ); // Loads the sidebar-front-page-callout.php template. ?>
+	
+	<?php do_atomic( 'before_front_page_sidebar' ); // kultalusikka_before_front_page_sidebar ?>
+
 	<?php get_sidebar( 'front-page' ); // Loads the sidebar-front-page.php template. ?>
 
 	<?php do_atomic( 'before_content' ); // kultalusikka_before_content ?>
