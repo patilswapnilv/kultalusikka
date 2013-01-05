@@ -2,7 +2,7 @@
  * Theme Name: Kultalusikka
  * Theme URI: http://foxnet-themes.fi/downloads/kultalusikka
  * Description: Kultalusikka is designed for selling digital downloads via Easy Digital Downloads WordPress Plugin.
- * Version: 0.0.9.2
+ * Version: 0.0.9.3
  * Author: Sami Keijonen
  * Author URI: http://foxnet-themes.fi
  * Tags: sticky-post, theme-options, threaded-comments, translation-ready, one-column, two-columns, flexible-width, left-sidebar, right-sidebar, custom-background, custom-header, featured-images, editor-style, green, white, light
@@ -440,6 +440,10 @@ hr {
 .gallery {
 	margin-bottom: 1.5em !important;
 }
+.gallery .gallery-row {
+	margin-bottom: 7px;
+	margin-bottom: 0.5rem;
+}
 .gallery-caption {
 	color: #555;
 	font: normal normal normal 0.875em/1.4 "Helvetica Neue", Helvetica, sans-serif;
@@ -654,8 +658,8 @@ div.menu li, nav.menu li {
 	text-align: center;
 }
 .home #site-description {
-	margin-bottom: 28px;
-	margin-bottom: 2rem;
+	margin-bottom: 14px;
+	margin-bottom: 1rem;
 }
 	
 /* Main. */
@@ -905,6 +909,7 @@ a.more-link:hover {
 	font-size: 18px;
 	font-size: 1.28571429rem;
 	font-style: italic;
+	line-height: 1.33333333;
 	text-align: center;
 }
 .singular-page #sidebar-primary {
@@ -1006,6 +1011,17 @@ input[type="password"]:focus {
 }
 ol.comment-list {
 	padding: 0;
+}
+ol.comment-list ul,
+ol.comment-list ol,
+ol.comment-list dl {
+	margin-bottom: 14px;
+	margin-bottom: 1rem;
+}
+ol.comment-list ul ul,
+ol.comment-list ol ol,
+ol.comment-list dl dl {
+	margin-bottom: 0;
 }
 .comment-list ol.children {
 	margin-left: 1%;
@@ -1872,6 +1888,7 @@ div.menu ul,nav.menu ul{margin:0;padding:0;list-style:none;line-height:1.0}div.m
 #sidebar-front-page-callout {
 	font-size: 28px;
 	font-size: 2rem;
+	line-height: 1.21428571; /* 34px / 28px = 1.21428571. */
 }
 
 /* Site title and menu. */
@@ -1884,6 +1901,12 @@ div.menu ul,nav.menu ul{margin:0;padding:0;list-style:none;line-height:1.0}div.m
 .custom-header #site-title {
 	margin: 7px 0;
 	margin: 0.5rem 0;
+}
+
+/* Site description. */
+.home #site-description {
+	margin-bottom: 21px;
+	margin-bottom: 1.5rem;
 }
 
 /* Secondary menu. */
