@@ -47,12 +47,10 @@ get_header(); // Loads the header.php template. ?>
 			
 			<?php
 			/* Get plural form in lowercase: default is 'downloads' */
-			if ( function_exists( 'edd_get_label_plural' ) ) {
+			if ( function_exists( 'edd_get_label_plural' ) )
 				$kultalusikka_download_url = edd_get_label_plural( true );
-			}
-			else {
+			else
 				$kultalusikka_download_url = 'downloads';
-			}
 			?>
 			
 			<?php $kultalusikka_download_url = esc_url( apply_filters( 'kultalusikka_front_page_download_url', home_url( '/'. $kultalusikka_download_url ) ) ); ?>
