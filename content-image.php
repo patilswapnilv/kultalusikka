@@ -34,17 +34,17 @@ do_atomic( 'before_entry' ); // kultalusikka_before_entry ?>
 		
 	<?php } else { ?>
 	
-		<div class="kultalusikka-image">
-			<?php if ( current_theme_supports( 'get-the-image' ) ) get_the_image( array( 'image_class' => 'aligncenter', 'size' => 'full', 'meta_key' => false ) ); ?>
-		</div><!-- .kultalusikka-image -->
+		<?php if ( current_theme_supports( 'get-the-image' ) ) get_the_image( array( 'image_class' => 'aligncenter', 'size' => 'full', 'meta_key' => false, 'image_scan' => true, 'before' => '<div class="kultalusikka-image">', 'after' => '</div>' ) ); ?>
 
 		<header class="entry-header">	
 			<?php echo apply_atomic_shortcode( 'entry_title', '[entry-title]' ); ?>
 		</header><!-- .entry-header -->
 		
-		<div class="entry-summary">
-			<?php the_excerpt(); ?>
-		</div><!-- .entry-summary -->
+		<?php if ( post_format_tools_post_has_content() || has_excerpt() ) { ?>
+			<div class="entry-summary">
+				<?php the_excerpt(); ?>
+			</div><!-- .entry-summary -->
+		<?php } // end if ?>
 
 		<footer class="entry-footer">
 			<?php echo apply_atomic_shortcode( 'entry_meta', '<div class="entry-meta">' . __( '[post-format-link] published on [entry-published] [entry-permalink before="| "] [entry-comments-link before="| "] [entry-edit-link before="| "]', 'kultalusikka' ) . '</div>' ); ?>
