@@ -110,10 +110,10 @@ function kultalusikka_theme_meta_box_license_key() {
 			<?php if( $kultalusikka_status !== false && $kultalusikka_status == 'valid' ) { ?>
 				<span style="color:green;"><?php _e( 'Active', 'kultalusikka' ); ?></span>
 				<?php wp_nonce_field( 'kultalusikka_license_nonce', 'kultalusikka_license_nonce' ); ?>
-				<input type="submit" class="button-secondary" name="kultalusikka_theme_license_deactivate" value="<?php _e( 'Deactivate License', 'kultalusikka' ); ?>" />
+				<input type="submit" class="button-secondary" name="kultalusikka_theme_license_deactivate" value="<?php esc_attr_e( 'Deactivate License', 'kultalusikka' ); ?>" />
 				<?php } else {
 					wp_nonce_field( 'kultalusikka_license_nonce', 'kultalusikka_license_nonce' ); ?>
-					<input type="submit" class="button-secondary" name="kultalusikka_theme_license_activate" value="<?php _e( 'Activate License', 'kultalusikka' ); ?>" />
+					<input type="submit" class="button-secondary" name="kultalusikka_theme_license_activate" value="<?php esc_attr_e( 'Activate License', 'kultalusikka' ); ?>" />
 					
 				<?php } ?>
 			</td>
