@@ -16,7 +16,7 @@
 		<?php if ( bbp_is_single_user_replies() ) : ?>
 
 			<span class="bbp-header">
-				<?php _e( 'in reply to: ', 'bbpress' ); ?>
+				<?php _e( 'in reply to: ', 'kultalusikka' ); ?>
 				<a class="bbp-topic-permalink" href="<?php bbp_topic_permalink( bbp_get_reply_topic_id() ); ?>" title="<?php bbp_topic_title( bbp_get_reply_topic_id() ); ?>"><?php bbp_topic_title( bbp_get_reply_topic_id() ); ?></a>
 			</span>
 

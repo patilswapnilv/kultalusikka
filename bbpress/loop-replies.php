@@ -15,13 +15,13 @@
 
 	<li class="bbp-header">
 
-		<div class="bbp-reply-author"><?php  _e( 'Author',  'bbpress' ); ?></div><!-- .bbp-reply-author -->
+		<div class="bbp-reply-author"><?php  _e( 'Author',  'kultalusikka' ); ?></div><!-- .bbp-reply-author -->
 
 		<div class="bbp-reply-content">
 
 			<?php if ( !bbp_show_lead_topic() ) : ?>
 
-				<?php // _e( 'Posts', 'bbpress' ); ?>
+				<?php // _e( 'Posts', 'kultalusikka' ); ?>
 
 				<?php bbp_user_subscribe_link(); ?>
 
@@ -29,7 +29,7 @@
 
 			<?php else : ?>
 
-				<?php _e( 'Replies', 'bbpress' ); ?>
+				<?php _e( 'Replies', 'kultalusikka' ); ?>
 
 			<?php endif; ?>
 
@@ -49,17 +49,17 @@
 
 	<li class="bbp-footer">
 
-		<div class="bbp-reply-author"><?php  _e( 'Author',  'bbpress' ); ?></div>
+		<div class="bbp-reply-author"><?php  _e( 'Author',  'kultalusikka' ); ?></div>
 
 		<div class="bbp-reply-content">
 
 			<?php if ( !bbp_show_lead_topic() ) : ?>
 
-				<?php // _e( 'Posts', 'bbpress' ); ?>
+				<?php // _e( 'Posts', 'kultalusikka' ); ?>
 
 			<?php else : ?>
 
-				<?php _e( 'Replies', 'bbpress' ); ?>
+				<?php _e( 'Replies', 'kultalusikka' ); ?>
 
 			<?php endif; ?>
 
