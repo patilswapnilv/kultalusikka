@@ -56,9 +56,6 @@ function kultalusikka_theme_setup() {
 	
 	/* Add theme support for WordPress features. */
 	
-	/* Add content editor styles. */
-	add_editor_style( 'css/editor-style.css' );
-	
 	/* Add support for auto-feed links. */
 	add_theme_support( 'automatic-feed-links' );
 
@@ -105,9 +102,9 @@ function kultalusikka_theme_setup() {
 	include( dirname( __FILE__ ) . '/includes/EDD_SL_Theme_Updater.php' );
 	}
 	
-	// Get license key from database.
+	/* Get license key from database. */
 	$kultalusikka_get_license = get_option( $prefix . '_theme_settings' ); // This is array.
-	$kultalusikka_license = $kultalusikka_get_license['kultalusikka_license_key'];
+	$kultalusikka_license = isset( $kultalusikka_get_license['kultalusikka_license_key'] ) ? $kultalusikka_get_license['kultalusikka_license_key'] : '';
 
 	$edd_updater = new EDD_SL_Theme_Updater( array( 
 		'remote_api_url' 	=> KULTALUSIKKA_SL_STORE_URL, 	// our store URL that is running EDD
@@ -128,7 +125,7 @@ function kultalusikka_theme_setup() {
 	add_action( 'init', 'kultalusikka_add_image_sizes' );
 	
 	/* Add excerpt support for 'download' post type. */
-	add_filter( 'edd_download_supports', 'kultalusikka_add_edd_excerpt' );
+	add_action('init', 'kultalusikka_add_edd_excerpt' );
 	
 	/* Enqueue scripts. */
 	add_action( 'wp_enqueue_scripts', 'kultalusikka_scripts_styles' );
@@ -166,7 +163,7 @@ function kultalusikka_theme_setup() {
 	add_filter( 'edd_download_info_feature_image_size', 'kultalusikka_edd_download_info_feature_size' );
 	
 	/* Disable bbPress breadcrumb. */
-	add_filter( 'bbp_no_breadcrumb', 'kultalusikka_no_breadcrumb' );
+	add_filter( 'bbp_no_breadcrumb', '__return_true' );
 	
 	/* Display topics (bbPress) by last activity. */
 	add_action( 'pre_get_posts', 'kultalusikka_filter_topic' );
@@ -215,11 +212,9 @@ function kultalusikka_add_image_sizes() {
  *
  * @since 0.1.0
  */
-function kultalusikka_add_edd_excerpt( $download_supports ) {
+function kultalusikka_add_edd_excerpt() {
 
-	$download_supports[] = 'excerpt';
-
-	return $download_supports;
+	add_post_type_support( 'download', 'excerpt' );
 	
 }
 
@@ -319,7 +314,10 @@ function kultalusikka_theme_layout_one_column( $layout ) {
  * Counts widgets number in subsidiary sidebar and ads css class (.sidebar-subsidiary-$number) to body_class.
  * Used to increase / decrease widget size according to number of widgets.
  * Example: if there's one widget in subsidiary sidebar - widget width is 100%, if two widgets, 50% each...
- * @note: credit goes to Sukelius Magazine Theme. http://themehybrid.com/themes/sukelius-magazine
+ * @author Sinisa Nikolic
+ * @copyright Copyright (c) 2012
+ * @link http://themehybrid.com/themes/sukelius-magazine
+ * @license http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  * @since 0.1.0
  */
 function kultalusikka_subsidiary_classes( $classes ) {
@@ -338,16 +336,19 @@ function kultalusikka_subsidiary_classes( $classes ) {
 
 /**
  * Counts widgets number in front-page sidebar and ads css class (.sidebar-front-page-$number) to body_class.
- * @note: credit goes to Sukelius Magazine Theme. http://themehybrid.com/themes/sukelius-magazine
+ * @author Sinisa Nikolic
+ * @copyright Copyright (c) 2012
+ * @link http://themehybrid.com/themes/sukelius-magazine
+ * @license http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  * @since 0.1.0
  */
 function kultalusikka_front_page_classes( $classes ) {
 	
 	if ( is_active_sidebar( 'front-page' ) && is_page_template( 'page-templates/front-page.php' ) ) {
 		
-	$the_sidebars = wp_get_sidebars_widgets();
-	$num = count( $the_sidebars['front-page'] );
-	$classes[] = 'sidebar-front-page-'. $num;
+		$the_sidebars = wp_get_sidebars_widgets();
+		$num = count( $the_sidebars['front-page'] );
+		$classes[] = 'sidebar-front-page-'. $num;
 		
     }
     
@@ -357,7 +358,10 @@ function kultalusikka_front_page_classes( $classes ) {
 
 /**
  * Add infinity symbol to aside post format.
- * @note: credit goes to Justin Tadlock. http://justintadlock.com/archives/2012/09/06/post-formats-aside
+ * @author Justin Tadlock <justin@justintadlock.com>
+ * @copyright Copyright (c) 2012
+ * @link http://justintadlock.com/archives/2012/09/06/post-formats-aside
+ * @license http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  * @since 0.1.0
  */
 function kultalusikka_aside_infinity( $content ) {
@@ -404,15 +408,12 @@ function kultalusikka_customize_preview_js() {
 function kultalusikka_customize_preview_css() {
 	global $wp_customize;
 
-	if ( isset( $wp_customize ) ) {
-	
+	if ( isset( $wp_customize ) )
 		wp_enqueue_style( 'kultalusikka-customizer-stylesheet', trailingslashit( get_template_directory_uri() ) . 'css/customize/kultalusikka-customizer.css', false, 20121019, 'all' );
-
-	}
 }
 
 /**
- *  Use template 'archive-download.php' in taxonomies 'edd_download_info_feature' and 'download_category' so that we don't need to duplicate same template content.
+ * Use template 'archive-download.php' in taxonomies 'edd_download_info_feature' and 'download_category' so that we don't need to duplicate same template content.
  * 
  * @since 0.1.0
  */
@@ -488,16 +489,6 @@ function kultalusikka_edd_download_info_feature_size( $feature_size ) {
 	
 }
 
-/**
- * Disable bbPress breadcrumb.
- * 
- * @since 0.1.0
- */
-function kultalusikka_no_breadcrumb( $param ) {
-	
-	return true;
-	
-}
 
 /**
  * Display topics (bbPress) by last activity.
@@ -507,12 +498,10 @@ function kultalusikka_no_breadcrumb( $param ) {
 function kultalusikka_filter_topic( $query ) {
 
 	/* Get topic post type. */
-	if( function_exists( 'bbp_get_topic_post_type' ) ) {
+	if( function_exists( 'bbp_get_topic_post_type' ) )
 		$kultalusikka_topic = bbp_get_topic_post_type();
-	}
-	else {
+	else
 		$kultalusikka_topic = 'topic';
-	}
 	
 	/* Set query to show topics by latest activity. */
 	if( $query->is_main_query() && is_post_type_archive( $kultalusikka_topic ) ) {
@@ -533,12 +522,10 @@ function kultalusikka_filter_topic( $query ) {
 function kultalusikka_filter_forum( $query ) {
 
 	/* Get forum post type. */
-	if( function_exists( 'bbp_get_forum_post_type' ) ) {
+	if( function_exists( 'bbp_get_forum_post_type' ) )
 		$kultalusikka_forum = bbp_get_forum_post_type();
-	}
-	else {
+	else
 		$kultalusikka_forum = 'forum';
-	}
 	
 	/* Set query to show forums by title. */
 	if( $query->is_main_query() && is_post_type_archive( $kultalusikka_forum ) ) {
