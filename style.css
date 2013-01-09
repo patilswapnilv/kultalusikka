@@ -268,10 +268,9 @@ dl dd {
 
 /* Blockquotes. */
 blockquote {
-	background: #90b535;
 	border-left: 5px solid #363d40;
-	color: #fff;
-	font-size: 16px;
+	color: #777;
+	font-size: 18px;
 	font-size: 1.14285714rem;
 	font-style: italic;
 	margin: 14px 0;
@@ -1283,12 +1282,23 @@ body #edd_checkout_form_wrap input[type="email"],
 body #edd_checkout_form_wrap input[type="password"] { 
 	padding: 7px;
 	padding: 0.5rem;
+	width: 100%;
 }
 
 body #edd_checkout_form_wrap fieldset#edd_register_account_fields,
 body #edd_checkout_form_wrap fieldset#edd_login_fields {
-	border: none;
-	padding: 0;
+	border: 1px solid #e5e5e5;
+	padding: 2%;
+}
+
+body #edd_purchase_form input.edd-input.required {
+	color: #282828;
+}
+
+body #edd_checkout_form_wrap fieldset#edd_register_account_fields input[type="text"], 
+body #edd_checkout_form_wrap fieldset#edd_register_account_fields input[type="email"], 
+body #edd_checkout_form_wrap fieldset#edd_register_account_fields input[type="password"] {
+	width: 100%;
 }
 
 body .edd-submit.button {
@@ -2015,6 +2025,29 @@ div.menu ul,nav.menu ul{margin:0;padding:0;list-style:none;line-height:1.0}div.m
 .singular-download .entry-title {
 	margin-right: 56px;
 	margin-right: 4rem;
+}
+
+
+/* =EDD CSS
+-------------------------------------------------------------- */
+
+body #edd_purchase_form fieldset#edd_register_fields p#edd-user-pass-wrap,
+body #edd_purchase_form fieldset#edd_register_fields p#edd-user-pass-confirm-wrap,
+body #edd_purchase_form p#edd-user-first-name-wrap,
+body #edd_purchase_form p#edd-first-name-wrap,
+body #edd_purchase_form p#edd-user-last-name-wrap,
+body #edd_purchase_form p#edd-last-name-wrap {
+	width: 45%;
+}
+body #edd_purchase_form fieldset#edd_register_fields p#edd-user-pass-wrap,
+body #edd_purchase_form p#edd-user-first-name-wrap,
+body #edd_purchase_form p#edd-first-name-wrap {
+	float: left;
+}
+body #edd_purchase_form fieldset#edd_register_fields p#edd-user-pass-confirm-wrap,
+body #edd_purchase_form p#edd-user-last-name-wrap,
+body #edd_purchase_form p#edd-last-name-wrap {
+	float: right;
 }
 
 }
