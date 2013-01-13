@@ -2062,4 +2062,9 @@ body #edd_purchase_form p#edd-last-name-wrap {
 	padding-top: 1.85714286rem;
 }
 
+/* Comments. */
+.comment-list ol.children {
+	margin-left: 4%;
+}
+
 }
