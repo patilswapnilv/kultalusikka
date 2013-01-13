@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Kultalusikka WordPress Theme\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-01-05 09:45+0200\n"
-"PO-Revision-Date: 2013-01-05 09:45+0200\n"
+"POT-Creation-Date: 2013-01-13 12:22+0200\n"
+"PO-Revision-Date: 2013-01-13 12:22+0200\n"
 "Last-Translator: Sami Keijonen <sami.keijonen@foxnet.fi>\n"
 "Language-Team: Foxnet Themes <sami.keijonen@foxnet.fi>\n"
 "Language: en\n"
@@ -16,6 +16,7 @@ msgstr ""
 "X-Poedit-KeywordsList: __;_e;esc_attr__;esc_attr_e;esc_html__;esc_html_e;_n;"
 "_x;_x:1,2c\n"
 "X-Poedit-Basepath: ../\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Poedit-SearchPath-0: .\n"
 
 #: 404.php:28
@@ -332,7 +333,8 @@ msgstr ""
 #: admin/functions-admin.php:159
 #, php-format
 msgid ""
-"Want to set a logo? <a href=\"%s\">Go to Appearance &gt;&gt; Header</a>. "
+"Want to replace or remove default logo? <a href=\"%s\">Go to Appearance &gt;"
+"&gt; Header</a>. "
 msgstr ""
 
 #: admin/functions-admin.php:176
