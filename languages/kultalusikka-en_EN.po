@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Kultalusikka WordPress Theme\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-01-13 12:22+0200\n"
-"PO-Revision-Date: 2013-01-13 12:22+0200\n"
+"POT-Creation-Date: 2013-01-16 14:35+0200\n"
+"PO-Revision-Date: 2013-01-16 14:42+0200\n"
 "Last-Translator: Sami Keijonen <sami.keijonen@foxnet.fi>\n"
 "Language-Team: Foxnet Themes <sami.keijonen@foxnet.fi>\n"
 "Language: en\n"
@@ -14,7 +14,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 1.5.4\n"
 "X-Poedit-KeywordsList: __;_e;esc_attr__;esc_attr_e;esc_html__;esc_html_e;_n;"
-"_x;_x:1,2c\n"
+"_x;_x:1,2c;_n:1,2;_ex:1,2c\n"
 "X-Poedit-Basepath: ../\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Poedit-SearchPath-0: .\n"
@@ -127,13 +127,17 @@ msgstr ""
 #: content-forum.php:39
 #, php-format
 msgid "%d topic"
-msgstr ""
+msgid_plural "%d topics"
+msgstr[0] ""
+msgstr[1] ""
 
 #: content-forum.php:46 content-forum.php:49 content-topic.php:46
 #: content-topic.php:49
 #, php-format
 msgid "%d post"
-msgstr ""
+msgid_plural "%d posts"
+msgstr[0] ""
+msgstr[1] ""
 
 #: content-forum.php:54 content-topic.php:54
 #, php-format
@@ -143,7 +147,9 @@ msgstr ""
 #: content-gallery.php:50
 #, php-format
 msgid "This gallery contains %s image."
-msgstr ""
+msgid_plural "This gallery contains %s images."
+msgstr[0] ""
+msgstr[1] ""
 
 #: content-quote.php:23
 msgid ""
@@ -173,7 +179,9 @@ msgstr ""
 #: content-topic.php:39
 #, php-format
 msgid "%d voice"
-msgstr ""
+msgid_plural "%d voices"
+msgstr[0] ""
+msgstr[1] ""
 
 #: content-topic.php:61
 msgid "by"
