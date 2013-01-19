@@ -2,7 +2,7 @@
  * Theme Name: Kultalusikka
  * Theme URI: http://foxnet-themes.fi/downloads/kultalusikka
  * Description: Kultalusikka is designed for selling digital downloads via Easy Digital Downloads WordPress Plugin.
- * Version: 0.0.9.5
+ * Version: 0.0.9.6
  * Author: Sami Keijonen
  * Author URI: http://foxnet-themes.fi
  * Tags: sticky-post, theme-options, threaded-comments, translation-ready, one-column, two-columns, flexible-width, left-sidebar, right-sidebar, custom-background, custom-header, featured-images, editor-style, green, white, light
@@ -1524,19 +1524,10 @@ div.menu ul,nav.menu ul{margin:0;padding:0;list-style:none;line-height:1.0}div.m
 }
 
 /* Navigation. */
-#menu-primary-mobile ul.nav-menu,
-#menu-primary-mobile div.nav-menu > ul {
-	display: inline-block !important;
-	text-align: left;
-}
-#menu-primary-mobile li {
-	margin-top: 0;
-	margin-bottom: 0;
-}
 #menu-primary {
 	display: block;
-	padding: 7px 0 14px;
-	padding: 0.5rem 0 1rem;
+	padding-bottom: 14px;
+	padding-bottom: 1rem;
 	text-align: left;
 }
 #menu-primary .menu {   
@@ -1564,10 +1555,12 @@ div.menu ul,nav.menu ul{margin:0;padding:0;list-style:none;line-height:1.0}div.m
 	margin-bottom: 4px;
 	margin-bottom: 0.285714286rem;
 	padding: 6px 12px;
+	padding: 0.428571429rem 0.857142857rem;
 	text-transform: uppercase;
 }
 #menu-primary li li a {
 	font-weight: normal;
+	margin-bottom: 0;
 	text-transform: none;
 }
 #menu-primary li li {
