@@ -986,6 +986,11 @@ body.my-account #bbpress-forums {
 /* =Theme spesific styles
 -------------------------------------------------------------- */
 
+#bbpress-forums pre {
+	overflow: auto;
+	word-break: normal;
+}
+
 .bbPress .entry-content {
 	padding: 0;
 }
