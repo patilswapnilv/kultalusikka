@@ -173,6 +173,9 @@ function kultalusikka_theme_setup() {
 	
 	/* Change user profile gravatar size. */
 	add_filter( 'bbp_single_user_details_avatar_size', 'kultalusikka_user_details_avatar_size' );
+	
+	/* Testing out some early Hybrid Core 1.6 proposed HTML5 changes. */
+	add_filter( "{$prefix}_sidebar_defaults", 'kultalusikka_sidebar_defaults' );
 
 }
 
@@ -439,8 +442,8 @@ function kultalusikka_register_sidebars() {
 			'id' => 'front-page',
 			'name' => __( 'Front Page', 'kultalusikka' ),
 			'description' => __( 'Front Page widget area.', 'kultalusikka' ),
-			'before_widget' => '<div id="%1$s" class="widget %2$s widget-%2$s"><div class="widget-wrap widget-inside">',
-			'after_widget' => '</div></div>',
+			'before_widget' => '<section id="%1$s" class="widget %2$s widget-%2$s">',
+			'after_widget' => '</section>',
 			'before_title' => '<h3 class="widget-title">',
 			'after_title' => '</h3>'
 		)
@@ -452,8 +455,8 @@ function kultalusikka_register_sidebars() {
 			'id' => 'front-page-callout',
 			'name' => __( 'Front Page Callout', 'kultalusikka' ),
 			'description' => __( 'Front Page Callout widget area. This is meant to used for short text area.', 'kultalusikka' ),
-			'before_widget' => '<div id="%1$s" class="widget %2$s widget-%2$s"><div class="widget-wrap widget-inside">',
-			'after_widget' => '</div></div>',
+			'before_widget' => '<section id="%1$s" class="widget %2$s widget-%2$s">',
+			'after_widget' => '</section>',
 			'before_title' => '<h3 class="widget-title">',
 			'after_title' => '</h3>'
 		)
@@ -544,6 +547,26 @@ function kultalusikka_filter_forum( $query ) {
 function kultalusikka_user_details_avatar_size() {
 	
 	return 80;
+	
+}
+
+/**
+ * Use HTML5 markup in sidebars.
+ *
+ * @todo Remember to take of when Hybric Core 1.6 is released.
+ * 
+ * @since 0.1.0
+ */
+function kultalusikka_sidebar_defaults( $defaults ) {
+
+	$defaults = array(
+		'before_widget' => '<section id="%1$s" class="widget %2$s widget-%2$s">',
+		'after_widget' => '</section>',
+		'before_title' => '<h3 class="widget-title">',
+		'after_title' => '</h3>'
+	);
+
+	return $defaults;
 	
 }
 
