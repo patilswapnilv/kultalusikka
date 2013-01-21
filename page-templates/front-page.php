@@ -104,7 +104,7 @@ get_header(); // Loads the header.php template. ?>
 							<?php if( function_exists( 'edd_price' ) ) { ?>
 								<div class="kultalusikka-download-price">
 									<?php if( edd_has_variable_prices( get_the_ID() ) ) {
-											echo __( 'Starting at: ', 'kultalusikka' ); edd_price(get_the_ID()); // echo download price.
+											echo __( 'Starting at: ', 'kultalusikka' ); edd_price( get_the_ID() ); // echo download price.
 										} 
 										else {
 											edd_price( get_the_ID() ); // echo download price.
