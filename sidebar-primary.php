@@ -15,7 +15,7 @@ if ( is_active_sidebar( 'primary' ) ) : ?>
 
 	<?php do_atomic( 'before_sidebar_primary' ); // kultalusikka_before_sidebar_primary ?>
 
-	<div id="sidebar-primary" class="sidebar" role="complementary">
+	<aside id="sidebar-primary" class="sidebar" role="complementary">
 
 		<?php do_atomic( 'open_sidebar_primary' ); // kultalusikka_open_sidebar_primary ?>
 
@@ -23,7 +23,7 @@ if ( is_active_sidebar( 'primary' ) ) : ?>
 
 		<?php do_atomic( 'close_sidebar_primary' ); // kultalusikka_close_sidebar_primary ?>
 
-	</div><!-- #sidebar-primary .aside -->
+	</aside><!-- #sidebar-primary .sidebar -->
 
 	<?php do_atomic( 'after_sidebar_primary' ); // kultalusikka_after_sidebar_primary ?>
 
