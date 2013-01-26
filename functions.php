@@ -116,7 +116,8 @@ function kultalusikka_theme_setup() {
 	);
 	
 	/* Set content width. */
-	hybrid_set_content_width( 600 );
+	hybrid_set_content_width( 604 );
+	add_filter( 'embed_defaults', 'kultalusikka_embed_defaults' );
 	
 	/* Add respond.js and  html5shiv.js for unsupported browsers. */
 	add_action( 'wp_head', 'kultalusikka_respond_html5shiv' );
@@ -177,6 +178,22 @@ function kultalusikka_theme_setup() {
 	/* Testing out some early Hybrid Core 1.6 proposed HTML5 changes. */
 	add_filter( "{$prefix}_sidebar_defaults", 'kultalusikka_sidebar_defaults' );
 
+}
+
+/**
+ * Overwrites the default widths for embeds. This function overwrites what the $content_width variable handles
+ * with context-based widths.
+ *
+ * @since  0.1.0
+ * @param  array  $args
+ * @return array
+ */
+function kultalusikka_embed_defaults( $args ) {
+
+	if ( current_theme_supports( 'theme-layouts' ) && '1c' == get_theme_mod( 'theme_layout' ) )
+		$args['width'] = 944;
+
+	return $args;
 }
 
 /**
