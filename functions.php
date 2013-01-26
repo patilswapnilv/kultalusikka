@@ -46,7 +46,7 @@ function kultalusikka_theme_setup() {
 	add_theme_support( 'hybrid-core-template-hierarchy' );
 	
 	/* Add theme support for framework extensions. */
-	add_theme_support( 'theme-layouts', array( '1c', '2c-l', '2c-r' ) );
+	add_theme_support( 'theme-layouts', array( '1c', '2c-l', '2c-r' ), array( 'default' => '2c-l' ) );
 	add_theme_support( 'post-stylesheets' );
 	add_theme_support( 'loop-pagination' );
 	add_theme_support( 'get-the-image' );
@@ -269,38 +269,25 @@ function kultalusikka_disable_sidebars( $sidebars_widgets ) {
 function kultalusikka_one_column() {
 
 	if ( !is_active_sidebar( 'primary' ) )
-		add_filter( 'get_theme_layout', 'kultalusikka_theme_layout_one_column' );
+		add_filter( 'theme_mod_theme_layout', 'kultalusikka_theme_layout_one_column' );
 		
 	elseif ( is_post_type_archive( 'download' ) )
-		add_filter( 'get_theme_layout', 'kultalusikka_theme_layout_one_column' );
+		add_filter( 'theme_mod_theme_layout', 'kultalusikka_theme_layout_one_column' );
 		
 	elseif ( is_tax( 'download_category' ) || is_tax( 'download_tag' ) )
-		add_filter( 'get_theme_layout', 'kultalusikka_theme_layout_one_column' );
+		add_filter( 'theme_mod_theme_layout', 'kultalusikka_theme_layout_one_column' );
 		
 	elseif ( is_tax( 'edd_download_info_feature' ) )
-		add_filter( 'get_theme_layout', 'kultalusikka_theme_layout_one_column' );
+		add_filter( 'theme_mod_theme_layout', 'kultalusikka_theme_layout_one_column' );
 	
 	elseif ( is_attachment() && 'layout-default' == theme_layouts_get_layout() )
-		add_filter( 'get_theme_layout', 'kultalusikka_theme_layout_one_column' );
+		add_filter( 'theme_mod_theme_layout', 'kultalusikka_theme_layout_one_column' );
 
 	elseif ( is_page_template( 'page-templates/front-page.php' ) )
-		add_filter( 'get_theme_layout', 'kultalusikka_theme_layout_one_column' );
-
-	elseif ( 'layout-default' == theme_layouts_get_layout() )
-		add_filter( 'get_theme_layout', 'kultalusikka_theme_layout_global' );
+		add_filter( 'theme_mod_theme_layout', 'kultalusikka_theme_layout_one_column' );
 
 }
 
-/**
- * Returns the global layout selected by the user.
- *
- * @since 0.1.0
- * @param string $layout
- * @return string
- */
-function kultalusikka_theme_layout_global( $layout ) {
-	return 'layout-' . get_theme_mod( 'theme_layout' );
-}
 
 /**
  * Filters 'get_theme_layout' by returning 'layout-1c'.
@@ -310,7 +297,7 @@ function kultalusikka_theme_layout_global( $layout ) {
  * @return string
  */
 function kultalusikka_theme_layout_one_column( $layout ) {
-	return 'layout-1c';
+	return '1c';
 }
 
 /**
