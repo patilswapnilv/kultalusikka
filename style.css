@@ -2,7 +2,7 @@
  * Theme Name: Kultalusikka
  * Theme URI: http://foxnet-themes.fi/downloads/kultalusikka
  * Description: Kultalusikka is designed for selling digital downloads via Easy Digital Downloads WordPress Plugin.
- * Version: 0.1
+ * Version: 0.1.1
  * Author: Sami Keijonen
  * Author URI: http://foxnet-themes.fi
  * Tags: sticky-post, theme-options, threaded-comments, translation-ready, one-column, two-columns, flexible-width, left-sidebar, right-sidebar, custom-background, custom-header, featured-images, editor-style, green, white, light
@@ -479,7 +479,8 @@ img.wp-smiley {
 #header:after,
 #sidebar-subsidiary:after,
 #sidebar-subsidiary .wrap:after,
-#sidebar-front-page:after {
+#sidebar-front-page:after,
+#sidebar-after-singular-download:after {
 	content: "";
 	display: table;
 	clear: both;
@@ -698,7 +699,8 @@ div.menu li, nav.menu li {
 #respond,
 #sidebar-front-page,
 #sidebar-front-page-callout,
-#kultalusikka-latest-downloads {
+#kultalusikka-latest-downloads,
+#sidebar-after-singular-download {
 	padding: 0 4%;
 }
 
@@ -901,7 +903,8 @@ a.more-link:hover {
 	padding: 1rem 4%;
 }
 #sidebar-front-page,
-#sidebar-front-page-callout {
+#sidebar-front-page-callout,
+#sidebar-after-singular-download {
 	margin-bottom: 14px;
 	margin-bottom: 1rem;
 }
@@ -921,7 +924,8 @@ a.more-link:hover {
 }
 #sidebar-primary .widget,
 #sidebar-subsidiary .widget,
-#sidebar-front-page .widget {
+#sidebar-front-page .widget,
+#sidebar-after-singular-download .widget {
 	color: #777;
 	margin: 0 0 14px 0;
 	margin: 0 0 1rem 0;
@@ -1696,7 +1700,8 @@ div.menu ul,nav.menu ul{margin:0;padding:0;list-style:none;line-height:1.0}div.m
 #comments-template .comment-wrap,
 #comments-number,
 #respond,
-#sidebar-primary .widget {
+#sidebar-primary .widget,
+#sidebar-after-singular-download  {
 	padding: 0 14px;
 	padding: 0 1rem;
 }
@@ -1865,7 +1870,8 @@ div.menu ul,nav.menu ul{margin:0;padding:0;list-style:none;line-height:1.0}div.m
 .loop-meta,
 #comments-template .comment-wrap,
 #comments-number,
-#respond {
+#respond,
+#sidebar-after-singular-download  {
 	padding: 0 28px;
 	padding: 0 2rem;
 }

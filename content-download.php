@@ -51,3 +51,10 @@ do_atomic( 'before_entry' ); // kultalusikka_before_entry ?>
 </article><!-- .hentry -->
 					
 <?php do_atomic( 'after_entry' ); // kultalusikka_after_entry ?>
+
+<?php 
+
+if ( is_singular() && is_main_query() && class_exists( 'Easy_Digital_Downloads' ) )
+		get_sidebar( 'after-singular-download' ); // Loads the sidebar-after-singular-download.php template.
+	
+?>

@@ -465,6 +465,21 @@ function kultalusikka_register_sidebars() {
 			'after_title' => '</h3>'
 		)
 	);
+	
+	/* Register the 'after-singular-download' sidebar. But register only if EDD is installed. */
+	if ( class_exists( 'Easy_Digital_Downloads' ) ) {
+		register_sidebar(
+			array(
+				'id' => 'after-singular-download',
+				'name' => __( 'After Singular Download', 'kultalusikka' ),
+				'description' => __( 'After singular download widget area. This only works with Easy Digital Download plugin.', 'kultalusikka' ),
+				'before_widget' => '<section id="%1$s" class="widget %2$s widget-%2$s">',
+				'after_widget' => '</section>',
+				'before_title' => '<h3 class="widget-title">',
+				'after_title' => '</h3>'
+			)
+		);
+	}
 
 }
 
