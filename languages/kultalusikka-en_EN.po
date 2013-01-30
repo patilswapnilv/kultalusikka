@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Kultalusikka WordPress Theme\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-01-16 14:35+0200\n"
-"PO-Revision-Date: 2013-01-16 14:42+0200\n"
+"POT-Creation-Date: 2013-01-30 20:53+0200\n"
+"PO-Revision-Date: 2013-01-30 20:53+0200\n"
 "Last-Translator: Sami Keijonen <sami.keijonen@foxnet.fi>\n"
 "Language-Team: Foxnet Themes <sami.keijonen@foxnet.fi>\n"
 "Language: en\n"
@@ -193,24 +193,34 @@ msgid ""
 "[entry-edit-link before=\" | \"]"
 msgstr ""
 
-#: functions.php:440
+#: functions.php:447
 msgid "Front Page"
 msgstr ""
 
-#: functions.php:441
+#: functions.php:448
 msgid "Front Page widget area."
 msgstr ""
 
-#: functions.php:453
+#: functions.php:460
 msgid "Front Page Callout"
 msgstr ""
 
-#: functions.php:454
+#: functions.php:461
 msgid ""
 "Front Page Callout widget area. This is meant to used for short text area."
 msgstr ""
 
-#: functions.php:472
+#: functions.php:474
+msgid "After Singular Download"
+msgstr ""
+
+#: functions.php:475
+msgid ""
+"After singular download widget area. This only works with Easy Digital "
+"Download plugin."
+msgstr ""
+
+#: functions.php:494
 msgid "Theme Green"
 msgstr ""
 
