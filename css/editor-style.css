@@ -1,0 +1,242 @@
+@import url( 'league-gothic.css' );
+
+/* =CSS Resets (Normalize v2.0.1). @link: https://raw.github.com/necolas/normalize.css/master/normalize.css
+-------------------------------------------------------------- */
+
+article,aside,details,figcaption,figure,footer,header,hgroup,nav,section,summary{ display:block}audio,canvas,video{ display:inline-block}audio:not([controls]){ display:none; height:0}[hidden]{ display:none}html{ font-family:sans-serif; -webkit-text-size-adjust:100%; -ms-text-size-adjust:100%}body{ margin:0}a:focus{ outline:thin dotted}a:active,a:hover{ outline:0}h1{ font-size:2em}abbr[title]{ border-bottom:1px dotted}b,strong{ font-weight:bold}dfn{ font-style:italic}mark{ background:#ff0; color:#000}code,kbd,pre,samp{ font-family:monospace,serif; font-size:1em}pre{ overflow:auto;}q{ quotes:"\201C""\201D""\2018""\2019"}small{ font-size:80%}sub,sup{ font-size:75%; line-height:0; position:relative; vertical-align:baseline}sup{ top:-0.5em}sub{ bottom:-0.25em}img{ border:0}svg:not(:root){ overflow:hidden}figure{ margin:0}fieldset{ border:1px solid #c0c0c0; margin:0 2px; padding:0.35em 0.625em 0.75em}legend{ border:0; padding:0}button,input,select,textarea{ font-family:inherit; font-size:100%; margin:0}button,input{ line-height:normal}button,html input[type="button"],input[type="reset"],input[type="submit"]{ -webkit-appearance:button; cursor:pointer}button[disabled],input[disabled]{ cursor:default}input[type="checkbox"],input[type="radio"]{ box-sizing:border-box; padding:0}input[type="search"]{ -webkit-appearance:textfield; -moz-box-sizing:content-box; -webkit-box-sizing:content-box; box-sizing:content-box}input[type="search"]::-webkit-search-cancel-button,input[type="search"]::-webkit-search-decoration{ -webkit-appearance:none}button::-moz-focus-inner,input::-moz-focus-inner{ border:0; padding:0}textarea{ overflow:auto; vertical-align:top}table{ border-collapse:collapse; border-spacing:0}
+
+
+html .mceContentBody {
+	color: #424242;
+	font-size: 14px;
+	font-size: 1rem;
+	line-height: 1.71428571;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	padding: 0 2%;
+    word-break: break-word;
+}
+
+/* Links. */
+a,
+a:visited {
+	color: #90b535;
+	text-decoration: none;
+}
+a:focus,
+a:active,
+a:hover {
+	color: #83ab23;
+	text-decoration: underline;
+}
+:focus {
+	outline: none;
+}
+
+/* Images, embed, video. */
+img,
+object,
+embed,
+iframe,
+video {
+	max-width: 100%;
+}
+img {
+	height: auto;
+}
+
+/* Aligns. */
+.alignleft,
+.left {
+	float:left;
+	margin: 14px 18px 7px 0;
+	margin: 1rem 1.28571429rem 0.5rem 0;
+}
+.alignlefttop {
+	margin: 0 14px 7px 0;
+	margin: 0 1rem 0.5rem 0;
+}
+.alignright,
+.right {
+	float: right;
+	margin: 14px 0 7px 18px;
+	margin: 1rem 0 0.5rem 1.28571429rem;
+}
+.aligncenter,
+.center {
+	display: block;
+	margin: 14px auto;
+	margin: 1rem auto;
+	}
+.alignnone,
+.block { 
+	clear:both;
+	margin: 14px 0;
+	margin: 1rem 0;
+}
+.clear {
+	clear: both;
+}
+blockquote.alignleft,
+blockquote.alignright {
+	width: 33%;
+}
+
+/* Headers. */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: LeagueGothicRegular, "Helvetica Neue", Helvetica, Arial, Sans-serif;
+    font-style: normal;
+    font-weight: normal;
+	margin-top: 0;
+	margin-bottom: 14px;
+	margin-bottom: 1rem;
+}
+
+/* Note: line-height is 28px. */
+h1 {
+	font-size: 32px;
+	font-size: 2.28571429rem;
+	line-height: 0.875;
+}
+h2 {
+	font-size: 28px;
+	font-size: 2rem;
+	line-height: 1;
+}
+h3 {
+	font-size: 24px;
+	font-size: 1.71428571rem;
+	line-height: 1.16666667;
+}
+h4 {
+	font-size: 22px;
+	font-size: 1.57142857rem;
+	line-height: 1.27272727;
+}
+h5 {
+	font-size: 20px;
+	font-size: 1.42857143rem;
+	line-height: 1.4;
+}
+h6 {
+	font-size: 18px;
+	font-size: 1.28571429rem;
+	line-height: 1.55555556;
+}
+ul {
+	list-style-type: circle;
+}
+
+/* Blockquotes. */
+blockquote {
+	border-left: 5px solid #363d40;
+	color: #777;
+	font-size: 18px;
+	font-size: 1.14285714rem;
+	font-style: italic;
+	margin: 14px 0;
+	margin: 1rem 0;
+	padding: 1% 2%;
+}
+blockquote blockquote {
+	padding: 0.5% 2%;
+}
+
+/* Fieldset. */
+fieldset {
+    border: none;
+    margin: 0 2px;
+    padding: 0;
+}
+
+/* Code */
+code {
+	background: #f7f7f7;
+	color: #555;
+	padding: 0 0.1875em;
+}
+pre {
+	background: #f7f7f7;
+	border: 1px solid #e5e5e5;
+	color: #555;
+	font-size: .9375em;
+	padding: 3%;
+	word-break: normal;
+}
+pre code {
+	padding: 0;
+}
+
+/* Acronyms and abbreviations */
+acronym,
+abbr {
+	border-bottom: 1px dotted #999;
+}
+
+/* Tables. */
+table {
+	background: #fff;
+	margin: 0 0 14px 0;
+	margin: 0 0 1rem 0;
+	width: 100%;
+}
+th {
+	background: #90b535;
+	border-top: 1px solid #f2f2f2;
+	border-bottom: 1px solid #f2f2f2;
+	border-right: 1px solid #f2f2f2;
+	color: #fff;
+	padding: 7px 2%;
+	padding: 0.5rem 2%;
+	text-align: left;
+}
+td,
+tbody th {
+	border-bottom: 1px solid #f2f2f2;
+	border-left: 1px solid #f2f2f2;
+	border-right: 1px solid #f2f2f2;
+	padding: 7px 2%;
+	padding: 0.5rem 2%;
+}
+tr:hover td {
+	background: #f2f2f2;
+}
+tr:hover th {
+	background: #363d40;
+}
+thead th,
+tfoot th,
+thead tr:hover th,
+tfoot tr:hover th {
+	background: #e9edf1;
+	color: #666;
+}
+
+
+/* Captions. */
+.wp-caption {
+	max-width: 100%;
+	overflow: visible;
+	padding: 0;
+}
+.wp-caption img {
+	margin: 0;
+	width: 100%;
+}
+.wp-caption-text {
+	background: #f9f9f9;
+	border-bottom: 1px solid #e5e5e5;
+	color: #777;
+	font-size: 13px;
+	font-size: 0.928571429rem;
+	line-height: 1.84615385;
+	margin: -5px 0 0 0;
+	margin: -0.357142857rem 0 0 0;
+	max-width: 100%;
+	padding: 0.571428571em 0.714285714em;
+	text-align: center;
+}

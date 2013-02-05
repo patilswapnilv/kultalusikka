@@ -56,6 +56,9 @@ function kultalusikka_theme_setup() {
 	
 	/* Add theme support for WordPress features. */
 	
+	/* Add content editor styles. */
+	add_editor_style( 'css/editor-style.css' );
+	
 	/* Add support for auto-feed links. */
 	add_theme_support( 'automatic-feed-links' );
 
