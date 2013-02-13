@@ -9,7 +9,7 @@
  * @version     0.1.0
  * @author      Sami Keijonen <sami.keijonen@foxnet.fi>
  * @copyright   Copyright (c) 2012, Sami Keijonen
- * @link        http://foxnet-themes.com
+ * @link        https://foxnet-themes.fi
  * @license     http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  */
  
@@ -128,9 +128,6 @@ function kultalusikka_theme_setup() {
 	/* Add custom image sizes. */
 	add_action( 'init', 'kultalusikka_add_image_sizes' );
 	
-	/* Add excerpt support for 'download' post type. */
-	add_action('init', 'kultalusikka_add_edd_excerpt' );
-	
 	/* Enqueue scripts. */
 	add_action( 'wp_enqueue_scripts', 'kultalusikka_scripts_styles' );
 	
@@ -227,17 +224,6 @@ function kultalusikka_add_image_sizes() {
 
 	add_image_size( 'kultalusikka-thumbnail-download', 428, 265, true );
 	add_image_size( 'kultalusikka-thumbnail-gallery', 256, 158, true );
-	
-}
-
-/**
- * Add excerpt support for 'download' post type. 
- *
- * @since 0.1.0
- */
-function kultalusikka_add_edd_excerpt() {
-
-	add_post_type_support( 'download', 'excerpt' );
 	
 }
 
@@ -419,7 +405,7 @@ function kultalusikka_customize_preview_css() {
 	global $wp_customize;
 
 	if ( isset( $wp_customize ) )
-		wp_enqueue_style( 'kultalusikka-customizer-stylesheet', trailingslashit( get_template_directory_uri() ) . 'css/customize/kultalusikka-customizer.css', false, 20121019, 'all' );
+		wp_enqueue_style( 'kultalusikka-customizer-stylesheet', trailingslashit( get_template_directory_uri() ) . 'css/customize/kultalusikka-customizer.css', false, '20121019', 'all' );
 }
 
 /**
