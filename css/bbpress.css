@@ -201,6 +201,7 @@ li.bbp-header div.bbp-reply-content span#favorite-toggle {
 #bbpress-forums .bbp-reply-post-date {
 	margin: 0 12px;
 	margin: 0 0.857142857rem;
+	word-wrap: break-word;
 	word-break: break-word;
 }
 
@@ -275,14 +276,12 @@ div.bbp-breadcrumb {
 
 div.bbp-breadcrumb,
 div.bbp-topic-tags {
-	font-size: 12px;
-	font-size: 0.857142857rem;
 }
 
 #bbpress-forums div.bbp-breadcrumb p,
 #bbpress-forums div.bbp-topic-tags p {
-	margin-bottom: 10px;
-	margin-bottom: 0.714285714rem;
+	margin: 7px 0;
+	margin: 0.5rem 0;
 }
 
 div.bbp-topic-tags {
@@ -974,7 +973,7 @@ body.my-account #bbpress-forums {
 
 #bbpress-forums div.row-actions {
 	font-size: 12px;
-	font-size: 0.857142857;
+	font-size: 0.857142857rem;
 	visibility: hidden;
 }
 
