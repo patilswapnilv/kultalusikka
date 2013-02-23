@@ -22,7 +22,7 @@
 					<?php do_action( 'bbp_theme_before_topic_favorites_action' ); ?>
 
 					<?php bbp_user_favorites_link( array( 'mid' => '+', 'post' => '' ), array( 'pre' => '', 'mid' => '&times;', 'post' => '' ) ); ?>
-
+					
 					<?php do_action( 'bbp_theme_after_topic_favorites_action' ); ?>
 
 				</span>
