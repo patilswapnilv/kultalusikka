@@ -99,24 +99,9 @@ function kultalusikka_theme_setup() {
 	if ( $kultalusikka_theme->exists() ) {
 		define( 'KULTALUSIKKA_VERSION', $kultalusikka_theme->Version ); // Get parent theme Kultalusikka version
 	}
-
-	if( !class_exists( 'EDD_SL_Theme_Updater' ) ) {
-	// load our custom theme updater
-	include( dirname( __FILE__ ) . '/includes/EDD_SL_Theme_Updater.php' );
-	}
 	
-	/* Get license key from database. */
-	$kultalusikka_get_license = get_option( $prefix . '_theme_settings' ); // This is array.
-	$kultalusikka_license = isset( $kultalusikka_get_license['kultalusikka_license_key'] ) ? $kultalusikka_get_license['kultalusikka_license_key'] : '';
-
-	$edd_updater = new EDD_SL_Theme_Updater( array( 
-		'remote_api_url' 	=> KULTALUSIKKA_SL_STORE_URL, 	// our store URL that is running EDD
-		'version' 			=> KULTALUSIKKA_VERSION, 		// the current theme version we are running
-		'license' 			=> $kultalusikka_license, 		// the license key (used get_option above to retrieve from DB)
-		'item_name' 		=> KULTALUSIKKA_SL_THEME_NAME,	// the name of this theme
-		'author'			=> 'Sami Keijonen'	            // the author's name
-		)
-	);
+	/* Setup updater. */
+	add_action( 'admin_init', 'kultalusikka_theme_updater' );
 	
 	/* Set content width. */
 	hybrid_set_content_width( 604 );
@@ -177,6 +162,39 @@ function kultalusikka_theme_setup() {
 	
 	/* Testing out some early Hybrid Core 1.6 proposed HTML5 changes. */
 	add_filter( "{$prefix}_sidebar_defaults", 'kultalusikka_sidebar_defaults' );
+
+}
+
+/**
+ * Setup theme updater. @link https://gist.github.com/pippinsplugins/3ab7c0a01d5a9d8005ed
+ *
+ * @since  0.1.6
+ */
+function kultalusikka_theme_updater() {
+
+	/* If there is no valid license key status, don't let updates. */
+	if( get_option( 'kultalusikka_license_key_status' ) != 'valid' )
+		return;
+
+	/* load our custom theme updater. */
+	if( !class_exists( 'EDD_SL_Theme_Updater' ) )
+		require_once( trailingslashit( get_template_directory() ) . 'includes/EDD_SL_Theme_Updater.php' );
+		
+	/* Get action/filter hook prefix. */
+	$prefix = hybrid_get_prefix();
+	
+	/* Get license key from database. */
+	$kultalusikka_get_license = get_option( $prefix . '_theme_settings' ); // This is array.
+	$kultalusikka_license = isset( $kultalusikka_get_license['kultalusikka_license_key'] ) ? $kultalusikka_get_license['kultalusikka_license_key'] : '';
+
+	$edd_updater = new EDD_SL_Theme_Updater( array( 
+		'remote_api_url' 	=> KULTALUSIKKA_SL_STORE_URL, 	// our store URL that is running EDD
+		'version' 			=> KULTALUSIKKA_VERSION, 		// the current theme version we are running
+		'license' 			=> $kultalusikka_license, 		// the license key (used get_option above to retrieve from DB)
+		'item_name' 		=> KULTALUSIKKA_SL_THEME_NAME,	// the name of this theme
+		'author'			=> 'Sami Keijonen'	            // the author's name
+		)
+	);
 
 }
 
