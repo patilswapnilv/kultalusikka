@@ -1,3 +1,7 @@
+March 15, 2013 - version 0.1.5.1
+
+* This is only for testing automatic updater.
+
 March 15, 2013 - version 0.1.5
 
 * There was still a small bug in theme automatic updater.
