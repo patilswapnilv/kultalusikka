@@ -1,10 +1,10 @@
 /**
  * Theme Name: Kultalusikka
- * Theme URI: http://foxnet-themes.fi/downloads/kultalusikka
+ * Theme URI: https://foxnet-themes.fi/downloads/kultalusikka
  * Description: Kultalusikka is designed for selling digital downloads via Easy Digital Downloads WordPress Plugin.
- * Version: 0.1.4
+ * Version: 0.1.5
  * Author: Sami Keijonen
- * Author URI: http://foxnet-themes.fi
+ * Author URI: https://foxnet-themes.fi
  * Tags: sticky-post, theme-options, threaded-comments, translation-ready, one-column, two-columns, flexible-width, left-sidebar, right-sidebar, custom-background, custom-header, featured-images, editor-style, green, white, light
  * License: GNU General Public License v2.0
  * License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -1295,12 +1295,6 @@ body #edd_checkout_form_wrap input[type="password"] {
 	width: 100%;
 }
 
-body #edd_checkout_form_wrap fieldset#edd_register_account_fields,
-body #edd_checkout_form_wrap fieldset#edd_login_fields {
-	border: 1px solid #e5e5e5;
-	padding: 2%;
-}
-
 body #edd_purchase_form input.edd-input.required {
 	color: #282828;
 }
@@ -2030,29 +2024,6 @@ div.menu ul,nav.menu ul{margin:0;padding:0;list-style:none;line-height:1.0}div.m
 .singular-download .entry-title {
 	margin-right: 56px;
 	margin-right: 4rem;
-}
-
-
-/* =EDD CSS
--------------------------------------------------------------- */
-
-body #edd_purchase_form fieldset#edd_register_fields p#edd-user-pass-wrap,
-body #edd_purchase_form fieldset#edd_register_fields p#edd-user-pass-confirm-wrap,
-body #edd_purchase_form p#edd-user-first-name-wrap,
-body #edd_purchase_form p#edd-first-name-wrap,
-body #edd_purchase_form p#edd-user-last-name-wrap,
-body #edd_purchase_form p#edd-last-name-wrap {
-	width: 45%;
-}
-body #edd_purchase_form fieldset#edd_register_fields p#edd-user-pass-wrap,
-body #edd_purchase_form p#edd-user-first-name-wrap,
-body #edd_purchase_form p#edd-first-name-wrap {
-	float: left;
-}
-body #edd_purchase_form fieldset#edd_register_fields p#edd-user-pass-confirm-wrap,
-body #edd_purchase_form p#edd-user-last-name-wrap,
-body #edd_purchase_form p#edd-last-name-wrap {
-	float: right;
 }
 
 }
