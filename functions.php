@@ -54,6 +54,9 @@ function kultalusikka_theme_setup() {
 	add_theme_support( 'cleaner-gallery' );
 	add_theme_support( 'cleaner-caption' );
 	
+	/* Add theme support for media grabber. */
+	add_theme_support( 'hybrid-core-media-grabber' );
+	
 	/* Add theme support for WordPress features. */
 	
 	/* Add content editor styles. */
@@ -124,9 +127,6 @@ function kultalusikka_theme_setup() {
 	add_filter( 'body_class', 'kultalusikka_subsidiary_classes' );
 	add_filter( 'body_class', 'kultalusikka_front_page_classes' );
 	
-	/* Add infinity symbol to aside post format. */
-	add_filter( 'the_content', 'kultalusikka_aside_infinity', 9 );
-	
 	/* Set customizer transport. */
 	add_action( 'customize_register', 'kultalusikka_customize_register' );
 	
@@ -160,8 +160,8 @@ function kultalusikka_theme_setup() {
 	/* Change user profile gravatar size. */
 	add_filter( 'bbp_single_user_details_avatar_size', 'kultalusikka_user_details_avatar_size' );
 	
-	/* Testing out some early Hybrid Core 1.6 proposed HTML5 changes. */
-	add_filter( "{$prefix}_sidebar_defaults", 'kultalusikka_sidebar_defaults' );
+	/* Add menu-item-parent class to parent menu items.  */
+	add_filter( 'wp_nav_menu_objects', 'kultalusikka_add_menu_parent_class' );
 
 }
 
@@ -371,23 +371,6 @@ function kultalusikka_front_page_classes( $classes ) {
 }
 
 /**
- * Add infinity symbol to aside post format.
- * @author Justin Tadlock <justin@justintadlock.com>
- * @copyright Copyright (c) 2012
- * @link http://justintadlock.com/archives/2012/09/06/post-formats-aside
- * @license http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
- * @since 0.1.0
- */
-function kultalusikka_aside_infinity( $content ) {
-	
-	if ( has_post_format( 'aside' ) && !is_singular() )
-		$content .= ' <a href="' . get_permalink() . '">&#8734;</a>';
-
-	return $content;
-	
-}
-
-/**
  * Add postMessage support for site title and description for the Theme Customizer.
  * @since 0.1.0
  * @note: credit goes to TwentyTwelwe theme.
@@ -577,23 +560,53 @@ function kultalusikka_user_details_avatar_size() {
 }
 
 /**
- * Use HTML5 markup in sidebars.
+ * Add menu-item-parent class to parent menu items. Thanks to Chip Bennett.
  *
- * @todo Remember to take of when Hybric Core 1.6 is released.
- * 
- * @since 0.1.0
+ * @since 0.2
  */
-function kultalusikka_sidebar_defaults( $defaults ) {
+function kultalusikka_add_menu_parent_class( $items ) {
 
-	$defaults = array(
-		'before_widget' => '<section id="%1$s" class="widget %2$s widget-%2$s">',
-		'after_widget' => '</section>',
-		'before_title' => '<h3 class="widget-title">',
-		'after_title' => '</h3>'
-	);
+	$parents = array();
 
-	return $defaults;
-	
+	foreach ( $items as $item ) {
+
+		if ( $item->menu_item_parent && $item->menu_item_parent > 0 )
+			$parents[] = $item->menu_item_parent;
+		
+	}
+
+	foreach ( $items as $item ) {
+
+		if ( in_array( $item->ID, $parents ) )
+			$item->classes[] = 'menu-item-parent';
+
+	}
+
+	return $items;    
+
+}
+
+/**
+ * Returns the URL from the post.
+ *
+ * @uses get_the_post_format_url() to get the URL in the post meta (if it exists) or
+ * the first link found in the post content.
+ *
+ * Falls back to the post permalink if no URL is found in the post.
+ * @note This idea is taken from Twenty Thirteen theme.
+ * @author wordpressdotorg
+ * @copyright Copyright (c) 2011, wordpressdotorg
+ *
+ * @since 0.2.0
+ */
+function kultalusikka_get_link_url() {
+
+	$kultalusikka_content = get_the_content();
+
+	$kultalusikka_url = get_url_in_content( $kultalusikka_content );
+
+	return ( $kultalusikka_url ) ? $kultalusikka_url : apply_filters( 'the_permalink', get_permalink() );
+
 }
 
 ?>
