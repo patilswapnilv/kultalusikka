@@ -15,7 +15,7 @@
 
 		<?php do_action( 'bbp_theme_before_forum_title' ); ?>
 
-		<a class="bbp-forum-title" href="<?php bbp_forum_permalink(); ?>" title="<?php bbp_forum_title(); ?>"><?php bbp_forum_title(); ?></a>
+		<h2><a class="bbp-forum-title" href="<?php bbp_forum_permalink(); ?>" title="<?php bbp_forum_title(); ?>"><?php bbp_forum_title(); ?></a></h2>
 
 		<?php do_action( 'bbp_theme_after_forum_title' ); ?>
 
