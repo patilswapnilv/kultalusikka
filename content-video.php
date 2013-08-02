@@ -34,14 +34,9 @@ do_atomic( 'before_entry' ); // kultalusikka_before_entry ?>
 
 	<?php } else { ?>
 	
-		<?php
-		/* Get video from content. */
-		$kultalusikka_video = post_format_tools_get_video();
-		?>
-	
-		<?php if( !empty( $kultalusikka_video ) ) { ?>
-			<div class="kultalusikka-video"><?php echo $kultalusikka_video; ?></div>
-		<?php } ?>
+		<div class="kultalusikka-video">
+			<?php echo hybrid_media_grabber( array( 'type' => 'video' ) ); ?>
+		</div>
 
 		<header class="entry-header">
 			<?php echo apply_atomic_shortcode( 'entry_title', '[entry-title]' ); ?>
@@ -52,13 +47,6 @@ do_atomic( 'before_entry' ); // kultalusikka_before_entry ?>
 				<div class="entry-summary">
 					<?php the_excerpt(); ?>
 				</div><!-- .entry-summary -->
-
-			<?php } elseif ( empty( $kultalusikka_video ) ) { ?>
-
-				<div class="entry-content">
-					<?php the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'kultalusikka' ) ); ?>
-					<?php wp_link_pages( array( 'before' => '<p class="page-links">' . __( 'Pages:', 'kultalusikka' ), 'after' => '</p>' ) ); ?>
-				</div><!-- .entry-content -->
 
 			<?php } ?>
 
