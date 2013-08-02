@@ -34,13 +34,13 @@ do_atomic( 'before_entry' ); // kultalusikka_before_entry ?>
 		
 	<?php } else { ?>
 	
-		<?php if ( current_theme_supports( 'get-the-image' ) ) get_the_image( array( 'image_class' => 'aligncenter', 'size' => 'full', 'meta_key' => false, 'image_scan' => true, 'before' => '<div class="kultalusikka-image">', 'after' => '</div>' ) ); ?>
-
+	<?php if ( current_theme_supports( 'get-the-image' ) ) get_the_image( array( 'image_class' => 'aligncenter', 'size' => 'full', 'meta_key' => false, 'before' => '<div class="kultalusikka-image">', 'after' => '</div>' ) ); ?>
+		
 		<header class="entry-header">	
 			<?php echo apply_atomic_shortcode( 'entry_title', '[entry-title]' ); ?>
 		</header><!-- .entry-header -->
 		
-		<?php if ( post_format_tools_post_has_content() || has_excerpt() ) { ?>
+		<?php if ( hybrid_post_has_content() || has_excerpt() ) { ?>
 			<div class="entry-summary">
 				<?php the_excerpt(); ?>
 			</div><!-- .entry-summary -->
