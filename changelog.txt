@@ -1,3 +1,16 @@
+August 10, 2013 - version 0.2
+
+* Add submemu indicator as plus sign, not as image.
+* Update Hybrid Core to 1.6.
+* Update post format link grabber function.
+* Update image count function.
+* Use new media grabber for video.
+* Update language files.
+* Small tweaks for bbPress css and template files.
+* Remove archive-topic.php and archive-forum.php.
+
+* This is only for testing automatic updater.
+
 March 15, 2013 - version 0.1.5.1
 
 * This is only for testing automatic updater.
