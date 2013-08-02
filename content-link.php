@@ -38,7 +38,7 @@ do_atomic( 'before_entry' ); // kultalusikka_before_entry ?>
 
 			<header class="entry-header">
 				<?php if ( current_theme_supports( 'get-the-image' ) ) get_the_image( array( 'meta_key' => 'Thumbnail', 'size' => 'thumbnail' ) ); ?>
-				<?php the_title( '<h2 class="entry-title"><a href="' . esc_url( post_format_tools_url_grabber() ) . '" title="' . the_title_attribute( array( 'echo' => false ) ) . '">', '<span class="meta-nav">&rarr;</span></a></h2>' ); ?>
+				<?php the_title( '<h2 class="entry-title"><a href="' . esc_url( kultalusikka_get_link_url() ) . '" title="' . the_title_attribute( array( 'echo' => false ) ) . '">', ' <span class="meta-nav">&rarr;</span></a></h2>' ); ?>
 			</header><!-- .entry-header -->
 			
 		<?php } else { ?>
