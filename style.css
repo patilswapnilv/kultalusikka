@@ -2,10 +2,11 @@
  * Theme Name: Kultalusikka
  * Theme URI: https://foxnet-themes.fi/downloads/kultalusikka
  * Description: Kultalusikka is designed for selling digital downloads via Easy Digital Downloads WordPress Plugin.
- * Version: 0.1.5.1
+ * Version: 0.2
  * Author: Sami Keijonen
  * Author URI: https://foxnet-themes.fi
  * Tags: sticky-post, theme-options, threaded-comments, translation-ready, one-column, two-columns, flexible-width, left-sidebar, right-sidebar, custom-background, custom-header, featured-images, editor-style, green, white, light
+ * Text Domain: kultalusikka
  * License: GNU General Public License v2.0
  * License URI: http://www.gnu.org/licenses/gpl-2.0.html
  * Copyright (c) Sami Keijonen. All rights reserved.
@@ -1631,29 +1632,23 @@ div.menu ul,nav.menu ul{margin:0;padding:0;list-style:none;line-height:1.0}div.m
 }
 	
 /* Sub-nav indicator. */
-#menu-primary a.sf-with-ul {
-	padding-right: 24px;
-	padding-right: 1.71428571rem;
-}
-#menu-primary li .sf-sub-indicator {
-	background: url('images/menu-icon.png') no-repeat 0 0;
-	background-position: 0 0;
-	overflow: hidden;
+#menu-primary ul .menu-item-parent > a:after {
+	content: "\002B"; /* Plus sign. */
+	float: right;
+	padding-left: 8px;
+	padding-left: 0.5rem;
 	position: absolute;
-	top: 15px;
-	right: 10px;
-	width: 8px;
-	height: 5px;
-	text-indent: -9999em;
 }
-
-#menu-primary li ul li .sf-sub-indicator,
-#menu-primary li ul li.current-menu-item li .sf-sub-indicator {
-	background-position: 0 -5px !important;
-	top: 13px;
-	right: 12px;
-	width: 5px;
-	height: 8px;
+#menu-primary ul .menu-item-parent > a {
+	padding-right: 24px;
+	padding-right: 1.5rem;
+}
+#menu-primary ul ul .menu-item-parent > a:after {
+	position: static;
+}
+#menu-primary  ul ul .menu-item-parent > a {
+	padding-right: 8px;
+	padding-right: 0.5rem;
 }
 
 /* hentry, comments template.*/
