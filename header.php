@@ -82,4 +82,4 @@
 
 			<?php do_atomic( 'open_main' ); // kultalusikka_open_main ?>
 
-			<?php if ( current_theme_supports( 'breadcrumb-trail' ) ) breadcrumb_trail( array( 'container' => 'nav', 'before' => __( 'You are here:', 'kultalusikka' ), 'separator'  => __( '&#8764;', 'kultalusikka' ), 'front_page' => false ) ); ?>
+			<?php if ( current_theme_supports( 'breadcrumb-trail' ) ) breadcrumb_trail( array( 'container' => 'nav', 'separator'  => __( '&#8764;', 'kultalusikka' ), 'show_on_front' => false ) ); ?>
