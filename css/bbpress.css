@@ -25,12 +25,12 @@
 
 #bbpress-forums div.even,
 #bbpress-forums ul.even {
-	background-color: #fff;
+	background: #fff;
 }
 
 #bbpress-forums div.odd,
 #bbpress-forums ul.odd {
-	background-color: #fff;
+	background: #fff;	
 }
 
 #bbpress-forums div.reply {
@@ -61,7 +61,6 @@
 
 #bbpress-forums ul {
 	list-style: none;
-	margin: 0;
 	padding: 0;
 }
 
@@ -990,7 +989,7 @@ body.my-account #bbpress-forums {
 	word-break: normal;
 }
 
-.bbPress .entry-content {
+.bbpress .entry-content {
 	padding: 0;
 }
 
@@ -1013,8 +1012,7 @@ body.my-account #bbpress-forums {
 /* Topic and forum title. */
 #bbpress-forums .bbp-topics a.bbp-topic-permalink,
 #bbpress-forums .bbp-forums a.bbp-forum-title {
-	font-size: 18px;
-	font-size: 1.28571429rem;
+
 }
 
 /* Paddings. */
@@ -1035,10 +1033,8 @@ div.bbp-reply-header,
 div.bbp-no-reply,
 div.bbp-no-topic,
 div.bbp-template-notice,
-.archive-forum .entry-content,
-.archive-topic .entry-content,
-.archive-topic .entry-summary,
-#bbpress-forums #bbp-user-wrapper {
+#bbpress-forums #bbp-user-wrapper,
+.bbp-search-form {
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
@@ -1088,10 +1084,8 @@ div.bbp-reply-header,
 div.bbp-no-reply,
 div.bbp-no-topic,
 div.bbp-template-notice,
-.archive-forum .entry-content,
-.archive-topic .entry-content,
-.archive-topic .entry-summary,
-#bbpress-forums #bbp-user-wrapper  {
+#bbpress-forums #bbp-user-wrapper,
+.bbp-search-form {
 	padding: 0 14px;
 	padding: 0 1rem;
 }
@@ -1131,19 +1125,26 @@ div.bbp-reply-header,
 div.bbp-no-reply,
 div.bbp-no-topic,
 div.bbp-template-notice,
-.archive-forum .entry-content,
-.archive-topic .entry-content,
-.archive-topic .entry-summary,
-#bbpress-forums #bbp-user-wrapper {
+#bbpress-forums #bbp-user-wrapper,
+.bbp-search-form {
 	padding: 0 28px;
 	padding: 0 2rem;
 }
 div.bbp-topic-header,
 div.bbp-reply-header,
 #bbpress-forums li.bbp-body ul.forum,
-#bbpress-forums li.bbp-body ul.topic {
-	padding: 7px 28px;
-	padding: 0.5rem 2rem;
+#bbpress-forums li.bbp-body ul.topic,
+#bbpress-forums li.bbp-body ul.forum.sticky,
+#bbpress-forums li.bbp-body ul.topic.sticky,
+#bbpress-forums li.bbp-body ul.forum.super-sticky,
+#bbpress-forums li.bbp-body ul.topic.super-sticky {
+	padding: 14px 28px;
+	padding: 1rem 2rem;
+}
+.archive-topic #bbpress-forums li.bbp-body ul.topic.sticky,
+.archive-topic #bbpress-forums li.bbp-body ul.topic.super-sticky {
+	padding: 14px 28px;
+	padding: 1rem 2rem;
 }
 
 /* User profile. */
