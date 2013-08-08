@@ -3,9 +3,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Kultalusikka WordPress Theme\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-08-02 15:36+0200\n"
-"PO-Revision-Date: 2013-08-02 15:41+0200\n"
+"Report-Msgid-Bugs-To: http://wordpress.org/tags/kultalusikka\n"
+"POT-Creation-Date: 2013-08-08 12:07:24+00:00\n"
+"PO-Revision-Date: 2013-08-08 15:10+0200\n"
 "Last-Translator: Sami Keijonen <sami.keijonen@foxnet.fi>\n"
 "Language-Team: Foxnet Themes <sami.keijonen@foxnet.fi>\n"
 "Language: fi\n"
@@ -24,293 +24,11 @@ msgid "What happened!?"
 msgstr "Mitä tapahtui?"
 
 #: 404.php:34
-#, php-format
 msgid ""
 "You tried going to %s, which doesn't exist. You can try navigate or search."
 msgstr ""
 "Yritit mennä sivulle %s, mutta sitä ei ole olemassa. Voit koittaa navigoida "
 "tai käyttää hakutoimintoa."
-
-#: archive-download.php:68 attachment-image.php:43 bbpress.php:45
-#: content-aside.php:28 content-aside.php:39 content-audio.php:28
-#: content-audio.php:51 content-chat.php:28 content-chat.php:51
-#: content-download.php:42 content-forum.php:31 content-gallery.php:28
-#: content-gallery.php:47 content-image.php:28 content-link.php:28
-#: content-link.php:48 content-page.php:31 content-quote.php:28
-#: content-quote.php:39 content-status.php:27 content-status.php:42
-#: content-topic.php:31 content-video.php:28 content.php:32
-#: page-templates/account-page.php:59 page-templates/front-page.php:100
-msgid "Pages:"
-msgstr "Sivut:"
-
-#: archive-download.php:75 page-templates/front-page.php:107
-msgid "Starting at: "
-msgstr "Alkaen:"
-
-#: attachment-image.php:42 bbpress.php:44 content-aside.php:38
-#: content-audio.php:50 content-chat.php:50 content-forum.php:30
-#: content-status.php:41 content.php:31
-msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
-msgstr "Jatka lukemista <span class=\"meta-nav\">&rarr;</span>"
-
-#: attachment-image.php:48
-msgid "Published on [entry-published] [entry-edit-link before=\"| \"]"
-msgstr "Julkaistu [entry-published] [entry-edit-link before=\"| \"]"
-
-#: attachment-image.php:63
-msgid "Gallery"
-msgstr "Kuvagalleria"
-
-#: comment.php:32
-msgid "Your comment is awaiting moderation."
-msgstr "Kommenttisi odottaa moderointia."
-
-#: comments.php:27
-msgid "No Responses"
-msgstr "Ei kommentteja"
-
-#: comments.php:27
-msgid "One Response"
-msgstr "Yksi kommentti"
-
-#: comments.php:27
-msgid "% Responses"
-msgstr "%  Kommenttia"
-
-#: comments.php:40
-msgid "&larr; Previous"
-msgstr "&larr; Edellinen"
-
-#: comments.php:41
-#, php-format
-msgid "Page %1$s of %2$s"
-msgstr "Sivu %1$s / %2$s"
-
-#: comments.php:42
-msgid "Next &rarr;"
-msgstr "Seuraava &rarr;"
-
-#: comments.php:52
-#, php-format
-msgid ""
-"Comments are closed, but <a href=\"%s\" title=\"Trackback URL for this post"
-"\">trackbacks</a> and pingbacks are open."
-msgstr ""
-"Kommentointi on suljettu, mutta <a href=\"%s\" title=\"Paluuviitteen URL "
-"tähän artikkeliin\">paluuviitteet</a> ja päivitysilmoitukset ovat avoinna."
-
-#: comments.php:58
-msgid "Comments are closed."
-msgstr "Kommentointi on suljettu."
-
-#: content-aside.php:23 content-audio.php:23 content-chat.php:23
-#: content-gallery.php:23 content-image.php:23 content-link.php:23
-#: content-video.php:23
-msgid ""
-"[post-format-link] published on [entry-published] [entry-comments-link "
-"before=\" | \"] [entry-edit-link before=\" | \"]"
-msgstr ""
-"[post-format-link] julkaistu [entry-published] [entry-comments-link before="
-"\" | \"] [entry-edit-link before=\" | \"]"
-
-#: content-aside.php:32 content-audio.php:32 content-chat.php:32
-#: content-gallery.php:32 content-image.php:32 content-link.php:32
-#: content-quote.php:32 content-video.php:32 content.php:36
-msgid ""
-"[entry-terms taxonomy=\"category\" before=\"Posted in \"] [entry-terms "
-"before=\"Tagged \"]"
-msgstr ""
-"[entry-terms taxonomy=\"category\" before=\"Artikkeli kategoriassa \"] "
-"[entry-terms before=\"Avainsanat \"]"
-
-#: content-audio.php:57 content-chat.php:57 content-gallery.php:55
-#: content-image.php:50 content-link.php:54 content-quote.php:43
-#: content-video.php:54
-msgid ""
-"[post-format-link] published on [entry-published] [entry-permalink before="
-"\"| \"] [entry-comments-link before=\"| \"] [entry-edit-link before=\"| \"]"
-msgstr ""
-"[post-format-link] julkaistu [entry-published] [entry-permalink before=\"| "
-"\"] [entry-comments-link before=\"| \"] [entry-edit-link before=\"| \"]"
-
-#: content-forum.php:39
-#, php-format
-msgid "%d topic"
-msgid_plural "%d topics"
-msgstr[0] "%d aihe"
-msgstr[1] "%d aihetta"
-
-#: content-forum.php:46 content-forum.php:49 content-topic.php:46
-#: content-topic.php:49
-#, php-format
-msgid "%d post"
-msgid_plural "%d posts"
-msgstr[0] "%d vastaus"
-msgstr[1] "%d vastausta"
-
-#: content-forum.php:54 content-topic.php:54
-#, php-format
-msgid "Last post %s"
-msgstr "Viimeisin vastaus %s"
-
-#: content-gallery.php:50
-#, php-format
-msgid "This gallery contains %s image."
-msgid_plural "This gallery contains %s images."
-msgstr[0] "Tämä kuvagalleria sisältää %s kuvan."
-msgstr[1] "Tämä kuvagalleria sisältää %s kuvaa."
-
-#: content-quote.php:23
-msgid ""
-"[post-format-link] published on [entry-published] [entry-comments-link "
-"before=\" | \"] [entry-edit-link before=\"| \"]"
-msgstr ""
-"[post-format-link] julkaistu [entry-published] [entry-comments-link before="
-"\" | \"] [entry-edit-link before=\"| \"]"
-
-#: content-quote.php:38
-msgid "Read more &rarr;"
-msgstr "Lue lisää &rarr;"
-
-#: content-status.php:31
-msgid ""
-"[post-format-link] updated on [entry-published] [entry-edit-link before=\"| "
-"\"]<br />[entry-terms taxonomy=\"category\" before=\"Posted in \"] [entry-"
-"terms before=\"Tagged \"]"
-msgstr ""
-"[post-format-link] päivitetty [entry-published] [entry-edit-link before=\"| "
-"\"]<br />[entry-terms taxonomy=\"category\" before=\"Artikkeli kategoriassa "
-"\"] [entry-terms before=\"Avainsanat \"]"
-
-#: content-status.php:46
-#, php-format
-msgid ""
-"[post-format-link] updated on [entry-published] [entry-permalink before=\"| "
-"\"] [entry-comments-link before=\"| \" one=\"%s reply\" more=\"%s replies\" "
-"zero=\"Reply\"] [entry-edit-link before=\"| \"]"
-msgstr ""
-"[post-format-link] päivitetty [entry-published] [entry-permalink before=\"| "
-"\"] [entry-comments-link before=\"| \" one=\"%s kommentti\" more=\"%s "
-"kommenttia\" zero=\"Kommentti\"] [entry-edit-link before=\"| \"]"
-
-#: content-topic.php:39
-#, php-format
-msgid "%d voice"
-msgid_plural "%d voices"
-msgstr[0] "%d osallistuja"
-msgstr[1] "%d osallistujaa"
-
-#: content-topic.php:61
-msgid "by"
-msgstr "-"
-
-#: content.php:27
-msgid ""
-"[entry-published] by [entry-author] [entry-comments-link before=\" | \"] "
-"[entry-edit-link before=\" | \"]"
-msgstr ""
-"[entry-published]  [entry-author] [entry-comments-link before=\" | \"] "
-"[entry-edit-link before=\" | \"]"
-
-#: functions.php:437
-msgid "Front Page"
-msgstr "Etusivu"
-
-#: functions.php:438
-msgid "Front Page widget area."
-msgstr "Etusivun vimpainalue."
-
-#: functions.php:450
-msgid "Front Page Callout"
-msgstr "Etusivun 'Callout'."
-
-#: functions.php:451
-msgid ""
-"Front Page Callout widget area. This is meant to used for short text area."
-msgstr ""
-"Etusivun 'Callout' vimpainalue. Tämä on tarkoitettu lyhyille tekstinpätkille."
-
-#: functions.php:464
-msgid "After Singular Download"
-msgstr "Yksittäisen latauksen jälkeen"
-
-#: functions.php:465
-msgid ""
-"After singular download widget area. This only works with Easy Digital "
-"Download plugin."
-msgstr ""
-"Yksittäisen latauksen jälkeen tuleva vimpainalue. Tämä toimii vain lisäosan "
-"Easy Digital Download kanssa."
-
-#: functions.php:484
-msgid "Theme Green"
-msgstr "Teeman vihreä"
-
-#: header.php:85
-msgid "&#8764;"
-msgstr "&#8764;"
-
-#: loop-error.php:17
-msgid "Apologies, but no entries were found."
-msgstr "Pahoittelu, mutta yhtään artikkelia ei löytynyt."
-
-#: loop-meta.php:89
-#, php-format
-msgid "You are browsing the search results for &quot;%1$s&quot;"
-msgstr "Hakutulokset haulle: &quot;%1$s&quot;"
-
-#: loop-meta.php:98
-msgid "Archives by date"
-msgstr "Arkistot"
-
-#: loop-meta.php:102
-msgid "You are browsing the site archives by date."
-msgstr "Selaat päiväkohtaista arkistoa."
-
-#: loop-meta.php:126 library/classes/widget-archives.php:44
-#: library/classes/widget-archives.php:142
-#: library/extensions/breadcrumb-trail.php:180
-#: library/functions/context.php:576
-msgid "Archives"
-msgstr "Arkistot"
-
-#: loop-meta.php:130
-msgid "You are browsing the site archives."
-msgstr "Selaat sivun arkistoa."
-
-#: loop-nav.php:18
-msgid "<span class=\"meta-nav\">&larr;</span> Return to entry"
-msgstr "<span class=\"meta-nav\">&larr;</span> Palaa takaisin"
-
-#: loop-nav.php:24 loop-nav.php:28 loop-nav.php:30
-msgid "<span class=\"meta-nav\">&larr;</span> Previous"
-msgstr "<span class=\"meta-nav\">&larr;</span> Edellinen"
-
-#: loop-nav.php:25 loop-nav.php:28 loop-nav.php:30
-msgid "Next <span class=\"meta-nav\">&rarr;</span>"
-msgstr "Seuraava <span class=\"meta-nav\">&rarr;</span>"
-
-#: menu-primary-mobile.php:19 menu-primary.php:19
-msgid "Skip to content"
-msgstr "Hyppää sisältöön"
-
-#: menu-primary-mobile.php:25
-msgid "Menu"
-msgstr "Navigointi"
-
-#: search.php:45
-#, php-format
-msgid "[entry-published] &mdash; <code>%s</code>"
-msgstr "[entry-published] &mdash; <code>%s</code>"
-
-#: searchform.php:17
-msgid "Search..."
-msgstr "Etsi..."
-
-#: searchform.php:18 library/classes/widget-search.php:45
-#: library/classes/widget-search.php:132
-msgid "Search"
-msgstr "Etsi"
 
 #: admin/functions-admin.php:43
 msgid "Theme License Key"
@@ -357,7 +75,6 @@ msgid "Customize:"
 msgstr "Kustomoi:"
 
 #: admin/functions-admin.php:139
-#, php-format
 msgid ""
 "Want to set Global layout and set other features? <a href=\"%s\">Go to "
 "Appearance &gt;&gt; Customize</a>. "
@@ -370,7 +87,6 @@ msgid "Custom logo:"
 msgstr "Logo:"
 
 #: admin/functions-admin.php:159
-#, php-format
 msgid ""
 "Want to replace or remove default logo? <a href=\"%s\">Go to Appearance &gt;"
 "&gt; Header</a>. "
@@ -383,13 +99,42 @@ msgid "Custom background:"
 msgstr "Taustakuva:"
 
 #: admin/functions-admin.php:179
-#, php-format
 msgid ""
 "Want to replace or remove default background? <a href=\"%s\">Go to "
 "Appearance &gt;&gt; Background</a>. "
 msgstr ""
 "Halutatko vaihtaa tai poistaa oletustaustakuvan? <a href=\"%s\">Mene kohtaan "
 "ulkoasu &gt;&gt; Tausta</a>. "
+
+#: archive-download.php:68 attachment-image.php:43 bbpress.php:45
+#: content-aside.php:28 content-aside.php:39 content-audio.php:28
+#: content-audio.php:51 content-chat.php:28 content-chat.php:51
+#: content-download.php:42 content-forum.php:31 content-gallery.php:28
+#: content-gallery.php:47 content-image.php:28 content-link.php:28
+#: content-link.php:48 content-page.php:31 content-quote.php:28
+#: content-quote.php:39 content-status.php:27 content-status.php:42
+#: content-topic.php:31 content-video.php:28 content.php:32
+#: page-templates/account-page.php:59 page-templates/front-page.php:100
+msgid "Pages:"
+msgstr "Sivut:"
+
+#: archive-download.php:75 page-templates/front-page.php:107
+msgid "Starting at: "
+msgstr "Alkaen:"
+
+#: attachment-image.php:42 bbpress.php:44 content-aside.php:38
+#: content-audio.php:50 content-chat.php:50 content-forum.php:30
+#: content-status.php:41 content.php:31
+msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
+msgstr "Jatka lukemista <span class=\"meta-nav\">&rarr;</span>"
+
+#: attachment-image.php:48
+msgid "Published on [entry-published] [entry-edit-link before=\"| \"]"
+msgstr "Julkaistu [entry-published] [entry-edit-link before=\"| \"]"
+
+#: attachment-image.php:63
+msgid "Gallery"
+msgstr "Kuvagalleria"
 
 #: bbpress/loop-replies.php:18 bbpress/loop-replies.php:52
 #: library/classes/widget-pages.php:157
@@ -421,18 +166,197 @@ msgid "in reply to: "
 msgstr "Vastauksena:"
 
 #: bbpress/loop-single-topic.php:60
-#, php-format
 msgid "Started by: %1$s"
 msgstr "Aiheen on aloittanut: %1$s"
 
 #: bbpress/loop-single-topic.php:68
-#, php-format
 msgid "in: <a href=\"%1$s\">%2$s</a>"
 msgstr "<a href=\"%1$s\">%2$s</a>"
 
 #: bbpress/loop-single-topic.php:82
 msgid "Voices: "
 msgstr "Osallistujat:"
+
+#: comment.php:32
+msgid "Your comment is awaiting moderation."
+msgstr "Kommenttisi odottaa moderointia."
+
+#: comments.php:27
+msgid "No Responses"
+msgstr "Ei kommentteja"
+
+#: comments.php:27
+msgid "One Response"
+msgstr "Yksi kommentti"
+
+#: comments.php:27
+msgid "% Responses"
+msgstr "%  Kommenttia"
+
+#: comments.php:40
+msgid "&larr; Previous"
+msgstr "&larr; Edellinen"
+
+#: comments.php:41
+msgid "Page %1$s of %2$s"
+msgstr "Sivu %1$s / %2$s"
+
+#: comments.php:42
+msgid "Next &rarr;"
+msgstr "Seuraava &rarr;"
+
+#: comments.php:52
+msgid ""
+"Comments are closed, but <a href=\"%s\" title=\"Trackback URL for this post"
+"\">trackbacks</a> and pingbacks are open."
+msgstr ""
+"Kommentointi on suljettu, mutta <a href=\"%s\" title=\"Paluuviitteen URL "
+"tähän artikkeliin\">paluuviitteet</a> ja päivitysilmoitukset ovat avoinna."
+
+#: comments.php:58
+msgid "Comments are closed."
+msgstr "Kommentointi on suljettu."
+
+#: content-aside.php:23 content-audio.php:23 content-chat.php:23
+#: content-gallery.php:23 content-image.php:23 content-link.php:23
+#: content-video.php:23
+msgid ""
+"[post-format-link] published on [entry-published] [entry-comments-link "
+"before=\" | \"] [entry-edit-link before=\" | \"]"
+msgstr ""
+"[post-format-link] julkaistu [entry-published] [entry-comments-link before="
+"\" | \"] [entry-edit-link before=\" | \"]"
+
+#: content-aside.php:32 content-audio.php:32 content-chat.php:32
+#: content-gallery.php:32 content-image.php:32 content-link.php:32
+#: content-quote.php:32 content-video.php:32 content.php:36
+msgid ""
+"[entry-terms taxonomy=\"category\" before=\"Posted in \"] [entry-terms "
+"before=\"Tagged \"]"
+msgstr ""
+"[entry-terms taxonomy=\"category\" before=\"Artikkeli kategoriassa \"] "
+"[entry-terms before=\"Avainsanat \"]"
+
+#: content-audio.php:57 content-chat.php:57 content-gallery.php:55
+#: content-image.php:50 content-link.php:54 content-quote.php:43
+#: content-video.php:54
+msgid ""
+"[post-format-link] published on [entry-published] [entry-permalink before="
+"\"| \"] [entry-comments-link before=\"| \"] [entry-edit-link before=\"| \"]"
+msgstr ""
+"[post-format-link] julkaistu [entry-published] [entry-permalink before=\"| "
+"\"] [entry-comments-link before=\"| \"] [entry-edit-link before=\"| \"]"
+
+#: content-forum.php:39
+msgid "%d topic"
+msgid_plural "%d topics"
+msgstr[0] "%d aihe"
+msgstr[1] "%d aihetta"
+
+#: content-forum.php:46 content-forum.php:49 content-topic.php:46
+#: content-topic.php:49
+msgid "%d post"
+msgid_plural "%d posts"
+msgstr[0] "%d vastaus"
+msgstr[1] "%d vastausta"
+
+#: content-forum.php:54 content-topic.php:54
+msgid "Last post %s"
+msgstr "Viimeisin vastaus %s"
+
+#: content-gallery.php:50
+msgid "This gallery contains %s image."
+msgid_plural "This gallery contains %s images."
+msgstr[0] "Tämä kuvagalleria sisältää %s kuvan."
+msgstr[1] "Tämä kuvagalleria sisältää %s kuvaa."
+
+#: content-quote.php:23
+msgid ""
+"[post-format-link] published on [entry-published] [entry-comments-link "
+"before=\" | \"] [entry-edit-link before=\"| \"]"
+msgstr ""
+"[post-format-link] julkaistu [entry-published] [entry-comments-link before="
+"\" | \"] [entry-edit-link before=\"| \"]"
+
+#: content-quote.php:38
+msgid "Read more &rarr;"
+msgstr "Lue lisää &rarr;"
+
+#: content-status.php:31
+msgid ""
+"[post-format-link] updated on [entry-published] [entry-edit-link before=\"| "
+"\"]<br />[entry-terms taxonomy=\"category\" before=\"Posted in \"] [entry-"
+"terms before=\"Tagged \"]"
+msgstr ""
+"[post-format-link] päivitetty [entry-published] [entry-edit-link before=\"| "
+"\"]<br />[entry-terms taxonomy=\"category\" before=\"Artikkeli kategoriassa "
+"\"] [entry-terms before=\"Avainsanat \"]"
+
+#: content-status.php:46
+msgid ""
+"[post-format-link] updated on [entry-published] [entry-permalink before=\"| "
+"\"] [entry-comments-link before=\"| \" one=\"%s reply\" more=\"%s replies\" "
+"zero=\"Reply\"] [entry-edit-link before=\"| \"]"
+msgstr ""
+"[post-format-link] päivitetty [entry-published] [entry-permalink before=\"| "
+"\"] [entry-comments-link before=\"| \" one=\"%s kommentti\" more=\"%s "
+"kommenttia\" zero=\"Kommentti\"] [entry-edit-link before=\"| \"]"
+
+#: content-topic.php:39
+msgid "%d voice"
+msgid_plural "%d voices"
+msgstr[0] "%d osallistuja"
+msgstr[1] "%d osallistujaa"
+
+#: content-topic.php:61
+msgid "by"
+msgstr "-"
+
+#: content.php:27
+msgid ""
+"[entry-published] by [entry-author] [entry-comments-link before=\" | \"] "
+"[entry-edit-link before=\" | \"]"
+msgstr ""
+"[entry-published]  [entry-author] [entry-comments-link before=\" | \"] "
+"[entry-edit-link before=\" | \"]"
+
+#: functions.php:437
+msgid "Front Page Widget"
+msgstr "Etusivun vimpain."
+
+#: functions.php:438
+msgid "Front Page widget area."
+msgstr "Etusivun vimpainalue."
+
+#: functions.php:450
+msgid "Front Page Callout"
+msgstr "Etusivun 'Callout'."
+
+#: functions.php:451
+msgid ""
+"Front Page Callout widget area. This is meant to used for short text area."
+msgstr ""
+"Etusivun 'Callout' vimpainalue. Tämä on tarkoitettu lyhyille tekstinpätkille."
+
+#: functions.php:464
+msgid "After Singular Download"
+msgstr "Yksittäisen latauksen jälkeen"
+
+#: functions.php:465
+msgid ""
+"After singular download widget area. This only works with Easy Digital "
+"Download plugin."
+msgstr ""
+"Yksittäisen latauksen jälkeen tuleva vimpainalue. Tämä toimii vain lisäosan "
+"Easy Digital Download kanssa."
+
+#: functions.php:484
+msgid "Theme Green"
+msgstr "Teeman vihreä"
+
+#: header.php:85
+msgid "&#8764;"
+msgstr "&#8764;"
 
 #: includes/EDD_SL_Theme_Updater.php:53
 msgid ""
@@ -444,7 +368,6 @@ msgstr ""
 "päivitykseen."
 
 #: includes/EDD_SL_Theme_Updater.php:58
-#, php-format
 msgid ""
 "<strong>%1$s %2$s</strong> is available. <a href=\"%3$s\" class=\"thickbox\" "
 "title=\"%4s\">Check out what's new</a> or <a href=\"%5$s\"%6$s>update now</"
@@ -476,7 +399,6 @@ msgstr "Sivupohja"
 
 #: library/admin/meta-box-theme-about.php:31
 #: library/admin/meta-box-theme-about.php:36
-#, php-format
 msgid "About %s"
 msgstr "Tiedot %s"
 
@@ -510,7 +432,6 @@ msgstr ""
 "acronym> ja/tai lyhytkoodeja, jotka lisätään automaattisesti teemaan."
 
 #: library/admin/theme-settings.php:47 library/admin/theme-settings.php:171
-#, php-format
 msgid "%s Theme Settings"
 msgstr "%s Teeman asetukset"
 
@@ -535,6 +456,13 @@ msgid ""
 "An advanced widget that gives you total control over the output of your "
 "archives."
 msgstr "Vimpain, jolla hallitaan arkistoja."
+
+#: library/classes/widget-archives.php:44
+#: library/classes/widget-archives.php:142
+#: library/extensions/breadcrumb-trail.php:180
+#: library/functions/context.php:576 loop-meta.php:126
+msgid "Archives"
+msgstr "Arkistot"
 
 #: library/classes/widget-archives.php:79
 msgid "Select Year"
@@ -913,6 +841,11 @@ msgid ""
 "search form."
 msgstr "Vimpain, jolla hallitaan hakulomaketta."
 
+#: library/classes/widget-search.php:45 library/classes/widget-search.php:132
+#: searchform.php:18
+msgid "Search"
+msgstr "Etsi"
+
 #: library/classes/widget-search.php:148
 msgid "Search Label:"
 msgstr "Etsi nimike:"
@@ -969,7 +902,6 @@ msgstr "Etusivu"
 
 #: library/extensions/breadcrumb-trail.php:177
 #: library/functions/context.php:582
-#, php-format
 msgid "Search results for \"%s\""
 msgstr "Hakutulokset haulle: \"%s\""
 
@@ -979,7 +911,6 @@ msgid "404 Not Found"
 msgstr "404 Sivua ei löytynyt"
 
 #: library/extensions/breadcrumb-trail.php:179
-#, php-format
 msgid "Page %d"
 msgstr "Sivu %d"
 
@@ -989,7 +920,6 @@ msgid "g:i a"
 msgstr "G:i"
 
 #: library/extensions/breadcrumb-trail.php:182
-#, php-format
 msgid "Minute %d"
 msgstr "Minuutti %d"
 
@@ -1003,7 +933,6 @@ msgid "d"
 msgstr "d"
 
 #: library/extensions/breadcrumb-trail.php:185
-#, php-format
 msgid "Week %d"
 msgstr "Viikko %d"
 
@@ -1042,6 +971,10 @@ msgstr "Samaan aihepiiriin liittyvät artikkelit"
 #: library/extensions/custom-field-series.php:212
 msgid "Series"
 msgstr "Tähän liittyvät artikkelit"
+
+#: library/extensions/featured-header.php:202
+msgid "Featured Header"
+msgstr "Otsake-kuva"
 
 #: library/extensions/post-stylesheets.php:286
 msgid "Stylesheet"
@@ -1106,7 +1039,6 @@ msgid "Comment"
 msgstr "Kommentti"
 
 #: library/functions/comments.php:196
-#, php-format
 msgid ""
 "You must be <a href=\"%1$s\" title=\"Log in\">logged in</a> to post a "
 "comment."
@@ -1115,7 +1047,6 @@ msgstr ""
 "kirjoittaaksesi kommentin."
 
 #: library/functions/comments.php:197
-#, php-format
 msgid "Logged in as <a href=\"%1$s\" title=\"%2$s\">%2$s</a>."
 msgstr "Kirjautuneena nimellä <a href=\"%1$s\" title=\"%2$s\">%2$s</a>."
 
@@ -1132,7 +1063,6 @@ msgid "Leave a Reply"
 msgstr "Jätä kommentti"
 
 #: library/functions/comments.php:203
-#, php-format
 msgid "Leave a Reply to %s"
 msgstr "Jätä kommentti %s"
 
@@ -1147,12 +1077,10 @@ msgstr "Lähetä  kommentti"
 #: library/functions/context.php:553 library/functions/context.php:559
 #: library/functions/context.php:562 library/functions/context.php:568
 #: library/functions/context.php:571
-#, php-format
 msgid "Archive for %s"
 msgstr "Arkisto %s"
 
 #: library/functions/context.php:556
-#, php-format
 msgid "Archive for minute %s"
 msgstr "Minuuttiarkisto %s"
 
@@ -1165,7 +1093,6 @@ msgid "F jS, Y"
 msgstr "F jS, Y"
 
 #: library/functions/context.php:565
-#, php-format
 msgid "Archive for week %s of %s"
 msgstr "Viikkoarkisto %s / %s"
 
@@ -1174,12 +1101,10 @@ msgid "W"
 msgstr "W"
 
 #: library/functions/context.php:590
-#, php-format
 msgid "%1$s Page %2$s"
 msgstr "%1$s Sivu %2$s"
 
 #: library/functions/core-seo.php:97
-#, php-format
 msgid "Copyright (c) %1$s"
 msgstr "Copyright (c) %1$s"
 
@@ -1193,7 +1118,6 @@ msgid "Footer"
 msgstr "Alapalkki"
 
 #: library/functions/deprecated.php:684
-#, php-format
 msgid ""
 "<code>%1$s</code> &mdash; This function has been removed or replaced by "
 "another function."
@@ -1273,7 +1197,6 @@ msgid "WordPress"
 msgstr "WordPress"
 
 #: library/functions/shortcodes.php:106
-#, php-format
 msgid "%s WordPress Theme"
 msgstr "%s WordPress teema"
 
@@ -1286,13 +1209,11 @@ msgid "Log in"
 msgstr "Kirjaudu sisään"
 
 #: library/functions/shortcodes.php:151
-#, php-format
 msgid "This page loaded in %1$s seconds with %2$s database queries."
 msgstr ""
 "Sivu ladattiin %1$s sekunnissa, aikaa meni %2$s tietokannan kyselyihin."
 
 #: library/functions/shortcodes.php:205 library/functions/shortcodes.php:527
-#, php-format
 msgid "Edit %1$s"
 msgstr "Editoi %1$s"
 
@@ -1301,18 +1222,15 @@ msgid "Leave a response"
 msgstr "Jätä kommentti"
 
 #: library/functions/shortcodes.php:258
-#, php-format
 msgid "%1$s Response"
 msgstr "%1$s Kommentti"
 
 #: library/functions/shortcodes.php:259
-#, php-format
 msgid "%1$s Responses"
 msgstr "%1$s Kommenttia"
 
 #: library/functions/shortcodes.php:274 library/functions/shortcodes.php:276
 #: library/functions/shortcodes.php:278
-#, php-format
 msgid "Comment on %1$s"
 msgstr "Kommentti %1$s"
 
@@ -1325,12 +1243,10 @@ msgid "Permalink"
 msgstr "Pikalinkki"
 
 #: library/functions/shortcodes.php:455
-#, php-format
 msgid "%1$s at %2$s"
 msgstr "%1$s / %2$s"
 
 #: library/functions/shortcodes.php:506
-#, php-format
 msgid "Permalink to comment %1$s"
 msgstr "Pikalinkki kommenttiin %1$s"
 
@@ -1411,9 +1327,49 @@ msgstr ""
 "Ladataan yksittäisen sivun (artikkelin, kuvasivun jne.) jälkeen ennen "
 "kommenttialuetta."
 
-#: library/functions/utility.php:227
+#: library/functions/utility.php:197
 msgid "(Untitled)"
 msgstr "(Ei otsikkoa)"
+
+#: loop-error.php:17
+msgid "Apologies, but no entries were found."
+msgstr "Pahoittelu, mutta yhtään artikkelia ei löytynyt."
+
+#: loop-meta.php:89
+msgid "You are browsing the search results for &quot;%1$s&quot;"
+msgstr "Hakutulokset haulle: &quot;%1$s&quot;"
+
+#: loop-meta.php:98
+msgid "Archives by date"
+msgstr "Arkistot"
+
+#: loop-meta.php:102
+msgid "You are browsing the site archives by date."
+msgstr "Selaat päiväkohtaista arkistoa."
+
+#: loop-meta.php:130
+msgid "You are browsing the site archives."
+msgstr "Selaat sivun arkistoa."
+
+#: loop-nav.php:18
+msgid "<span class=\"meta-nav\">&larr;</span> Return to entry"
+msgstr "<span class=\"meta-nav\">&larr;</span> Palaa takaisin"
+
+#: loop-nav.php:24 loop-nav.php:28 loop-nav.php:30
+msgid "<span class=\"meta-nav\">&larr;</span> Previous"
+msgstr "<span class=\"meta-nav\">&larr;</span> Edellinen"
+
+#: loop-nav.php:25 loop-nav.php:28 loop-nav.php:30
+msgid "Next <span class=\"meta-nav\">&rarr;</span>"
+msgstr "Seuraava <span class=\"meta-nav\">&rarr;</span>"
+
+#: menu-primary-mobile.php:19 menu-primary.php:19
+msgid "Skip to content"
+msgstr "Hyppää sisältöön"
+
+#: menu-primary-mobile.php:25
+msgid "Menu"
+msgstr "Navigointi"
 
 #: page-templates/account-page.php:48
 msgid "You must be logged in to view the content of this page."
@@ -1428,13 +1384,52 @@ msgid "Latest downloads"
 msgstr "Uusimmat ladattavat"
 
 #: page-templates/front-page.php:60
-#, php-format
 msgid ""
 "%1$s <a href=\"%2$s\" class=\"kultalusikka-latest-downloads\">View all "
 "&raquo;&raquo;</a>"
 msgstr ""
 "%1$s <a href=\"%2$s\" class=\"kultalusikka-latest-downloads\">Katso kaikki "
 "&raquo;&raquo;</a>"
+
+#: search.php:45
+msgid "[entry-published] &mdash; <code>%s</code>"
+msgstr "[entry-published] &mdash; <code>%s</code>"
+
+#: searchform.php:17
+msgid "Search..."
+msgstr "Etsi..."
+
+#. Theme Name of the plugin/theme
+msgid "Kultalusikka"
+msgstr "Kultalusikka"
+
+#. Theme URI of the plugin/theme
+msgid "https://foxnet-themes.fi/downloads/kultalusikka"
+msgstr "https://foxnet-themes.fi/downloads/kultalusikka"
+
+#. Description of the plugin/theme
+msgid ""
+"Kultalusikka is designed for selling digital downloads via Easy Digital "
+"Downloads WordPress Plugin."
+msgstr ""
+"Kultalusikka on suunniteltu myymään digitaalisia tuotteita Easy Digital "
+"Downloads -lisäosan avulla."
+
+#. Author of the plugin/theme
+msgid "Sami Keijonen"
+msgstr "Sami Keijonen"
+
+#. Author URI of the plugin/theme
+msgid "https://foxnet-themes.fi"
+msgstr "https://foxnet-themes.fi"
+
+#. Template Name of the plugin/theme
+msgid "Account Page"
+msgstr "Oma tili -sivu"
+
+#. Template Name of the plugin/theme
+msgid "Front Page"
+msgstr "Etusivu"
 
 #~ msgid "You are here:"
 #~ msgstr "Olet täällä:"

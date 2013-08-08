@@ -434,7 +434,7 @@ function kultalusikka_register_sidebars() {
 	register_sidebar(
 		array(
 			'id' => 'front-page',
-			'name' => __( 'Front Page', 'kultalusikka' ),
+			'name' => __( 'Front Page Widget', 'kultalusikka' ),
 			'description' => __( 'Front Page widget area.', 'kultalusikka' ),
 			'before_widget' => '<section id="%1$s" class="widget %2$s widget-%2$s">',
 			'after_widget' => '</section>',
