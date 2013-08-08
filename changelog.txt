@@ -1,4 +1,4 @@
-August 10, 2013 - version 0.2
+August 8, 2013 - version 0.2
 
 * Add submemu indicator as plus sign, not as image.
 * Update Hybrid Core to 1.6.
@@ -8,6 +8,7 @@ August 10, 2013 - version 0.2
 * Update language files.
 * Small tweaks for bbPress css and template files.
 * Remove archive-topic.php and archive-forum.php.
+* Add input type url css.
 
 * This is only for testing automatic updater.
 
