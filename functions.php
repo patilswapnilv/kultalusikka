@@ -162,6 +162,9 @@ function kultalusikka_theme_setup() {
 	
 	/* Add menu-item-parent class to parent menu items.  */
 	add_filter( 'wp_nav_menu_objects', 'kultalusikka_add_menu_parent_class' );
+	
+	/* Remove the "Theme Settings" submenu. */
+	add_action( 'admin_menu', 'kultalusikka_remove_theme_settings_submenu', 11 );
 
 }
 
@@ -183,9 +186,12 @@ function kultalusikka_theme_updater() {
 	/* Get action/filter hook prefix. */
 	$prefix = hybrid_get_prefix();
 	
-	/* Get license key from database. */
+	/* Get old license key from database. */
 	$kultalusikka_get_license = get_option( $prefix . '_theme_settings' ); // This is array.
-	$kultalusikka_license = isset( $kultalusikka_get_license['kultalusikka_license_key'] ) ? $kultalusikka_get_license['kultalusikka_license_key'] : '';
+	
+	/* Get new license key from database. */
+	$kalervo_license_new = trim( get_option( 'kultalusikka_theme_license_key' ) );
+	$kultalusikka_license = isset( $kalervo_license_new ) ? $kalervo_license_new : $kultalusikka_get_license['kultalusikka_license_key'];
 
 	$edd_updater = new EDD_SL_Theme_Updater( array( 
 		'remote_api_url' 	=> KULTALUSIKKA_SL_STORE_URL, 	// our store URL that is running EDD
@@ -584,6 +590,17 @@ function kultalusikka_add_menu_parent_class( $items ) {
 
 	return $items;    
 
+}
+
+/**
+ * Remove the "Theme Settings" submenu.
+ *
+ * @since 0.2.1
+ */
+function kultalusikka_remove_theme_settings_submenu() {
+
+	/* Remove the Theme Settings settings page. */
+	remove_submenu_page( 'themes.php', 'theme-settings' );
 }
 
 /**
