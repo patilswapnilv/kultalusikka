@@ -958,7 +958,8 @@ a.more-link:hover {
 .widget-search input[type="text"],
 input[type="text"],
 input[type="password"],
-input[type="email"] {
+input[type="email"],
+input[type="url"]  {
 	background: #f9f9f9; 
 	border: 1px solid #e5e5e5;
 	-webkit-border-radius: 3px;
@@ -973,7 +974,8 @@ input[type="email"] {
 .widget-search input[type="text"]:focus,
 input[type="text"]:focus,
 input[type="password"]:focus,
-input[type="email"]:focus {
+input[type="email"]:focus,
+input[type="url"]:focus {
 	background: #fff;
 	border: 1px solid #90b535;
 	-moz-box-shadow: 0 0 3px rgba(131, 171, 35, 0.3);
