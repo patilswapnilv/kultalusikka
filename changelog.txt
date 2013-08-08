@@ -1,3 +1,7 @@
+August 8, 2013 - version 0.2.1
+
+* Create new place for theme license. It's now in under Appearance >> Theme License.
+
 August 8, 2013 - version 0.2
 
 * Add submemu indicator as plus sign, not as image.
