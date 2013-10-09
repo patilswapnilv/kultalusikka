@@ -2,7 +2,7 @@
  * Theme Name: Kultalusikka
  * Theme URI: https://foxnet-themes.fi/downloads/kultalusikka
  * Description: Kultalusikka is designed for selling digital downloads via Easy Digital Downloads WordPress Plugin.
- * Version: 0.2.2
+ * Version: 0.2.3
  * Author: Sami Keijonen
  * Author URI: https://foxnet-themes.fi
  * Tags: sticky-post, theme-options, threaded-comments, translation-ready, one-column, two-columns, flexible-width, left-sidebar, right-sidebar, custom-background, custom-header, featured-images, editor-style, green, white, light
@@ -1292,7 +1292,7 @@ ol.comment-list dl dl {
 
 body #edd_checkout_form_wrap input[type="text"], 
 body #edd_checkout_form_wrap input[type="email"], 
-body #edd_checkout_form_wrap input[type="password"] { 
+body #edd_checkout_form_wrap input[type="password"] {
 	padding: 7px;
 	padding: 0.5rem;
 	width: 100%;
@@ -1325,25 +1325,40 @@ body .edd-submit.plain:hover {
 }
 
 /* Theme Green */
-.edd-submit.button.theme-green {
+body .edd-submit.theme-green, 
+body .theme-green#edd-purchase-button, 
+body input[type="submit"].edd-submit.theme-green,
+body .edd-submit.theme-green.button {
 	color: #fff;
 	border-color: #78a018 #78a018 #387038;
 	background: #90b535;
 	background:    -moz-linear-gradient(top, #90b535, #83ab23);
 	background: -webkit-linear-gradient(top, #90b535, #83ab23);
 	background:         linear-gradient(top, #90b535, #83ab23);
+	font-size: inherit;
+	padding: 14px 20px;
+	padding: 1rem 1.42857143rem;
 }
 
-.edd-submit.button.theme-green:hover {
+body .edd-submit.theme-green:hover, 
+body .theme-green#edd-purchase-button:hover, 
+body input[type="submit"].edd-submit.theme-green:hover,
+body .edd-submit.theme-green.button:hover {
 	background: #78a018;
 	background:    -moz-linear-gradient(top, #83ab23, #90b535);
 	background: -webkit-linear-gradient(top, #83ab23, #90b535);
 	background:         linear-gradient(top, #83ab23, #90b535);
+	color: #fff;
 }
 
-.edd-submit.button.theme-green:active {
+body .edd-submit.button.theme-green:active {
 	background: #78a018;
 	border-color: #387038 #51A351 #51A351;
+}
+body  a.edd-submit.theme-green.button,
+body a.edd-submit.theme-green.button:visited {
+	border-color: #78a018 #78a018 #387038;
+	color: #fff;
 }
 
 /* EDD download info widget css. */
@@ -1353,6 +1368,10 @@ body .edd-submit.plain:hover {
 	margin: 0.5rem 0;
 	text-align: center;
 	width: 100%;
+}
+
+.edd_cart_footer_row th {
+	background: #fff;
 }
 
 
