@@ -434,7 +434,7 @@ function kultalusikka_register_sidebars() {
 	register_sidebar(
 		array(
 			'id' => 'front-page',
-			'name' => __( 'Front Page', 'kultalusikka' ),
+			'name' => _x( 'Front Page', 'Front Page Widget', 'kultalusikka' ),
 			'description' => __( 'Front Page widget area.', 'kultalusikka' ),
 			'before_widget' => '<section id="%1$s" class="widget %2$s widget-%2$s">',
 			'after_widget' => '</section>',
@@ -480,8 +480,12 @@ function kultalusikka_register_sidebars() {
  */
 function kultalusikka_add_button_color( $button_style  ) {
 	
-	if ( function_exists( 'edd_get_button_colors' ) ) 
-		$button_style['theme-green'] = __( 'Theme Green', 'kultalusikka' ) ;
+	if ( function_exists( 'edd_get_button_colors' ) ) {
+		$button_style['theme-green'] = array( 
+			'label' => __( 'Theme Green', 'kultalusikka' ),
+			'hex'   => ''
+		);
+	}
 
 	return $button_style;
 	
