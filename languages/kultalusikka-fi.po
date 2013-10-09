@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Kultalusikka WordPress Theme\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/tags/kultalusikka\n"
-"POT-Creation-Date: 2013-08-08 17:24:35+00:00\n"
-"PO-Revision-Date: 2013-08-08 20:26+0200\n"
+"POT-Creation-Date: 2013-08-09 09:45:12+00:00\n"
+"PO-Revision-Date: 2013-08-09 12:49+0200\n"
 "Last-Translator: Sami Keijonen <sami.keijonen@foxnet.fi>\n"
 "Language-Team: Foxnet Themes <sami.keijonen@foxnet.fi>\n"
 "Language: fi\n"
@@ -30,33 +30,81 @@ msgstr ""
 "Yritit mennä sivulle %s, mutta sitä ei ole olemassa. Voit koittaa navigoida "
 "tai käyttää hakutoimintoa."
 
-#: admin/functions-admin.php:23
-msgid "Theme License"
+#: admin/functions-admin.php:43
+msgid "Theme License Key"
 msgstr "Teeman lisenssiavain"
 
-#: admin/functions-admin.php:37
-msgid "Theme License Options"
-msgstr "Teeman lisenssiavaimen asetukset"
+#: admin/functions-admin.php:53 library/admin/theme-settings.php:172
+msgid "Customize"
+msgstr "Kustomoi"
 
-#: admin/functions-admin.php:46
-msgid "License Key"
-msgstr "Lisenssiavain"
+#: admin/functions-admin.php:63
+msgid "Logo Upload"
+msgstr "Logon lataus"
 
-#: admin/functions-admin.php:50
-msgid "Enter your license key for receiving automatic upgrades"
+#: admin/functions-admin.php:73
+msgid "Background"
+msgstr "Tausta"
+
+#: admin/functions-admin.php:96
+msgid "License key:"
+msgstr "Lisenssiavain:"
+
+#: admin/functions-admin.php:100
+msgid "Enter your license key here."
 msgstr "Kirjoita lisenssiavain tähän, jotta saat automaattisia päivityksiä."
 
-#: admin/functions-admin.php:56 admin/functions-admin.php:65
-msgid "Activate License"
-msgstr "Aktivoi lisenssi"
+#: admin/functions-admin.php:107
+msgid "Activate License:"
+msgstr "Aktivoi lisenssi:"
 
-#: admin/functions-admin.php:60
+#: admin/functions-admin.php:111
 msgid "Active"
 msgstr "Aktivoitu"
 
-#: admin/functions-admin.php:62
+#: admin/functions-admin.php:113
 msgid "Deactivate License"
 msgstr "Poista aktivointi"
+
+#: admin/functions-admin.php:116
+msgid "Activate License"
+msgstr "Aktivoi lisenssi"
+
+#: admin/functions-admin.php:136
+msgid "Customize:"
+msgstr "Kustomoi:"
+
+#: admin/functions-admin.php:139
+msgid ""
+"Want to set Global layout and set other features? <a href=\"%s\">Go to "
+"Appearance &gt;&gt; Customize</a>. "
+msgstr ""
+"Haluatko vaihtaa globaalia ulkoasua ja muita asetuksia? <a href=\"%s\">Mene "
+"kohtaan ulkoasu &gt;&gt; Kustomoi</a>. "
+
+#: admin/functions-admin.php:156
+msgid "Custom logo:"
+msgstr "Logo:"
+
+#: admin/functions-admin.php:159
+msgid ""
+"Want to replace or remove default logo? <a href=\"%s\">Go to Appearance &gt;"
+"&gt; Header</a>. "
+msgstr ""
+"Halutatko vaihtaa tai poistaa oletuslogon? <a href=\"%s\">Mene kohtaan "
+"ulkoasu &gt;&gt; Otsake</a>. "
+
+#: admin/functions-admin.php:176
+msgid "Custom background:"
+msgstr "Taustakuva:"
+
+#: admin/functions-admin.php:179
+msgid ""
+"Want to replace or remove default background? <a href=\"%s\">Go to "
+"Appearance &gt;&gt; Background</a>. "
+msgstr ""
+"Halutatko vaihtaa tai poistaa oletustaustakuvan? <a href=\"%s\">Mene kohtaan "
+"ulkoasu &gt;&gt; Tausta</a>. "
 
 #: archive-download.php:68 attachment-image.php:43 bbpress.php:45
 #: content-aside.php:28 content-aside.php:39 content-audio.php:28
@@ -272,29 +320,30 @@ msgstr ""
 "[entry-published]  [entry-author] [entry-comments-link before=\" | \"] "
 "[entry-edit-link before=\" | \"]"
 
-#: functions.php:443
-msgid "Front Page Widget"
-msgstr "Etusivun vimpain."
+#: functions.php:437
+msgctxt "Front Page Widget"
+msgid "Front Page"
+msgstr "Etusivun vimpaimet"
 
-#: functions.php:444
+#: functions.php:438
 msgid "Front Page widget area."
 msgstr "Etusivun vimpainalue."
 
-#: functions.php:456
+#: functions.php:450
 msgid "Front Page Callout"
 msgstr "Etusivun 'Callout'."
 
-#: functions.php:457
+#: functions.php:451
 msgid ""
 "Front Page Callout widget area. This is meant to used for short text area."
 msgstr ""
 "Etusivun 'Callout' vimpainalue. Tämä on tarkoitettu lyhyille tekstinpätkille."
 
-#: functions.php:470
+#: functions.php:464
 msgid "After Singular Download"
 msgstr "Yksittäisen latauksen jälkeen"
 
-#: functions.php:471
+#: functions.php:465
 msgid ""
 "After singular download widget area. This only works with Easy Digital "
 "Download plugin."
@@ -302,7 +351,7 @@ msgstr ""
 "Yksittäisen latauksen jälkeen tuleva vimpainalue. Tämä toimii vain lisäosan "
 "Easy Digital Download kanssa."
 
-#: functions.php:490
+#: functions.php:484
 msgid "Theme Green"
 msgstr "Teeman vihreä"
 
@@ -310,7 +359,7 @@ msgstr "Teeman vihreä"
 msgid "&#8764;"
 msgstr "&#8764;"
 
-#: includes/EDD_SL_Theme_Updater.php:54
+#: includes/EDD_SL_Theme_Updater.php:53
 msgid ""
 "Updating this theme will lose any customizations you have made. 'Cancel' to "
 "stop, 'OK' to update."
@@ -319,7 +368,7 @@ msgstr ""
 "päivityksen yhteydessä. Valitse 'Cancel' peruuttaaksesi, 'OK' jatkaaksesi "
 "päivitykseen."
 
-#: includes/EDD_SL_Theme_Updater.php:59
+#: includes/EDD_SL_Theme_Updater.php:58
 msgid ""
 "<strong>%1$s %2$s</strong> is available. <a href=\"%3$s\" class=\"thickbox\" "
 "title=\"%4s\">Check out what's new</a> or <a href=\"%5$s\"%6$s>update now</"
@@ -390,10 +439,6 @@ msgstr "%s Teeman asetukset"
 #: library/admin/theme-settings.php:48
 msgid "Theme Settings"
 msgstr "Teeman asetukset"
-
-#: library/admin/theme-settings.php:172
-msgid "Customize"
-msgstr "Kustomoi"
 
 #: library/admin/theme-settings.php:205
 msgid "Update Settings"
@@ -1387,44 +1432,11 @@ msgstr "Oma tili -sivu"
 msgid "Front Page"
 msgstr "Etusivu"
 
-#~ msgid "Logo Upload"
-#~ msgstr "Logon lataus"
+#~ msgid "Theme License Options"
+#~ msgstr "Teeman lisenssiavaimen asetukset"
 
-#~ msgid "Background"
-#~ msgstr "Tausta"
-
-#~ msgid "Activate License:"
-#~ msgstr "Aktivoi lisenssi:"
-
-#~ msgid "Customize:"
-#~ msgstr "Kustomoi:"
-
-#~ msgid ""
-#~ "Want to set Global layout and set other features? <a href=\"%s\">Go to "
-#~ "Appearance &gt;&gt; Customize</a>. "
-#~ msgstr ""
-#~ "Haluatko vaihtaa globaalia ulkoasua ja muita asetuksia? <a href=\"%s\">Go "
-#~ "to Appearance &gt;&gt; Kustomoi</a>. "
-
-#~ msgid "Custom logo:"
-#~ msgstr "Logo:"
-
-#~ msgid ""
-#~ "Want to replace or remove default logo? <a href=\"%s\">Go to Appearance "
-#~ "&gt;&gt; Header</a>. "
-#~ msgstr ""
-#~ "Halutatko vaihtaa tai poistaa oletuslogon? <a href=\"%s\">Mene kohtaan "
-#~ "ulkoasu &gt;&gt; Otsake</a>. "
-
-#~ msgid "Custom background:"
-#~ msgstr "Taustakuva:"
-
-#~ msgid ""
-#~ "Want to replace or remove default background? <a href=\"%s\">Go to "
-#~ "Appearance &gt;&gt; Background</a>. "
-#~ msgstr ""
-#~ "Halutatko vaihtaa tai poistaa oletustaustakuvan? <a href=\"%s\">Mene "
-#~ "kohtaan ulkoasu &gt;&gt; Tausta</a>. "
+#~ msgid "Front Page Widget"
+#~ msgstr "Etusivun vimpain."
 
 #~ msgid "You are here:"
 #~ msgstr "Olet täällä:"
